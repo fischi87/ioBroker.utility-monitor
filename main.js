@@ -1,7 +1,7 @@
 'use strict';
 
 /*
- * ioBroker Nebenkosten-Monitor Adapter
+ * ioBroker Utility Monitor Adapter
  * Monitors gas, water, and electricity consumption with cost calculation
  */
 
@@ -11,14 +11,14 @@ const BillingManager = require('./lib/billingManager');
 const MessagingHandler = require('./lib/messagingHandler');
 const MultiMeterManager = require('./lib/multiMeterManager');
 
-class NebenkostenMonitor extends utils.Adapter {
+class UtilityMonitor extends utils.Adapter {
     /**
      * @param {Partial<utils.AdapterOptions>} [options] - Adapter options
      */
     constructor(options) {
         super({
             ...options,
-            name: 'nebenkosten-monitor',
+            name: 'utility-monitor',
         });
         this.on('ready', this.onReady.bind(this));
         this.on('stateChange', this.onStateChange.bind(this));
@@ -290,8 +290,8 @@ if (require.main !== module) {
     /**
      * @param {Partial<utils.AdapterOptions>} [options] - Adapter options
      */
-    module.exports = options => new NebenkostenMonitor(options);
+    module.exports = options => new UtilityMonitor(options);
 } else {
     // otherwise start the instance directly
-    new NebenkostenMonitor();
+    new UtilityMonitor();
 }
