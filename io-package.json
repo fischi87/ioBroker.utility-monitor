@@ -80,32 +80,6 @@
                 "pl": "Nowe: Miesięczny raport statusu. Nowe: Dodano statystyki lastDay. Naprawa: Błąd resetowania okresu PV. Naprawa: Walidacja schematu dla cen. Ulepszone: Zoptymalizowana zakładka informacji Admin UI. Ulepszone: Spójne zaokrąglanie (2 miejsca dziesiętne). Ulepszone: Atrybuty siatki zgodności botów.",
                 "uk": "Нове: Щомісячний звіт про стан. Нове: Додано статистику lastDay. Виправлення: Помилка скидання періоду PV. Виправлення: Перевірка схеми для цін. Покращено: Оптимізовано вкладку інформації Admin UI. Покращено: Послідовне округлення (2 знаки). Покращено: Атрибути сітки відповідності ботів.",
                 "zh-cn": "新增：每月状态报告。新增：添加了lastDay统计信息。修复：PV周期重置错误。修复：价格架构验证。改进：优化了Admin UI信息选项卡。改进：一致的四舍五入（2位小数）。改进：机器人合规网格属性。"
-            },
-            "1.3.3": {
-                "en": "New: PV/Feed-in integration! Monitor your solar feed-in and earnings. New: Notifications for PV. Improved: Reorganized config UI.",
-                "de": "Neu: PV/Einspeise-Integration! Überwache deine Solareinspeisung und Vergütung. Neu: Benachrichtigungen für PV. Verbessert: Aufgeräumte Konfigurations-Oberfläche.",
-                "ru": "Новое: Интеграция PV/Feed-in! Отслеживайте свою солнечную подачу и доходы. Новое: Уведомления для PV. Улучшено: Реорганизован интерфейс конфигурации.",
-                "pt": "Novo: Integração PV/Feed-in! Monitore sua alimentação solar e ganhos. Novo: Notificações para PV. Melhorado: IU de configuração reorganizada.",
-                "nl": "Nieuw: PV/Feed-in integratie! Monitor je zonne-invoeding en inkomsten. Nieuw: Meldingen voor PV. Verbeterd: Gereorganiseerde configuratie-UI.",
-                "fr": "Nouveau: Intégration PV/Feed-in! Surveillez votre injection solaire et vos revenus. Nouveau: Notifications pour PV. Amélioré: Interface de configuration réorganisée.",
-                "it": "Nuovo: Integrazione PV/Feed-in! Monitora il tuo immissione solare e i guadagni. Nuovo: Notifiche per PV. Migliorato: IU di configurazione riorganizzata.",
-                "es": "Nuevo: Integración PV/Feed-in! Monitorea tu alimentación solar y ganancias. Nuevo: Notificaciones para PV. Mejorado: IU de configuración reorganizada.",
-                "pl": "Nowe: Integracja PV/Feed-in! Monitoruj swoje zasilanie słoneczne i zarobki. Nowe: Powiadomienia dla PV. Ulepszone: Zreorganizowany interfejs konfiguracji.",
-                "uk": "Нове: Інтеграція PV/Feed-in! Відстежуйте своє сонячне живлення та доходи. Нове: Сповіщення для PV. Покращено: Реорганізований інтерфейс конфігурації.",
-                "zh-cn": "新增：PV/Feed-in集成！监控您的太阳能馈入和收益。新增：PV通知。改进：重新组织的配置界面。"
-            },
-            "1.3.2": {
-                "en": "New: Initial support for PV integration.",
-                "de": "Neu: Erste Unterstützung für PV-Integration.",
-                "ru": "Новое: Начальная поддержка интеграции PV.",
-                "pt": "Novo: Suporte inicial para integração PV.",
-                "nl": "Nieuw: Initiële ondersteuning voor PV-integratie.",
-                "fr": "Nouveau: Support initial pour l'intégration PV.",
-                "it": "Nuovo: Supporto iniziale per l'integrazione PV.",
-                "es": "Nuevo: Soporte inicial para integración PV.",
-                "pl": "Nowe: Wstępne wsparcie dla integracji PV.",
-                "uk": "Нове: Початкова підтримка інтеграції PV.",
-                "zh-cn": "新增：PV集成的初始支持。"
             }
         },
         "titleLang": {
