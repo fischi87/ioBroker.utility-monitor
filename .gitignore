@@ -1,0 +1,38 @@
+# No dot-directories except github/vscode
+.*/
+!.vscode/
+!.github/
+
+*.code-workspace
+node_modules
+nbproject
+
+# npm package files
+iobroker.*.tgz
+*.tgz
+
+Thumbs.db
+.commitinfo
+
+# Backup and temp files
+*.backup
+*.rej
+*.js.js
+.DS_Store
+
+# Development notes (private)
+TODO.md
+
+# i18n intermediate files
+admin/i18n/flat.txt
+admin/i18n/*/flat.txt
+# Local development and deployment scripts
+install-tgz.sh
+deploy.sh
+upload.sh
+
+# Test files (use /test directory for real tests)
+test-multi-meter.js
+
+# Old backup files
+*.old.json
