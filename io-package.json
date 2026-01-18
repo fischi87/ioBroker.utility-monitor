@@ -67,19 +67,6 @@
                 "pl": "Nowe: Obsługa Wielu Liczników! Dodaj nieograniczoną liczbę niestandardowych liczników dla każdego typu mediów (gaz, woda, prąd). Automatyczne obliczanie sum. Pełna kompatybilność wsteczna.",
                 "uk": "Нове: Підтримка кількох лічильників! Додайте необмежену кількість власних лічильників для кожного типу комунальних послуг (газ, вода, електрика). Автоматичний розрахунок підсумків. Повна зворотна сумісність.",
                 "zh-cn": "新增：多表支持！为每种公用事业类型（燃气、水、电）添加无限的自定义计量表。自动总计计算。完全向后兼容。"
-            },
-            "1.3.5": {
-                "en": "New: Monthly Status Report. New: Added lastDay statistics. Fix: PV period reset bug. Fix: Schema validation for prices. Improved: Admin UI Info-Tab optimized. Improved: Consistent rounding (2 decimals). Improved: Bot compliance grid attributes.",
-                "de": "Neu: Monatlicher Status-Bericht. Neu: lastDay-Statistiken hinzugefügt. Fix: PV Perioden-Reset Fehler behoben. Fix: Schema-Validierung für Preisfelder. Verbessert: Admin-UI Info-Tab optimiert. Verbessert: Einheitliche Rundung (2 Stellen). Verbessert: Bot-Compliance Grid-Attribute.",
-                "ru": "Новое: Ежемесячный отчет о состоянии. Новое: Добавлена статистика lastDay. Исправление: Ошибка сброса периода PV. Исправление: Проверка схемы для цен. Улучшено: Оптимизирована вкладка информации Admin UI. Улучшено: Последовательное округление (2 знака). Улучшено: Атрибуты сетки соответствия ботов.",
-                "pt": "Novo: Relatório de Status Mensal. Novo: Adicionadas estatísticas lastDay. Correção: Bug de redefinição de período PV. Correção: Validação de esquema para preços. Melhorado: Guia de informações da Admin UI otimizada. Melhorado: Arredondamento consistente (2 decimais). Melhorado: Atributos de grade de conformidade do bot.",
-                "nl": "Nieuw: Maandelijks statusrapport. Nieuw: lastDay statistieken toegevoegd. Fix: PV periode reset bug. Fix: Schema validatie voor prijzen. Verbeterd: Admin UI Info-Tab geoptimaliseerd. Verbeterd: Consistente afronding (2 decimalen). Verbeterd: Bot compliance grid attributen.",
-                "fr": "Nouveau: Rapport d'état mensuel. Nouveau: Ajout de statistiques lastDay. Correction: Bug de réinitialisation de période PV. Correction: Validation de schéma pour les prix. Amélioré: Onglet d'informations Admin UI optimisé. Amélioré: Arrondi cohérent (2 décimales). Amélioré: Attributs de grille de conformité des bots.",
-                "it": "Nuovo: Rapporto di stato mensile. Nuovo: Aggiunte statistiche lastDay. Correzione: Bug di reset periodo PV. Correzione: Convalida dello schema per i prezzi. Migliorato: Scheda informazioni Admin UI ottimizzata. Migliorato: Arrotondamento coerente (2 decimali). Migliorato: Attributi griglia conformità bot.",
-                "es": "Nuevo: Informe de Estado Mensual. Nuevo: Agregadas estadísticas lastDay. Corrección: Error de reinicio de período PV. Corrección: Validación de esquema para precios. Mejorado: Pestaña de información de Admin UI optimizada. Mejorado: Redondeo consistente (2 decimales). Mejorado: Atributos de cuadrícula de cumplimiento de bots.",
-                "pl": "Nowe: Miesięczny raport statusu. Nowe: Dodano statystyki lastDay. Naprawa: Błąd resetowania okresu PV. Naprawa: Walidacja schematu dla cen. Ulepszone: Zoptymalizowana zakładka informacji Admin UI. Ulepszone: Spójne zaokrąglanie (2 miejsca dziesiętne). Ulepszone: Atrybuty siatki zgodności botów.",
-                "uk": "Нове: Щомісячний звіт про стан. Нове: Додано статистику lastDay. Виправлення: Помилка скидання періоду PV. Виправлення: Перевірка схеми для цін. Покращено: Оптимізовано вкладку інформації Admin UI. Покращено: Послідовне округлення (2 знаки). Покращено: Атрибути сітки відповідності ботів.",
-                "zh-cn": "新增：每月状态报告。新增：添加了lastDay统计信息。修复：PV周期重置错误。修复：价格架构验证。改进：优化了Admin UI信息选项卡。改进：一致的四舍五入（2位小数）。改进：机器人合规网格属性。"
             }
         },
         "titleLang": {

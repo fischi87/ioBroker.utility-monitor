@@ -306,17 +306,6 @@ Der Adapter setzt Zähler automatisch zurück:
 - **IMPROVED:** 🔍 **Debug-Logging** - Hilfreiche Debug-Logs für Troubleshooting (nur in Debug-Modus sichtbar)
 - **CLEANUP:** 🧹 Repository aufgeräumt - Alte Backup-Dateien und temporäre Scripts entfernt
 
-### 1.3.5 (2026-01-11)
-
-- **NEW:** **Monatlicher Status-Bericht** - Optionaler monatlicher Bericht per Benachrichtigung.
-- **NEW:** Datenpunkte `statistics.lastDay` (Verbrauch gestern) für alle Typen und `lastDayVolume` (Gas) hinzugefügt.
-- **FIX:** **PV-Reset Bug** behoben (Tages- und Monatswerte wurden nicht zurückgesetzt).
-- **FIX:** Schema-Validierung für Preisfelder korrigiert (Fix für Kommastellen).
-- **FIX:** HT/NT-Anzeige korrigiert.
-- **IMPROVED:** **Admin-UI Info-Tab** komplett optimiert (Sauberes Markdown & Layout).
-- **IMPROVED:** Einheitliche Rundung berechneter Werte auf **2 Nachkommastellen** (daily, monthly, yearly).
-- **ROBUSTNESS:** ioBroker Bot Compliance Check (Grid-Attribute in Admin-UI vereinheitlicht).
-
 ---
 
 ## License
