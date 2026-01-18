@@ -1,8 +1,21 @@
 {
     "common": {
         "name": "utility-monitor",
-        "version": "1.4.3",
+        "version": "1.4.4",
         "news": {
+            "1.4.4": {
+                "en": "Fix: lastYearStart now always recalculated from contract date on adapter start - fixes wrong month count in paidTotal",
+                "de": "Fix: lastYearStart wird jetzt immer aus Vertragsbeginn neu berechnet - behebt falsche Monatszahl in paidTotal",
+                "ru": "Исправление: lastYearStart теперь всегда пересчитывается из даты договора при запуске - исправляет неправильный подсчет месяцев в paidTotal",
+                "pt": "Correção: lastYearStart agora sempre recalculado da data do contrato na inicialização - corrige contagem incorreta de meses em paidTotal",
+                "nl": "Fix: lastYearStart nu altijd herberekend vanaf contractdatum bij start - lost onjuiste maandtelling in paidTotal op",
+                "fr": "Correction: lastYearStart maintenant toujours recalculé à partir de la date du contrat au démarrage - corrige le comptage incorrect des mois dans paidTotal",
+                "it": "Correzione: lastYearStart ora sempre ricalcolato dalla data contratto all'avvio - corregge conteggio errato mesi in paidTotal",
+                "es": "Corrección: lastYearStart ahora siempre recalculado desde fecha contrato al iniciar - corrige recuento incorrecto meses en paidTotal",
+                "pl": "Naprawa: lastYearStart teraz zawsze przeliczany z daty umowy przy starcie - naprawia błędne liczenie miesięcy w paidTotal",
+                "uk": "Виправлення: lastYearStart тепер завжди перераховується з дати договору при запуску - виправляє неправильний підрахунок місяців у paidTotal",
+                "zh-cn": "修复：lastYearStart现在在启动时始终从合同日期重新计算 - 修复paidTotal中的错误月数计数"
+            },
             "1.4.3": {
                 "en": "Fix: Critical paidTotal calculation bug - now correctly calculates (monthly payment × months) after sensor updates",
                 "de": "Fix: Kritischer paidTotal-Berechnungsfehler - berechnet jetzt korrekt (monatlicher Abschlag × Monate) nach Sensor-Updates",

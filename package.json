@@ -1,6 +1,6 @@
 {
   "name": "iobroker.utility-monitor",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Monitor gas, water, and electricity consumption with cost calculation",
   "author": {
     "name": "fischi87",

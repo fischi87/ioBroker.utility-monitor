@@ -230,6 +230,14 @@ Der Adapter setzt Zähler automatisch zurück:
 
 ### **WORK IN PROGRESS**
 
+### 1.4.4 (2026-01-18)
+
+- **FIX:** 🐛 **lastYearStart Recalculation Bug** - Fixed incorrect month count in paidTotal:
+    - `lastYearStart` is now always recalculated from `contractStart` on adapter initialization
+    - Fixes cases where `lastYearStart` was set incorrectly (e.g., 01.01.2026 instead of contract date)
+    - Ensures `monthsSinceYearStart` is always calculated correctly based on actual contract date
+    - Resolves issue where `paidTotal` showed only 1 month payment instead of correct accumulated amount
+
 ### 1.4.3 (2026-01-18)
 
 - **FIX:** 🐛 **Critical paidTotal Calculation Bug** - Fixed incorrect paidTotal after sensor updates:
