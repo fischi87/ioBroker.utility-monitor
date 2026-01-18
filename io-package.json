@@ -1,8 +1,21 @@
 {
     "common": {
         "name": "utility-monitor",
-        "version": "1.4.2",
+        "version": "1.4.3",
         "news": {
+            "1.4.3": {
+                "en": "Fix: Critical paidTotal calculation bug - now correctly calculates (monthly payment × months) after sensor updates",
+                "de": "Fix: Kritischer paidTotal-Berechnungsfehler - berechnet jetzt korrekt (monatlicher Abschlag × Monate) nach Sensor-Updates",
+                "ru": "Исправление: Критическая ошибка расчета paidTotal - теперь правильно вычисляет (ежемесячный платеж × месяцы) после обновлений датчика",
+                "pt": "Correção: Bug crítico de cálculo paidTotal - agora calcula corretamente (pagamento mensal × meses) após atualizações do sensor",
+                "nl": "Fix: Kritieke paidTotal-berekeningsfout - berekent nu correct (maandelijkse betaling × maanden) na sensor-updates",
+                "fr": "Correction: Bug critique de calcul paidTotal - calcule maintenant correctement (paiement mensuel × mois) après les mises à jour du capteur",
+                "it": "Correzione: Bug critico calcolo paidTotal - ora calcola correttamente (pagamento mensile × mesi) dopo aggiornamenti sensore",
+                "es": "Corrección: Bug crítico de cálculo paidTotal - ahora calcula correctamente (pago mensual × meses) después de actualizaciones del sensor",
+                "pl": "Naprawa: Krytyczny błąd obliczania paidTotal - teraz poprawnie oblicza (płatność miesięczna × miesiące) po aktualizacjach czujnika",
+                "uk": "Виправлення: Критична помилка розрахунку paidTotal - тепер правильно обчислює (щомісячний платіж × місяці) після оновлень датчика",
+                "zh-cn": "修复：关键的paidTotal计算错误 - 现在在传感器更新后正确计算（月付款×月数）"
+            },
             "1.4.2": {
                 "en": "Fix: Critical multi-meter balance bug (hardcoded 12 months). Fix: TypeScript errors resolved. New: Enhanced input validation. New: Extended constants. New: Error handling wrapper.",
                 "de": "Fix: Kritischer Multi-Meter Balance-Bug (hardcodierte 12 Monate). Fix: TypeScript-Fehler behoben. Neu: Erweiterte Eingabevalidierung. Neu: Erweiterte Konstanten. Neu: Fehlerbehandlungs-Wrapper.",

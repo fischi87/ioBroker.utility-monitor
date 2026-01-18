@@ -230,6 +230,14 @@ Der Adapter setzt Zähler automatisch zurück:
 
 ### **WORK IN PROGRESS**
 
+### 1.4.3 (2026-01-18)
+
+- **FIX:** 🐛 **Critical paidTotal Calculation Bug** - Fixed incorrect paidTotal after sensor updates:
+    - `paidTotal` was stored as string instead of timestamp, causing parsing errors in `updateCosts()`
+    - Changed `lastYearStart`, `lastMonthStart`, `lastDayStart` to store timestamps (number) instead of formatted strings
+    - Now correctly calculates `paidTotal = monthlyPayment × monthsSinceYearStart` for both adapter restart and sensor updates
+    - Backward compatible: existing string values auto-convert to timestamps on next update
+
 ### 1.4.2 (2026-01-18)
 
 - **FIX:** 🔧 **TypeScript Errors Resolved** - All TypeScript compilation errors fixed:
