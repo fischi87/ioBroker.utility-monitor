@@ -1,33 +1,20 @@
 {
     "common": {
         "name": "utility-monitor",
-        "version": "1.4.4",
+        "version": "1.4.5",
         "news": {
-            "1.4.4": {
-                "en": "Fix: lastYearStart now always recalculated from contract date on adapter start - fixes wrong month count in paidTotal",
-                "de": "Fix: lastYearStart wird jetzt immer aus Vertragsbeginn neu berechnet - behebt falsche Monatszahl in paidTotal",
-                "ru": "Исправление: lastYearStart теперь всегда пересчитывается из даты договора при запуске - исправляет неправильный подсчет месяцев в paidTotal",
-                "pt": "Correção: lastYearStart agora sempre recalculado da data do contrato na inicialização - corrige contagem incorreta de meses em paidTotal",
-                "nl": "Fix: lastYearStart nu altijd herberekend vanaf contractdatum bij start - lost onjuiste maandtelling in paidTotal op",
-                "fr": "Correction: lastYearStart maintenant toujours recalculé à partir de la date du contrat au démarrage - corrige le comptage incorrect des mois dans paidTotal",
-                "it": "Correzione: lastYearStart ora sempre ricalcolato dalla data contratto all'avvio - corregge conteggio errato mesi in paidTotal",
-                "es": "Corrección: lastYearStart ahora siempre recalculado desde fecha contrato al iniciar - corrige recuento incorrecto meses en paidTotal",
-                "pl": "Naprawa: lastYearStart teraz zawsze przeliczany z daty umowy przy starcie - naprawia błędne liczenie miesięcy w paidTotal",
-                "uk": "Виправлення: lastYearStart тепер завжди перераховується з дати договору при запуску - виправляє неправильний підрахунок місяців у paidTotal",
-                "zh-cn": "修复：lastYearStart现在在启动时始终从合同日期重新计算 - 修复paidTotal中的错误月数计数"
-            },
-            "1.4.3": {
-                "en": "Fix: Critical paidTotal calculation bug - now correctly calculates (monthly payment × months) after sensor updates",
-                "de": "Fix: Kritischer paidTotal-Berechnungsfehler - berechnet jetzt korrekt (monatlicher Abschlag × Monate) nach Sensor-Updates",
-                "ru": "Исправление: Критическая ошибка расчета paidTotal - теперь правильно вычисляет (ежемесячный платеж × месяцы) после обновлений датчика",
-                "pt": "Correção: Bug crítico de cálculo paidTotal - agora calcula corretamente (pagamento mensal × meses) após atualizações do sensor",
-                "nl": "Fix: Kritieke paidTotal-berekeningsfout - berekent nu correct (maandelijkse betaling × maanden) na sensor-updates",
-                "fr": "Correction: Bug critique de calcul paidTotal - calcule maintenant correctement (paiement mensuel × mois) après les mises à jour du capteur",
-                "it": "Correzione: Bug critico calcolo paidTotal - ora calcola correttamente (pagamento mensile × mesi) dopo aggiornamenti sensore",
-                "es": "Corrección: Bug crítico de cálculo paidTotal - ahora calcula correctamente (pago mensual × meses) después de actualizaciones del sensor",
-                "pl": "Naprawa: Krytyczny błąd obliczania paidTotal - teraz poprawnie oblicza (płatność miesięczna × miesiące) po aktualizacjach czujnika",
-                "uk": "Виправлення: Критична помилка розрахунку paidTotal - тепер правильно обчислює (щомісячний платіж × місяці) після оновлень датчика",
-                "zh-cn": "修复：关键的paidTotal计算错误 - 现在在传感器更新后正确计算（月付款×月数）"
+            "1.4.5": {
+                "en": "Fix: Critical multi-meter cost calculation bugs (main meter sync, basicCharge/paidTotal accumulation, annualFee as fixed yearly value). Fix: Balance formula corrected. Fix: Removed duplicate initialization causing sync issues.",
+                "de": "Fix: Kritische Multi-Meter Kostenberechnungsfehler (Hauptzähler-Sync, basicCharge/paidTotal Akkumulation, Jahresgebühr als fester Jahreswert). Fix: Balance-Formel korrigiert. Fix: Doppelte Initialisierung entfernt.",
+                "ru": "Исправление: Критические ошибки расчета затрат multi-meter (синхронизация главного счетчика, накопление basicCharge/paidTotal, annualFee как фиксированное годовое значение). Исправление: Формула баланса исправлена. Исправление: Удалена дублирующая инициализация.",
+                "pt": "Correção: Bugs críticos de cálculo de custos multi-medidor (sincronização medidor principal, acumulação basicCharge/paidTotal, annualFee como valor anual fixo). Correção: Fórmula de saldo corrigida. Correção: Inicialização duplicada removida.",
+                "nl": "Fix: Kritieke multi-meter kostenberekeningsfouten (hoofdmeter sync, basicCharge/paidTotal accumulatie, annualFee als vaste jaarwaarde). Fix: Balans formule gecorrigeerd. Fix: Dubbele initialisatie verwijderd.",
+                "fr": "Correction: Bugs critiques calcul coûts multi-compteurs (sync compteur principal, accumulation basicCharge/paidTotal, annualFee comme valeur annuelle fixe). Correction: Formule de solde corrigée. Correction: Initialisation en double supprimée.",
+                "it": "Correzione: Bug critici calcolo costi multi-contatore (sync contatore principale, accumulazione basicCharge/paidTotal, annualFee come valore annuale fisso). Correzione: Formula bilancio corretta. Correzione: Inizializzazione duplicata rimossa.",
+                "es": "Corrección: Bugs críticos cálculo costos multi-medidor (sincronización medidor principal, acumulación basicCharge/paidTotal, annualFee como valor anual fijo). Corrección: Fórmula balance corregida. Corrección: Inicialización duplicada eliminada.",
+                "pl": "Naprawa: Krytyczne błędy obliczania kosztów multi-meter (synchronizacja głównego licznika, akumulacja basicCharge/paidTotal, annualFee jako stała wartość roczna). Naprawa: Formuła salda poprawiona. Naprawa: Usunięto podwójną inicjalizację.",
+                "uk": "Виправлення: Критичні помилки розрахунку витрат multi-meter (синхронізація головного лічильника, накопичення basicCharge/paidTotal, annualFee як фіксоване річне значення). Виправлення: Формула балансу виправлена. Виправлення: Видалено подвійну ініціалізацію.",
+                "zh-cn": "修复：关键多表成本计算错误（主表同步、basicCharge/paidTotal累积、annualFee作为固定年值）。修复：余额公式已更正。修复：删除重复初始化。"
             },
             "1.4.2": {
                 "en": "Fix: Critical multi-meter balance bug (hardcoded 12 months). Fix: TypeScript errors resolved. New: Enhanced input validation. New: Extended constants. New: Error handling wrapper.",
@@ -41,32 +28,6 @@
                 "pl": "Naprawa: Krytyczny błąd salda multi-meter (zakodowane 12 miesięcy). Naprawa: Naprawione błędy TypeScript. Nowe: Ulepszona walidacja danych. Nowe: Rozszerzone stałe. Nowe: Wrapper obsługi błędów.",
                 "uk": "Виправлення: Критична помилка балансу multi-meter (жорстко задані 12 місяців). Виправлення: Усунено помилки TypeScript. Нове: Покращена перевірка даних. Нове: Розширені константи. Нове: Обробник помилок.",
                 "zh-cn": "修复：关键多表余额错误（硬编码12个月）。修复：解决TypeScript错误。新增：增强输入验证。新增：扩展常量。新增：错误处理包装器。"
-            },
-            "1.4.1": {
-                "en": "Fix: Multi-meter bugs (cost calculation, billing period closure, monthly reports, yearly resets). Fix: Per-meter billing closure support. Fix: State type corrections (lastDayStart). Fix: ioBroker Bot compliance.",
-                "de": "Fix: Multi-Meter-Fehler (Kostenberechnung, Periodenabschluss, Monatsberichte, Jahres-Resets). Fix: Zähler-individuelle Periodenabschlüsse. Fix: State-Typ-Korrekturen (lastDayStart). Fix: ioBroker Bot-Compliance.",
-                "ru": "Исправление: Ошибки нескольких счетчиков (расчет затрат, закрытие периода, ежемесячные отчеты, годовые сбросы). Исправление: Поддержка закрытия периода для каждого счетчика. Исправление: Исправления типов состояний. Исправление: Соответствие ioBroker Bot.",
-                "pt": "Correção: Bugs multi-medidor (cálculo custos, fechamento período, relatórios mensais, resets anuais). Correção: Suporte fechamento período por medidor. Correção: Correções tipo estado. Correção: Conformidade Bot ioBroker.",
-                "nl": "Fix: Multi-meter bugs (kostenberekening, periode afsluiting, maandraporten, jaarlijkse resets). Fix: Per-meter periode afsluiting. Fix: State type correcties. Fix: ioBroker Bot compliance.",
-                "fr": "Correction: Bugs multi-compteurs (calcul coûts, clôture période, rapports mensuels, réinitialisations annuelles). Correction: Support clôture période par compteur. Correction: Corrections type d'état. Correction: Conformité Bot ioBroker.",
-                "it": "Correzione: Bug multi-contatore (calcolo costi, chiusura periodo, report mensili, reset annuali). Correzione: Supporto chiusura periodo per contatore. Correzione: Correzioni tipo stato. Correzione: Conformità Bot ioBroker.",
-                "es": "Corrección: Bugs multi-medidor (cálculo costos, cierre período, informes mensuales, reinicios anuales). Corrección: Soporte cierre período por medidor. Corrección: Correcciones tipo estado. Corrección: Cumplimiento Bot ioBroker.",
-                "pl": "Naprawa: Błędy wielu liczników (obliczanie kosztów, zamknięcie okresu, raporty miesięczne, resety roczne). Naprawa: Wsparcie zamknięcia okresu dla licznika. Naprawa: Poprawki typu stanu. Naprawa: Zgodność z Bot ioBroker.",
-                "uk": "Виправлення: Помилки кількох лічильників (розрахунок витрат, закриття періоду, місячні звіти, річні скидання). Виправлення: Підтримка закриття періоду для лічильника. Виправлення: Виправлення типу стану. Виправлення: Відповідність ioBroker Bot.",
-                "zh-cn": "修复：多表错误（成本计算、期间关闭、月度报告、年度重置）。修复：每表期间关闭支持。修复：状态类型更正。修复：ioBroker Bot合规性。"
-            },
-            "1.4.0": {
-                "en": "New: Multi-Meter Support! Add unlimited custom-named meters per utility type (gas, water, electricity). Automatic totals calculation. Fully backward compatible.",
-                "de": "Neu: Multi-Meter-Unterstützung! Unbegrenzt viele Zähler pro Medium (Gas, Wasser, Strom) mit benutzerdefinierten Namen. Automatische Gesamt-Summen. Vollständig rückwärtskompatibel.",
-                "ru": "Новое: Поддержка нескольких счетчиков! Добавьте неограниченное количество пользовательских счетчиков для каждого типа коммунальных услуг (газ, вода, электричество). Автоматический расчет итогов. Полная обратная совместимость.",
-                "pt": "Novo: Suporte Multi-Medidor! Adicione medidores personalizados ilimitados por tipo de utilidade (gás, água, eletricidade). Cálculo automático de totais. Totalmente compatível com versões anteriores.",
-                "nl": "Nieuw: Multi-Meter Ondersteuning! Voeg onbeperkt aangepaste meters toe per type (gas, water, elektriciteit). Automatische totaalberekening. Volledig achterwaarts compatibel.",
-                "fr": "Nouveau: Support Multi-Compteur! Ajoutez des compteurs personnalisés illimités par type de service (gaz, eau, électricité). Calcul automatique des totaux. Entièrement rétrocompatible.",
-                "it": "Nuovo: Supporto Multi-Contatore! Aggiungi contatori personalizzati illimitati per tipo di servizio (gas, acqua, elettricità). Calcolo automatico dei totali. Completamente retrocompatibile.",
-                "es": "Nuevo: Soporte Multi-Medidor! Agregue medidores personalizados ilimitados por tipo de servicio (gas, agua, electricidad). Cálculo automático de totales. Totalmente compatible con versiones anteriores.",
-                "pl": "Nowe: Obsługa Wielu Liczników! Dodaj nieograniczoną liczbę niestandardowych liczników dla każdego typu mediów (gaz, woda, prąd). Automatyczne obliczanie sum. Pełna kompatybilność wsteczna.",
-                "uk": "Нове: Підтримка кількох лічильників! Додайте необмежену кількість власних лічильників для кожного типу комунальних послуг (газ, вода, електрика). Автоматичний розрахунок підсумків. Повна зворотна сумісність.",
-                "zh-cn": "新增：多表支持！为每种公用事业类型（燃气、水、电）添加无限的自定义计量表。自动总计计算。完全向后兼容。"
             }
         },
         "titleLang": {
