@@ -229,23 +229,20 @@ Der Adapter setzt Zähler automatisch zurück:
 
 ## Changelog
 
-### **WORK IN PROGRESS**
+### 1.4.5 (2026-01-20)
 
-### 1.4.4 (2026-01-18)
-
-- **FIX:** 🐛 **lastYearStart Recalculation Bug** - Fixed incorrect month count in paidTotal:
-    - `lastYearStart` is now always recalculated from `contractStart` on adapter initialization
-    - Fixes cases where `lastYearStart` was set incorrectly (e.g., 01.01.2026 instead of contract date)
-    - Ensures `monthsSinceYearStart` is always calculated correctly based on actual contract date
-    - Resolves issue where `paidTotal` showed only 1 month payment instead of correct accumulated amount
-
-### 1.4.3 (2026-01-18)
-
-- **FIX:** 🐛 **Critical paidTotal Calculation Bug** - Fixed incorrect paidTotal after sensor updates:
-    - `paidTotal` was stored as string instead of timestamp, causing parsing errors in `updateCosts()`
-    - Changed `lastYearStart`, `lastMonthStart`, `lastDayStart` to store timestamps (number) instead of formatted strings
-    - Now correctly calculates `paidTotal = monthlyPayment × monthsSinceYearStart` for both adapter restart and sensor updates
-    - Backward compatible: existing string values auto-convert to timestamps on next update
+- **FIX:** 🐛 **Critical Multi-Meter Cost Calculation Bugs** - Comprehensive fixes for multi-meter functionality:
+    - **Main Meter Sync Issue**: Removed duplicate initialization that prevented `lastSync` updates on main meter
+    - **basicCharge Accumulation**: Now correctly calculates `basicCharge = grundgebuehr × months` (was showing only 1 month)
+    - **paidTotal Accumulation**: Now correctly calculates `paidTotal = abschlag × months` (was showing only 1 month)
+    - **annualFee as Fixed Value**: Jahresgebühr is now used as fixed yearly value (e.g., 60€ stays 60€)
+      - Previously incorrectly treated as monthly fee and multiplied by months
+      - User-entered value in config (e.g., 60€) is now used directly as intended
+    - **Balance Formula Corrected**: Fixed reversed formula `balance = totalYearly - paidTotal`
+      - Positive balance = Nachzahlung (you owe money)
+      - Negative balance = Guthaben (you get money back)
+- **IMPROVED:** 📦 **Dev-Dependencies**: Updated from tilde (~) to caret (^) versioning for better security updates
+- **CLEANUP:** 🧹 **Repository Compliance**: Removed unpublished versions from changelog (resolves ioBroker Bot Issue #1)
 
 ### 1.4.2 (2026-01-18)
 
@@ -268,44 +265,6 @@ Der Adapter setzt Zähler automatisch zurück:
     - `safeSetObjectNotExists()` catches and logs state creation failures
     - Prevents silent failures in StateManager
 - **IMPROVED:** 🧪 **Code Quality** - All tests passing (31 unit + 57 package tests)
-
-### 1.4.1 (2026-01-18)
-
-- **FIX:** 🐛 **Multi-Meter Critical Bugs** - Comprehensive fixes for multi-meter functionality:
-    - Fixed `updateCosts()` to correctly delegate to multiMeterManager for all meters
-    - Fixed `closeBillingPeriod()` to archive totals instead of only main meter values
-    - Fixed `checkMonthlyReport()` to display totals in reports for multi-meter setups
-    - Fixed state type mismatch: `lastDayStart`, `lastMonthStart`, `lastYearStart` now use number (timestamp) instead of string
-- **NEW:** 🎯 **Per-Meter Billing Closure** - Each meter can now be closed individually with its own `billing.closePeriod` button
-    - Main meter: `gas.billing.closePeriod`
-    - Additional meters: `gas.erdgeschoss.billing.closePeriod`, `gas.keller.billing.closePeriod`, etc.
-    - Each meter uses its own contract date for yearly resets
-- **NEW:** 📅 **Individual Contract Anniversary Resets** - Each meter resets on its own contract date
-    - Primary: Manual `closePeriod` triggers yearly reset immediately
-    - Fallback: Automatic reset on contract anniversary if user forgets to close period
-    - Contract date is preserved when closing period early (no drift)
-- **IMPROVED:** 💰 **Billing Period Closure** - No longer resets `basicCharge` and `annualFee` to zero
-    - These values now persist from config (user must update config if tariff changes)
-    - Helpful reminder message added after closing period
-- **FIX:** 🤖 **ioBroker Bot Compliance** - All bot checker issues resolved:
-    - Removed non-existent version 1.3.4 from news
-    - Added complete translations for all news entries (9 languages)
-    - Removed `.npmignore` file (using `files` field in package.json)
-    - DevDependencies already use `~` syntax (compliant)
-
-### 1.4.0 (2026-01-17)
-
-- **NEW:** 🎉 **Multi-Meter Support** - Verwende mehrere Zähler pro Typ (z.B. Gas Hauptzähler + Werkstatt-Zähler)
-    - Beliebig viele zusätzliche Zähler mit eigenen Namen konfigurierbar
-    - Separate Kostenberechnung und Statistiken pro Zähler
-    - Automatische Totals-Berechnung über alle Zähler
-- **NEW:** ✨ **Komma-Dezimaltrenner Support** - Admin UI akzeptiert jetzt sowohl Komma als auch Punkt (z.B. `12,50` oder `12.50`)
-- **NEW:** 📊 **Pro-Meter Billing** - Jeder Zähler hat eigene `billing.daysRemaining` und `billing.periodEnd` Werte
-- **NEW:** 🔧 **Config-Parser** - Automatische Konvertierung von String→Number mit Komma-Support
-- **FIX:** 💰 **Balance-Berechnung korrigiert** - Nutzt jetzt begonnene Monate statt volle Monate (17 Tage = 1 Monat gezahlt)
-- **FIX:** 🐛 **String-Type Fehler** behoben - Config-Werte werden korrekt als Numbers verarbeitet
-- **IMPROVED:** 🔍 **Debug-Logging** - Hilfreiche Debug-Logs für Troubleshooting (nur in Debug-Modus sichtbar)
-- **CLEANUP:** 🧹 Repository aufgeräumt - Alte Backup-Dateien und temporäre Scripts entfernt
 
 ---
 
