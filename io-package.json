@@ -1,0 +1,149 @@
+{
+    "common": {
+        "name": "utility-monitor",
+        "version": "1.4.6",
+        "news": {
+            "1.4.6": {
+                "en": "Breaking Change: Main meter now requires a name (default: 'main'). State paths changed from 'gas.*' to 'gas.METER_NAME.*'. All meters now use consistent naming structure.",
+                "de": "Breaking Change: Hauptzähler benötigt jetzt einen Namen (Standard: 'main'). State-Pfade geändert von 'gas.*' zu 'gas.METER_NAME.*'. Alle Zähler nutzen jetzt konsistente Namensstruktur."
+            },
+            "1.4.5": {
+                "en": "Fix: Critical multi-meter cost calculation bugs (main meter sync, basicCharge/paidTotal accumulation, annualFee as fixed yearly value). Fix: Balance formula corrected. Fix: Removed duplicate initialization causing sync issues.",
+                "de": "Fix: Kritische Multi-Meter Kostenberechnungsfehler (Hauptzähler-Sync, basicCharge/paidTotal Akkumulation, Jahresgebühr als fester Jahreswert). Fix: Balance-Formel korrigiert. Fix: Doppelte Initialisierung entfernt.",
+                "ru": "Исправление: Критические ошибки расчета затрат multi-meter (синхронизация главного счетчика, накопление basicCharge/paidTotal, annualFee как фиксированное годовое значение). Исправление: Формула баланса исправлена. Исправление: Удалена дублирующая инициализация.",
+                "pt": "Correção: Bugs críticos de cálculo de custos multi-medidor (sincronização medidor principal, acumulação basicCharge/paidTotal, annualFee como valor anual fixo). Correção: Fórmula de saldo corrigida. Correção: Inicialização duplicada removida.",
+                "nl": "Fix: Kritieke multi-meter kostenberekeningsfouten (hoofdmeter sync, basicCharge/paidTotal accumulatie, annualFee als vaste jaarwaarde). Fix: Balans formule gecorrigeerd. Fix: Dubbele initialisatie verwijderd.",
+                "fr": "Correction: Bugs critiques calcul coûts multi-compteurs (sync compteur principal, accumulation basicCharge/paidTotal, annualFee comme valeur annuelle fixe). Correction: Formule de solde corrigée. Correction: Initialisation en double supprimée.",
+                "it": "Correzione: Bug critici calcolo costi multi-contatore (sync contatore principale, accumulazione basicCharge/paidTotal, annualFee come valore annuale fisso). Correzione: Formula bilancio corretta. Correzione: Inizializzazione duplicata rimossa.",
+                "es": "Corrección: Bugs críticos cálculo costos multi-medidor (sincronización medidor principal, acumulación basicCharge/paidTotal, annualFee como valor anual fijo). Corrección: Fórmula balance corregida. Corrección: Inicialización duplicada eliminada.",
+                "pl": "Naprawa: Krytyczne błędy obliczania kosztów multi-meter (synchronizacja głównego licznika, akumulacja basicCharge/paidTotal, annualFee jako stała wartość roczna). Naprawa: Formuła salda poprawiona. Naprawa: Usunięto podwójną inicjalizację.",
+                "uk": "Виправлення: Критичні помилки розрахунку витрат multi-meter (синхронізація головного лічильника, накопичення basicCharge/paidTotal, annualFee як фіксоване річне значення). Виправлення: Формула балансу виправлена. Виправлення: Видалено подвійну ініціалізацію.",
+                "zh-cn": "修复：关键多表成本计算错误（主表同步、basicCharge/paidTotal累积、annualFee作为固定年值）。修复：余额公式已更正。修复：删除重复初始化。"
+            },
+            "1.4.2": {
+                "en": "Fix: Critical multi-meter balance bug (hardcoded 12 months). Fix: TypeScript errors resolved. New: Enhanced input validation. New: Extended constants. New: Error handling wrapper.",
+                "de": "Fix: Kritischer Multi-Meter Balance-Bug (hardcodierte 12 Monate). Fix: TypeScript-Fehler behoben. Neu: Erweiterte Eingabevalidierung. Neu: Erweiterte Konstanten. Neu: Fehlerbehandlungs-Wrapper.",
+                "ru": "Исправление: Критическая ошибка баланса multi-meter (жестко заданные 12 месяцев). Исправление: Устранены ошибки TypeScript. Новое: Расширенная проверка входных данных. Новое: Расширенные константы. Новое: Обработка ошибок.",
+                "pt": "Correção: Bug crítico de saldo multi-medidor (12 meses fixos). Correção: Erros TypeScript resolvidos. Novo: Validação de entrada aprimorada. Novo: Constantes estendidas. Novo: Wrapper de tratamento de erros.",
+                "nl": "Fix: Kritieke multi-meter balans bug (hardcoded 12 maanden). Fix: TypeScript-fouten opgelost. Nieuw: Verbeterde invoervalidatie. Nieuw: Uitgebreide constanten. Nieuw: Foutafhandeling wrapper.",
+                "fr": "Correction: Bug critique de solde multi-compteurs (12 mois codés en dur). Correction: Erreurs TypeScript résolues. Nouveau: Validation d'entrée améliorée. Nouveau: Constantes étendues. Nouveau: Wrapper de gestion des erreurs.",
+                "it": "Correzione: Bug critico bilancio multi-contatore (12 mesi hardcoded). Correzione: Errori TypeScript risolti. Nuovo: Validazione input migliorata. Nuovo: Costanti estese. Nuovo: Wrapper gestione errori.",
+                "es": "Corrección: Bug crítico de saldo multi-medidor (12 meses fijos). Corrección: Errores TypeScript resueltos. Nuevo: Validación de entrada mejorada. Nuevo: Constantes extendidas. Nuevo: Wrapper manejo errores.",
+                "pl": "Naprawa: Krytyczny błąd salda multi-meter (zakodowane 12 miesięcy). Naprawa: Naprawione błędy TypeScript. Nowe: Ulepszona walidacja danych. Nowe: Rozszerzone stałe. Nowe: Wrapper obsługi błędów.",
+                "uk": "Виправлення: Критична помилка балансу multi-meter (жорстко задані 12 місяців). Виправлення: Усунено помилки TypeScript. Нове: Покращена перевірка даних. Нове: Розширені константи. Нове: Обробник помилок.",
+                "zh-cn": "修复：关键多表余额错误（硬编码12个月）。修复：解决TypeScript错误。新增：增强输入验证。新增：扩展常量。新增：错误处理包装器。"
+            }
+        },
+        "titleLang": {
+            "en": "Utility Costs Monitor",
+            "de": "Nebenkosten-Monitor",
+            "ru": "Монитор коммунальных расходов",
+            "pt": "Monitor de Custos de Utilidades",
+            "nl": "Nutskosten Monitor",
+            "fr": "Moniteur des Coûts des Services Publics",
+            "it": "Monitor dei Costi delle Utenze",
+            "es": "Monitor de Costos de Servicios",
+            "pl": "Monitor Kosztów Mediów",
+            "uk": "Монітор комунальних витрат",
+            "zh-cn": "公用事业费用监控器"
+        },
+        "desc": {
+            "en": "Monitor gas, water, and electricity consumption with cost calculation",
+            "de": "Überwachung von Gas, Wasser und Strom mit Kostenrechnung",
+            "ru": "Мониторинг потребления газа, воды и электроэнергии с расчетом затрат",
+            "pt": "Monitorar consumo de gás, água e eletricidade com cálculo de custos",
+            "nl": "Monitor gas-, water- en elektriciteitsverbruik met kostenberekning",
+            "fr": "Surveiller la consommation de gaz, d'eau et d'électricité avec calcul des coûts",
+            "it": "Monitorare il consumo di gas, acqua ed elettricità con calcolo dei costi",
+            "es": "Monitorear el consumo de gas, agua y electricidad con cálculo de costos",
+            "pl": "Monitoruj zużycie gazu, wody i energii elektrycznej z obliczaniem kosztów",
+            "uk": "Моніторинг споживання газу, води та електроенергії з розрахунком витрат",
+            "zh-cn": "监控燃气、水和电力消耗并计算成本"
+        },
+        "authors": ["fischi87 <axel.fischer@hotmail.com>"],
+        "keywords": ["utility", "electricity", "gas", "water", "metering"],
+        "licenseInformation": {
+            "license": "MIT",
+            "type": "free"
+        },
+        "platform": "Javascript/Node.js",
+        "icon": "utility-monitor.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/fischi87/ioBroker.utility-monitor/main/admin/utility-monitor.png",
+        "readme": "https://github.com/fischi87/ioBroker.utility-monitor",
+        "loglevel": "info",
+        "tier": 3,
+        "mode": "daemon",
+        "type": "metering",
+        "compact": true,
+        "messagebox": true,
+        "connectionType": "local",
+        "dataSource": "push",
+        "adminUI": {
+            "config": "json"
+        },
+        "dependencies": [
+            {
+                "js-controller": ">=6.0.11"
+            }
+        ],
+        "globalDependencies": [
+            {
+                "admin": ">=7.6.17"
+            }
+        ]
+    },
+    "native": {
+        "gasAktiv": false,
+        "gasMainMeterName": "main",
+        "gasSensorDP": "",
+        "gasOffset": 0,
+        "gasInitialReading": 0,
+        "gasBrennwert": 11.5,
+        "gasZahl": 0.95,
+        "gasPreis": 0,
+        "gasGrundgebuehr": 0,
+        "gasAbschlag": 0,
+        "wasserAktiv": false,
+        "wasserMainMeterName": "main",
+        "wasserSensorDP": "",
+        "wasserOffset": 0,
+        "wasserInitialReading": 0,
+        "wasserPreis": 0,
+        "wasserGrundgebuehr": 0,
+        "wasserAbschlag": 0,
+        "stromAktiv": false,
+        "stromMainMeterName": "main",
+        "stromSensorDP": "",
+        "stromOffset": 0,
+        "stromInitialReading": 0,
+        "stromPreis": 0,
+        "stromGrundgebuehr": 0,
+        "stromAbschlag": 0,
+        "pvAktiv": false,
+        "pvMainMeterName": "main",
+        "pvSensorDP": "",
+        "pvOffset": 0,
+        "pvInitialReading": 0,
+        "pvContractStart": "",
+        "pvPreis": 0,
+        "pvGrundgebuehr": 0,
+        "pvJahresgebuehr": 0,
+        "notificationEnabled": false,
+        "notificationInstance": "",
+        "notificationDaysBefore": 30,
+        "notificationGasEnabled": false,
+        "notificationGasMeters": [],
+        "notificationWasserEnabled": false,
+        "notificationWasserMeters": [],
+        "notificationStromEnabled": false,
+        "notificationStromMeters": [],
+        "notificationPVEnabled": false,
+        "notificationPVMeters": [],
+        "notificationBillingEnabled": true,
+        "notificationBillingDays": 7,
+        "notificationChangeDays": 60
+    },
+    "objects": [],
+    "instanceObjects": []
+}
