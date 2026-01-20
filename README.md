@@ -96,11 +96,11 @@ Für jede aktivierte Verbrauchsart (Gas/Wasser/Strom/PV) werden folgende Ordner 
 | `daily`       | Kosten **heute**                                              | daily × Arbeitspreis                       | 2,27 €                         |
 | `monthly`     | Kosten **diesen Monat**                                       | monthly × Arbeitspreis                     | 21,61 €                        |
 | `yearly`      | **Verbrauchskosten** seit Vertragsbeginn                      | yearly × Arbeitspreis                      | 137,61 €                       |
-| `totalYearly` | **Gesamtkosten Jahr** (Verbrauch + alle Fixkosten)            | yearly-cost + basicCharge + annualFee      | 162,64 €                       |
-| `basicCharge` | **Grundgebühr akkumuliert** (inkl. Jahresgebühr anteilig)     | (Grundgebühr + (Jahresgebühr/12)) × Monate | 19,20 €                        |
-| `annualFee`   | **Jahresgebühr akkumuliert**                                  | (Jahresgebühr / 12) × Monate               | 4,17 €                         |
+| `totalYearly` | **Gesamtkosten Jahr** (Verbrauch + alle Fixkosten)            | yearly-cost + basicCharge + annualFee      | 212,64 €                       |
+| `basicCharge` | **Grundgebühr akkumuliert**                                   | Grundgebühr × Monate                       | 15,03 €                        |
+| `annualFee`   | **Jahresgebühr** (fester Wert pro Jahr)                       | Jahresgebühr (aus Config)                  | 60,00 €                        |
 | `paidTotal`   | **Bezahlt** via Abschlag                                      | Abschlag × Monate                          | 150,00 €                       |
-| `balance`     | **🎯 WICHTIGSTER Wert!**<br>Nachzahlung (+) oder Guthaben (-) | totalYearly - paidTotal                    | **+12,64 €**<br>→ Nachzahlung! |
+| `balance`     | **🎯 WICHTIGSTER Wert!**<br>Nachzahlung (+) oder Guthaben (-) | totalYearly - paidTotal                    | **+62,64 €**<br>→ Nachzahlung! |
 
 #### 🔍 **balance** genauer erklärt:
 
@@ -112,13 +112,14 @@ Für jede aktivierte Verbrauchsart (Gas/Wasser/Strom/PV) werden folgende Ordner 
 
 ```
 Verbrauchskosten:  137,61 € (yearly)
-Grundgebühr:      + 15,03 € (basicCharge)
+Grundgebühr:      + 15,03 € (basicCharge - 1 Monat × 15,03€)
+Jahresgebühr:     + 60,00 € (annualFee - fester Wert)
 ────────────────────────────
-Gesamtkosten:      152,64 €
+Gesamtkosten:      212,64 € (totalYearly)
 
-Bezahlt (Abschlag): 150,00 € (paidTotal)
+Bezahlt (Abschlag): 150,00 € (paidTotal - 1 Monat × 150€)
 ────────────────────────────
-Balance:           +2,64 € → Nachzahlung
+Balance:           +62,64 € → Nachzahlung
 ```
 
 ---

@@ -44,25 +44,11 @@ class UtilityMonitor extends utils.Adapter {
         this.multiMeterManager = new MultiMeterManager(this, this.consumptionManager, this.billingManager);
 
         // Initialize each utility type based on configuration
+        // Note: initializeUtility() internally calls multiMeterManager.initializeType()
         await this.initializeUtility('gas', this.config.gasAktiv);
         await this.initializeUtility('water', this.config.wasserAktiv);
         await this.initializeUtility('electricity', this.config.stromAktiv);
-
         await this.initializeUtility('pv', this.config.pvAktiv);
-
-        // Initialize Multi-Meter structures for each active type
-        if (this.config.gasAktiv) {
-            await this.multiMeterManager.initializeType('gas');
-        }
-        if (this.config.wasserAktiv) {
-            await this.multiMeterManager.initializeType('water');
-        }
-        if (this.config.stromAktiv) {
-            await this.multiMeterManager.initializeType('electricity');
-        }
-        if (this.config.pvAktiv) {
-            await this.multiMeterManager.initializeType('pv');
-        }
 
         // Initialize General Info States
         await this.setObjectNotExistsAsync('info', {
