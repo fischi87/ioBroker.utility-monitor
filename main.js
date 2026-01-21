@@ -10,6 +10,7 @@ const ConsumptionManager = require('./lib/consumptionManager');
 const BillingManager = require('./lib/billingManager');
 const MessagingHandler = require('./lib/messagingHandler');
 const MultiMeterManager = require('./lib/multiMeterManager');
+const calculator = require('./lib/calculator');
 
 class UtilityMonitor extends utils.Adapter {
     /**
@@ -254,8 +255,10 @@ class UtilityMonitor extends utils.Adapter {
         // All meters (including main) are now handled by multiMeterManager
         if (this.multiMeterManager) {
             const meterInfo = this.multiMeterManager.findMeterBySensor(id);
-            if (meterInfo && typeof state.val === 'number') {
-                await this.multiMeterManager.handleSensorUpdate(meterInfo.type, meterInfo.meterName, id, state.val);
+            if (meterInfo && state.val != null) {
+                // Convert sensor value to number (handles strings, German commas, etc.)
+                const numValue = calculator.ensureNumber(state.val);
+                await this.multiMeterManager.handleSensorUpdate(meterInfo.type, meterInfo.meterName, id, numValue);
                 return;
             }
         }
