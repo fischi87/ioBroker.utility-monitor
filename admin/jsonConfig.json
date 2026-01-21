@@ -180,7 +180,7 @@
                     "hidden": "!data.gasAktiv",
                     "label": "Grundgebühr (€/Monat)",
                     "placeholder": "z.B. 15.30",
-                    "default": 0,
+                    "default": "0",
                     "xs": 12,
                     "sm": 12,
                     "md": 6,
@@ -192,7 +192,7 @@
                     "hidden": "!data.gasAktiv",
                     "label": "Jahresgebühr (z.B. Zählermiete) (€/Jahr)",
                     "placeholder": "z.B. 20.00",
-                    "default": 0,
+                    "default": "0",
                     "xs": 12,
                     "sm": 12,
                     "md": 6,
@@ -323,7 +323,7 @@
                     "label": "Monatlicher Abschlag (€)",
                     "placeholder": "z.B. 85.00",
                     "hidden": "!data.gasAktiv",
-                    "default": 0,
+                    "default": "0",
                     "sm": 12,
                     "md": 6,
                     "xs": 12,
@@ -385,7 +385,7 @@
                             "filter": false,
                             "sort": false,
                             "width": "10%",
-                            "default": 0
+                            "default": "0"
                         },
                         {
                             "type": "text",
@@ -394,7 +394,7 @@
                             "filter": false,
                             "sort": false,
                             "width": "8%",
-                            "default": 0
+                            "default": "0"
                         },
                         {
                             "type": "text",
@@ -403,7 +403,7 @@
                             "filter": false,
                             "sort": false,
                             "width": "12%",
-                            "default": 0
+                            "default": "0"
                         },
                         {
                             "type": "text",
@@ -421,7 +421,7 @@
                             "filter": false,
                             "sort": false,
                             "width": "10%",
-                            "default": 0
+                            "default": "0"
                         },
                         {
                             "type": "text",
@@ -430,7 +430,7 @@
                             "filter": false,
                             "sort": false,
                             "width": "10%",
-                            "default": 0
+                            "default": "0"
                         },
                         {
                             "type": "text",
@@ -439,7 +439,7 @@
                             "filter": false,
                             "sort": false,
                             "width": "10%",
-                            "default": 0
+                            "default": "0"
                         }
                     ]
                 }
@@ -585,7 +585,7 @@
                     "hidden": "!data.wasserAktiv",
                     "label": "Grundgebühr (€/Monat)",
                     "placeholder": "z.B. 5.00",
-                    "default": 0,
+                    "default": "0",
                     "xs": 12,
                     "sm": 12,
                     "md": 6,
@@ -597,7 +597,7 @@
                     "hidden": "!data.wasserAktiv",
                     "label": "Jahresgebühr (z.B. Zählermiete) (€/Jahr)",
                     "placeholder": "z.B. 20.00",
-                    "default": 0,
+                    "default": "0",
                     "xs": 12,
                     "sm": 12,
                     "md": 6,
@@ -630,7 +630,7 @@
                     "label": "Monatlicher Abschlag (€)",
                     "placeholder": "z.B. 25.00",
                     "hidden": "!data.wasserAktiv",
-                    "default": 0,
+                    "default": "0",
                     "sm": 12,
                     "md": 6,
                     "xs": 12,
@@ -692,7 +692,7 @@
                             "filter": false,
                             "sort": false,
                             "width": "10%",
-                            "default": 0
+                            "default": "0"
                         },
                         {
                             "type": "text",
@@ -701,7 +701,7 @@
                             "filter": false,
                             "sort": false,
                             "width": "8%",
-                            "default": 0
+                            "default": "0"
                         },
                         {
                             "type": "text",
@@ -710,7 +710,7 @@
                             "filter": false,
                             "sort": false,
                             "width": "12%",
-                            "default": 0
+                            "default": "0"
                         },
                         {
                             "type": "text",
@@ -728,7 +728,7 @@
                             "filter": false,
                             "sort": false,
                             "width": "10%",
-                            "default": 0
+                            "default": "0"
                         },
                         {
                             "type": "text",
@@ -737,7 +737,7 @@
                             "filter": false,
                             "sort": false,
                             "width": "10%",
-                            "default": 0
+                            "default": "0"
                         },
                         {
                             "type": "text",
@@ -746,7 +746,7 @@
                             "filter": false,
                             "sort": false,
                             "width": "10%",
-                            "default": 0
+                            "default": "0"
                         }
                     ]
                 }
@@ -890,7 +890,7 @@
                     "type": "text",
                     "hidden": "!data.stromAktiv",
                     "label": "Grundgebühr (€/Monat)",
-                    "default": 0,
+                    "default": "0",
                     "xs": 12,
                     "sm": 12,
                     "md": 6,
@@ -901,7 +901,7 @@
                     "type": "text",
                     "hidden": "!data.stromAktiv",
                     "label": "Jahresgebühr (z.B. Zählermiete) (€/Jahr)",
-                    "default": 0,
+                    "default": "0",
                     "xs": 12,
                     "sm": 12,
                     "md": 6,
@@ -1032,7 +1032,7 @@
                     "hidden": "!data.stromAktiv",
                     "sm": 12,
                     "md": 6,
-                    "default": 0,
+                    "default": "0",
                     "xs": 12,
                     "lg": 4,
                     "xl": 3
@@ -1092,7 +1092,7 @@
                             "filter": false,
                             "sort": false,
                             "width": "10%",
-                            "default": 0
+                            "default": "0"
                         },
                         {
                             "type": "text",
@@ -1101,7 +1101,7 @@
                             "filter": false,
                             "sort": false,
                             "width": "8%",
-                            "default": 0
+                            "default": "0"
                         },
                         {
                             "type": "text",
@@ -1110,7 +1110,7 @@
                             "filter": false,
                             "sort": false,
                             "width": "12%",
-                            "default": 0
+                            "default": "0"
                         },
                         {
                             "type": "text",
@@ -1128,7 +1128,7 @@
                             "filter": false,
                             "sort": false,
                             "width": "10%",
-                            "default": 0
+                            "default": "0"
                         },
                         {
                             "type": "text",
@@ -1137,7 +1137,7 @@
                             "filter": false,
                             "sort": false,
                             "width": "10%",
-                            "default": 0
+                            "default": "0"
                         },
                         {
                             "type": "text",
@@ -1146,7 +1146,7 @@
                             "filter": false,
                             "sort": false,
                             "width": "10%",
-                            "default": 0
+                            "default": "0"
                         }
                     ]
                 }
@@ -1290,7 +1290,7 @@
                     "type": "text",
                     "hidden": "!data.pvAktiv",
                     "label": "Grundgebühr (Messstellenbetrieb) (€/Monat)",
-                    "default": 0,
+                    "default": "0",
                     "xs": 12,
                     "sm": 12,
                     "md": 6,
@@ -1301,7 +1301,7 @@
                     "type": "text",
                     "hidden": "!data.pvAktiv",
                     "label": "Jahresgebühr (€/Jahr)",
-                    "default": 0,
+                    "default": "0",
                     "xs": 12,
                     "sm": 12,
                     "md": 6,
@@ -1437,7 +1437,7 @@
                     "type": "text",
                     "label": "Tag des Monats (1-28)",
                     "hidden": "!data.notificationEnabled || !data.notificationMonthlyEnabled",
-                    "default": 1,
+                    "default": "1",
                     "sm": 12,
                     "xs": 12,
                     "md": 4,
