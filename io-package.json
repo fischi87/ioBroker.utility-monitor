@@ -3,6 +3,10 @@
         "name": "utility-monitor",
         "version": "1.4.6",
         "news": {
+            "1.4.7": {
+                "en": "Fix: Removed redundant initialization code causing state object warnings. Fix: Race conditions in multi-meter initialization. New: Support for German umlauts (ä,ö,ü,ß) in meter names.",
+                "de": "Fix: Redundanten Initialisierungscode entfernt, der State-Object-Warnungen verursachte. Fix: Race Conditions bei Multi-Meter-Initialisierung. Neu: Unterstützung für deutsche Umlaute (ä,ö,ü,ß) in Zählernamen."
+            },
             "1.4.6": {
                 "en": "Breaking Change: Main meter now requires a name (default: 'main'). State paths changed from 'gas.*' to 'gas.METER_NAME.*'. All meters now use consistent naming structure.",
                 "de": "Breaking Change: Hauptzähler benötigt jetzt einen Namen (Standard: 'main'). State-Pfade geändert von 'gas.*' zu 'gas.METER_NAME.*'. Alle Zähler nutzen jetzt konsistente Namensstruktur."
