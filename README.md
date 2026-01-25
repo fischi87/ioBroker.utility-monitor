@@ -308,6 +308,8 @@ Der Adapter setzt Zähler automatisch zurück:
 
 ## Changelog
 
+### **WORK IN PROGRESS**
+
 ### 1.5.0 (2026-01-23)
 
 - **NEU:** 📥 **CSV Import** - Importiere historische Zählerstände einfach per Drag-and-Drop:
