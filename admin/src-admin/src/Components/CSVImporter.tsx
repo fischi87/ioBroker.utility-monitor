@@ -76,7 +76,9 @@ const CSVImporter: React.FC<CSVImporterProps> = ({ socket, instance, adapterName
     });
 
     const handleUpload = async () => {
-        if (!file || !socket) return;
+        if (!file || !socket) {
+            return;
+        }
 
         const finalMeterName = meterName.trim();
 
@@ -114,14 +116,14 @@ const CSVImporter: React.FC<CSVImporterProps> = ({ socket, instance, adapterName
                         setMeterName('');
                     }
                 } catch (sendError: any) {
-                    setError('Kommunikationsfehler: ' + sendError.message);
+                    setError(`Kommunikationsfehler: ${sendError.message}`);
                 } finally {
                     setLoading(false);
                 }
             };
             reader.readAsDataURL(file);
         } catch (err: any) {
-            setError('Fehler beim Lesen der Datei: ' + err.message);
+            setError(`Fehler beim Lesen der Datei: ${err.message}`);
             setLoading(false);
         }
     };
@@ -200,7 +202,7 @@ const CSVImporter: React.FC<CSVImporterProps> = ({ socket, instance, adapterName
                                     onChange={e => setType(e.target.value)}
                                     sx={{
                                         borderRadius: 2,
-                                        '& .MuiOutlinedInput-notchedOutline': { borderColor: getTypeColor() + '88' },
+                                        '& .MuiOutlinedInput-notchedOutline': { borderColor: `${getTypeColor()}88` },
                                         '&:hover .MuiOutlinedInput-notchedOutline': { borderColor: getTypeColor() },
                                     }}
                                 >

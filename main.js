@@ -125,14 +125,10 @@ class UtilityMonitor extends utils.Adapter {
                 for (const meter of additionalMeters) {
                     if (meter && meter.name) {
                         if (!meter.contractStart) {
-                            this.log.warn(
-                                `${type.label} Zähler "${meter.name}": Kein Vertragsbeginn konfiguriert!`,
-                            );
+                            this.log.warn(`${type.label} Zähler "${meter.name}": Kein Vertragsbeginn konfiguriert!`);
                         }
                         if (!meter.sensorDP) {
-                            this.log.warn(
-                                `${type.label} Zähler "${meter.name}": Kein Sensor-Datenpunkt konfiguriert!`,
-                            );
+                            this.log.warn(`${type.label} Zähler "${meter.name}": Kein Sensor-Datenpunkt konfiguriert!`);
                         }
                     }
                 }
