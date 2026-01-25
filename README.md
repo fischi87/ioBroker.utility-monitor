@@ -21,8 +21,10 @@ Monitor gas, water, and electricity consumption with automatic cost calculation,
 - 🔄 **Flexible Sensoren** - Nutzt vorhandene Sensoren (Shelly, Tasmota, Homematic, etc.)
 - ⚡ **HT/NT-Tarife** - Volle Unterstützung für Hoch- und Nebentarife (Tag/Nacht)
 - 🔄 **Gas-Spezial** - Automatische Umrechnung von m³ in kWh
-- 🕛 **Automatische Resets** - Täglich, monatlich und jährlich (Vertragsjubiläum)
+- 🕛 **Automatische Resets** - Täglich, wöchentlich, monatlich und jährlich (Vertragsjubiläum)
 - 🔔 **Intelligente Benachrichtigungen** - Getrennte Erinnerungen für Abrechnungsende (Zählerstand) und Vertragswechsel (Tarif-Check) mit einstellbaren Vorlaufzeiten
+- � **Wöchentliche Auswertung** _(NEU in 1.5.0)_ - Verfolge deinen Verbrauch auch auf Wochenbasis
+- �📥 **CSV Import** _(NEU in 1.5.0)_ - Importiere historische Zählerstände einfach per Drag-and-Drop
 - ⌨️ **Komma-Support** - Admin UI akzeptiert `12,50` oder `12.50` für Dezimalzahlen
 
 ---
@@ -68,6 +70,7 @@ Gefällt dir dieser Adapter? Du kannst mich gerne mit einem Kaffee unterstützen
 ### Was hat sich geändert?
 
 **Vorher (bis 1.4.5):**
+
 ```
 gas.consumption.daily
 gas.costs.monthly
@@ -75,6 +78,7 @@ wasser.consumption.daily
 ```
 
 **Jetzt (ab 1.4.6):**
+
 ```
 gas.main.consumption.daily          ← Hauptzähler mit Namen "main"
 gas.main.costs.monthly
@@ -86,13 +90,15 @@ wasser.main.consumption.daily
 1. **Config öffnen**: Neue Felder "Name des Hauptzählers" für Gas/Wasser/Strom/PV
 2. **Namen eingeben**: Standard ist "main" (empfohlen), oder eigener Name wie "wohnung", "haus"
 3. **Skripte anpassen**: Alle Verweise auf States müssen angepasst werden
-   ```javascript
-   // Alt:
-   getState('utility-monitor.0.gas.consumption.daily')
 
-   // Neu:
-   getState('utility-monitor.0.gas.main.consumption.daily')
-   ```
+    ```javascript
+    // Alt:
+    getState('utility-monitor.0.gas.consumption.daily');
+
+    // Neu:
+    getState('utility-monitor.0.gas.main.consumption.daily');
+    ```
+
 4. **Visualisierungen updaten**: VIS, Grafana, etc. auf neue Pfade anpassen
 
 ### 💡 Warum diese Änderung?
@@ -101,6 +107,25 @@ wasser.main.consumption.daily
 - **Flexibilität**: Hauptzähler kann jetzt frei benannt werden (z.B. "erdgeschoss", "gesamt")
 - **Klarheit**: Keine Special-Case Logik mehr im Code
 - **Multi-Meter**: Bessere Unterstützung für mehrere Zähler pro Typ
+- **CSV Import**: Einfaches Nachpflegen von historischen Daten via Drag-and-Drop im Admin-Interface
+
+---
+
+## 📥 CSV Import (v1.5.0)
+
+Der neue Import-Tab ermöglicht es dir, historische Zählerstände bequem hochzuladen.
+
+### Unterstützte Formate
+
+- **Generic CSV**: Datum (DD.MM.YYYY), Zählerstand
+- **EhB+ App**: Direkter Import aus der EhB+ App möglich
+
+### So funktioniert's
+
+1. Gehe zum Tab **Import**
+2. Wähle den **Zählertyp** (Gas/Wasser/Strom) und den **Zähler** aus
+3. Ziehe deine CSV-Datei in das Upload-Feld
+4. Klicke auf **Daten importieren**
 
 ---
 
@@ -116,12 +141,16 @@ Für jede aktivierte Verbrauchsart (Gas/Wasser/Strom/PV) werden folgende Ordner 
 | --------------- | ----------------------------------------------------- | ---------------- |
 | `daily`         | Verbrauch **heute** (seit 00:00 Uhr)                  | 12,02 kWh        |
 | `dailyVolume`   | Verbrauch heute in m³                                 | 1,092 m³         |
+| `weekly`        | Verbrauch **diese Woche** (seit Montag)               | 84,12 kWh        |
+| `weeklyVolume`  | Wöchentlicher Verbrauch in m³                         | 7,65 m³          |
 | `monthly`       | Verbrauch **diesen Monat** (seit 1. des Monats)       | 117,77 kWh       |
 | `monthlyVolume` | Monatlicher Verbrauch in m³                           | 10,69 m³         |
 | `yearly`        | Verbrauch **seit Vertragsbeginn** (this billing year) | 730,01 kWh       |
 | `yearlyVolume`  | Jahresverbrauch in m³                                 | 66,82 m³         |
 | `dailyHT`       | Tagesverbrauch im **Haupttarif** (HT)                 | 8,40 kWh         |
 | `dailyNT`       | Tagesverbrauch im **Nebentarif** (NT)                 | 3,62 kWh         |
+| `weeklyHT`      | Wochenverbrauch im HT                                 | 58,15 kWh        |
+| `weeklyNT`      | Wochenverbrauch im NT                                 | 25,62 kWh        |
 | `monthlyHT`     | Monatsverbrauch im HT                                 | 82,15 kWh        |
 | `monthlyNT`     | Monatsverbrauch im NT                                 | 35,62 kWh        |
 | `yearlyHT`      | Jahresverbrauch im HT                                 | 511,00 kWh       |
@@ -136,16 +165,16 @@ Für jede aktivierte Verbrauchsart (Gas/Wasser/Strom/PV) werden folgende Ordner 
 
 ### 💰 **costs** (Kosten)
 
-| Datenpunkt    | Was ist das?                                                  | Berechnung                                 | Beispiel                       |
-| ------------- | ------------------------------------------------------------- | ------------------------------------------ | ------------------------------ |
-| `daily`       | Kosten **heute**                                              | daily × Arbeitspreis                       | 2,27 €                         |
-| `monthly`     | Kosten **diesen Monat**                                       | monthly × Arbeitspreis                     | 21,61 €                        |
-| `yearly`      | **Verbrauchskosten** seit Vertragsbeginn                      | yearly × Arbeitspreis                      | 137,61 €                       |
-| `totalYearly` | **Gesamtkosten Jahr** (Verbrauch + alle Fixkosten)            | yearly-cost + basicCharge + annualFee      | 212,64 €                       |
-| `basicCharge` | **Grundgebühr akkumuliert**                                   | Grundgebühr × Monate                       | 15,03 €                        |
-| `annualFee`   | **Jahresgebühr** (fester Wert pro Jahr)                       | Jahresgebühr (aus Config)                  | 60,00 €                        |
-| `paidTotal`   | **Bezahlt** via Abschlag                                      | Abschlag × Monate                          | 150,00 €                       |
-| `balance`     | **🎯 WICHTIGSTER Wert!**<br>Nachzahlung (+) oder Guthaben (-) | totalYearly - paidTotal                    | **+62,64 €**<br>→ Nachzahlung! |
+| Datenpunkt    | Was ist das?                                                  | Berechnung                            | Beispiel                       |
+| ------------- | ------------------------------------------------------------- | ------------------------------------- | ------------------------------ |
+| `daily`       | Kosten **heute**                                              | daily × Arbeitspreis                  | 2,27 €                         |
+| `monthly`     | Kosten **diesen Monat**                                       | monthly × Arbeitspreis                | 21,61 €                        |
+| `yearly`      | **Verbrauchskosten** seit Vertragsbeginn                      | yearly × Arbeitspreis                 | 137,61 €                       |
+| `totalYearly` | **Gesamtkosten Jahr** (Verbrauch + alle Fixkosten)            | yearly-cost + basicCharge + annualFee | 212,64 €                       |
+| `basicCharge` | **Grundgebühr akkumuliert**                                   | Grundgebühr × Monate                  | 15,03 €                        |
+| `annualFee`   | **Jahresgebühr** (fester Wert pro Jahr)                       | Jahresgebühr (aus Config)             | 60,00 €                        |
+| `paidTotal`   | **Bezahlt** via Abschlag                                      | Abschlag × Monate                     | 150,00 €                       |
+| `balance`     | **🎯 WICHTIGSTER Wert!**<br>Nachzahlung (+) oder Guthaben (-) | totalYearly - paidTotal               | **+62,64 €**<br>→ Nachzahlung! |
 
 #### 🔍 **balance** genauer erklärt:
 
@@ -187,7 +216,11 @@ Balance:           +62,64 € → Nachzahlung
 | ---------------- | ------------------------------------ |
 | `averageDaily`   | Durchschnittlicher Tagesverbrauch    |
 | `averageMonthly` | Durchschnittlicher Monatsverbrauch   |
+| `lastDay`        | Verbrauch **gesten** (Vortag)        |
+| `lastWeek`       | Verbrauch **letzte Woche**           |
+| `lastMonth`      | Verbrauch **letzter Monat**          |
 | `lastDayStart`   | Letzter Tages-Reset (00:00 Uhr)      |
+| `lastWeekStart`  | Letzter Wochen-Reset (Montag)        |
 | `lastMonthStart` | Letzter Monats-Reset (1. des Monats) |
 | `lastYearStart`  | Vertragsbeginn / Jahresstart         |
 
@@ -266,35 +299,48 @@ Der Adapter setzt Zähler automatisch zurück:
 
 | Zeitpunkt             | Was passiert  | Beispiel            |
 | --------------------- | ------------- | ------------------- |
-| **00:00 Uhr** täglich | `daily` → 0   | Neuer Tag beginnt   |
-| **1. des Monats**     | `monthly` → 0 | Neuer Monat beginnt |
+| **23:59 Uhr** täglich | `daily` → 0   | Neuer Tag beginnt   |
+| **Sonntag 23:59**     | `weekly` → 0  | Neue Woche beginnt  |
+| **Monatsende 23:59**  | `monthly` → 0 | Neuer Monat beginnt |
 | **Vertragsjubiläum**  | `yearly` → 0  | Abrechnungsjahr neu |
 
 ---
 
 ## Changelog
 
+### 1.5.0 (2026-01-23)
+
+- **NEU:** 📥 **CSV Import** - Importiere historische Zählerstände einfach per Drag-and-Drop:
+    - Neuer "Import"-Tab in der Konfiguration
+    - Modulare Backend-Struktur für CSV-Parsing
+    - Unterstützung für generische und EhB+-Formate
+    - Moderne React-basierte UI-Komponente für eine flüssige Bedienung
+- **NEU:** 📊 **Wöchentliches Tracking** - Verbrauchsüberwachung nun auch auf Wochenbasis möglich
+- **FIX:** 🕛 **Reset-Timing** - Automatische Resets werden nun um 23:59 Uhr ausgeführt (statt 00:00 Uhr), um Datenverluste am Ende des Zeitraums zu vermeiden
+- **ARCHITEKTUR:** 🏗️ **Verbesserte Backend-Modularisierung**:
+    - `ImportManager` eingeführt, um die Logik von `main.js` zu trennen
+
 ### 1.4.6 (2026-01-20)
 
-- **⚠️ BREAKING CHANGE:** 🔄 **Main Meter Naming** - Hauptzähler benötigt jetzt einen Namen:
+- **⚠️ BREAKING CHANGE:** 🔄 **Hauptzähler-Benennung** - Hauptzähler benötigt jetzt einen Namen:
     - **State-Pfade geändert**: `gas.*` → `gas.METER_NAME.*` (z.B. `gas.main.*`)
     - **Neue Config-Felder**: "Name des Hauptzählers" für Gas/Wasser/Strom/PV
     - **Default-Name**: "main" (wird automatisch verwendet wenn leer gelassen)
     - **Konsistente Struktur**: Alle Zähler (Haupt + Zusätzlich) verwenden jetzt `type.meterName.*`
     - **Flexibilität**: Hauptzähler kann jetzt frei benannt werden (z.B. "wohnung", "erdgeschoss", "gesamt")
-    - **Keine Special-Cases**: Vereinfachter Code ohne `meterName === 'main'` Bedingungen
-- **NEW:** 🔔 **Smart Notifications** - Zählerauswahl für Benachrichtigungen:
+    - **Keine Special-Cases**: Vereinfachte Logik im Code
+- **NEU:** 🔔 **Smart Notifications** - Zählerauswahl für Benachrichtigungen:
     - Wähle pro Utility-Typ aus, welche Zähler benachrichtigt werden sollen
     - Multi-Select Dropdown zeigt alle konfigurierten Zähler
     - Wenn leer: Alle Zähler werden benachrichtigt (Standard)
     - Wenn ausgewählt: Nur gewählte Zähler erhalten Benachrichtigungen
     - Gilt für Abrechnungsende, Vertragswechsel und monatliche Berichte
-- **IMPROVED:** 🏗️ **Code-Architektur** - Entfernung von 19 Special-Case Checks in 7 Dateien:
+- **VERBESSERT:** 🏗️ **Code-Architektur** - Entfernung von 19 Special-Case Checks in 7 Dateien:
     - Vereinfachte basePath-Berechnungen in multiMeterManager, billingManager, stateManager
     - Vereinheitlichter Config-Zugriff (alle Meter nutzen `meter.config.contractStart`)
     - HT/NT-Logik basiert jetzt auf `config.htNtEnabled` statt Meter-Name
     - Button-Trigger erkennt nur noch einheitliche Pfadstruktur
-    - Legacy-Code entfernt: updateBillingCountdown, updateCurrentPrice jetzt per-meter
+    - Legacy-Code entfernt: updateBillingCountdown, updateCurrentPrice jetzt pro Zähler
 - **MIGRATION:** 📋 **Upgrade-Hinweise**:
     - Bei Neuinstallation: Namen für Hauptzähler eingeben (oder "main" akzeptieren)
     - Bei Upgrade: Adapter neu konfigurieren + Skripte/Visualisierungen anpassen
@@ -303,40 +349,37 @@ Der Adapter setzt Zähler automatisch zurück:
 
 ### 1.4.5 (2026-01-20)
 
-- **FIX:** 🐛 **Critical Multi-Meter Cost Calculation Bugs** - Comprehensive fixes for multi-meter functionality:
-    - **Main Meter Sync Issue**: Removed duplicate initialization that prevented `lastSync` updates on main meter
-    - **basicCharge Accumulation**: Now correctly calculates `basicCharge = grundgebuehr × months` (was showing only 1 month)
-    - **paidTotal Accumulation**: Now correctly calculates `paidTotal = abschlag × months` (was showing only 1 month)
-    - **annualFee as Fixed Value**: Jahresgebühr is now used as fixed yearly value (e.g., 60€ stays 60€)
-      - Previously incorrectly treated as monthly fee and multiplied by months
-      - User-entered value in config (e.g., 60€) is now used directly as intended
-    - **Balance Formula Corrected**: Fixed reversed formula `balance = totalYearly - paidTotal`
-      - Positive balance = Nachzahlung (you owe money)
-      - Negative balance = Guthaben (you get money back)
-- **IMPROVED:** 📦 **Dev-Dependencies**: Updated from tilde (~) to caret (^) versioning for better security updates
-- **CLEANUP:** 🧹 **Repository Compliance**: Removed unpublished versions from changelog (resolves ioBroker Bot Issue #1)
+- **FIX:** 🐛 **Kritische Multi-Meter Kostenberechnungsfehler** - Umfassende Korrekturen für Multi-Meter Funktionalität:
+    - **Hauptzähler Sync-Problem**: Doppelte Initialisierung entfernt, die `lastSync` Updates verhinderte
+    - **basicCharge Akkumulation**: Berechnet jetzt korrekt `basicCharge = Grundgebühr × Monate` (vorher nur 1 Monat)
+    - **paidTotal Akkumulation**: Berechnet jetzt korrekt `paidTotal = Abschlag × Monate` (vorher nur 1 Monat)
+    - **Jahresgebühr als fester Wert**: Jahresgebühr wird jetzt als fester jährlicher Wert genutzt (z.B. 60€ bleibt 60€)
+        - Vorher fälschlicherweise als monatlich behandelt
+        - Eingegebener Wert wird nun direkt wie vorgesehen genutzt
+    - **Balance-Formel korrigiert**: Formel `balance = totalYearly - paidTotal` korrigiert
+        - Positive Balance = Nachzahlung (Schuldner)
+        - Negative Balance = Guthaben (Rückerstattung)
+- **VERBESSERT:** 📦 **Entwickler-Abhängigkeiten**: Umstellung von Tilde (~) auf Caret (^) Versionierung für bessere Sicherheitsupdates
+- **CLEANUP:** 🧹 **Repository Compliance**: Unveröffentlichte Versionen aus dem Changelog entfernt (löst ioBroker Bot Issue #1)
 
 ### 1.4.2 (2026-01-18)
 
-- **FIX:** 🔧 **TypeScript Errors Resolved** - All TypeScript compilation errors fixed:
-    - Fixed `formatDateString()` missing argument in multiMeterManager
-    - Fixed Date arithmetic type errors (explicit timestamp conversion)
-    - Added `@ts-ignore` comments for intentional error tests
-- **FIX:** 🐛 **Critical Multi-Meter Balance Bug** - Fixed incorrect balance calculation:
-    - `totalYearly` was using hardcoded 12 months for `basicCharge` instead of actual months since contract start
-    - Now correctly calculates `basicChargeAccumulated = grundgebuehr × monthsSinceYearStart`
-    - Fixes incorrect high balance values for users with mid-year contract start dates
-- **NEW:** ✅ **Enhanced Input Validation** - Robust validation for configuration values:
-    - `isValidSensorDP()` - Validates sensor datapoint IDs
-    - `parseConfigDate()` - Validates German and ISO date formats
-    - `parseConfigPrice()` - Ensures prices are non-negative
-- **NEW:** 📋 **Extended Constants** - Centralized constant definitions:
-    - Rounding precision, time constants, validation constraints
-    - Better maintainability and consistency across modules
-- **NEW:** 🛡️ **Error Handling** - Safe wrapper for state creation:
-    - `safeSetObjectNotExists()` catches and logs state creation failures
-    - Prevents silent failures in StateManager
-- **IMPROVED:** 🧪 **Code Quality** - All tests passing (31 unit + 57 package tests)
+- **FIX:** 🔧 **TypeScript Fehler behoben** - Alle Kompilierungsfehler behoben:
+    - `formatDateString()` fehlendes Argument im multiMeterManager korrigiert
+    - Datums-Arithmetik Typfehler behoben
+    - `@ts-ignore` Kommentare für absichtliche Fehlertests hinzugefügt
+- **FIX:** 🐛 **Kritischer Multi-Meter Balance-Bug** - Korrektur fehlerhafter Bilanzberechnung:
+    - `totalYearly` nutzte hartcodierte 12 Monate für die Grundgebühr statt der tatsächlichen Monate seit Vertragsstart
+    - Berechnet nun korrekt `basicChargeAccumulated = Grundgebühr × MonateSeitJahresstart`
+- **NEU:** ✅ **Erweiterte Eingabevalidierung** - Robuste Validierung von Konfigurationswerten:
+    - `isValidSensorDP()` - Validiert Sensor-Datenpunkt-IDs
+    - `parseConfigDate()` - Validiert deutsche und ISO Datumsformate
+    - `parseConfigPrice()` - Stellt sicher, dass Preise nicht negativ sind
+- **NEU:** 📋 **Zentrale Konstanten** - Zentralisierte Konstantendefinitionen:
+    - Rundungspräzision, Zeitkonstanten, Validierungsregeln
+- **NEU:** 🛡️ **Fehlerbehandlung** - Sicherer Wrapper für State-Erstellung:
+    - `safeSetObjectNotExists()` fängt Fehler bei der State-Erstellung ab
+- **VERBESSERT:** 🧪 **Code-Qualität** - Alle Tests erfolgreich (31 Unit + 57 Paket-Tests)
 
 ---
 

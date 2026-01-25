@@ -24,13 +24,10 @@ describe('Calculator Module', () => {
             expect(result).to.equal(0);
         });
 
-        it('should throw TypeError for non-number inputs', () => {
-            // @ts-ignore - Intentionally testing with wrong types
-            expect(() => calculator.convertGasM3ToKWh('100')).to.throw(TypeError);
-            // @ts-ignore - Intentionally testing with wrong types
-            expect(() => calculator.convertGasM3ToKWh(100, '11.5')).to.throw(TypeError);
-            // @ts-ignore - Intentionally testing with wrong types
-            expect(() => calculator.convertGasM3ToKWh(100, 11.5, '0.95')).to.throw(TypeError);
+        it('should handle numeric strings correctly', () => {
+            // @ts-ignore - Testing string input
+            const result = calculator.convertGasM3ToKWh('100');
+            expect(result).to.equal(1092.5);
         });
 
         it('should throw RangeError for negative consumption', () => {

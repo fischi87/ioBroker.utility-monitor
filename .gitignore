@@ -33,6 +33,7 @@ upload.sh
 
 # Test files (use /test directory for real tests)
 test-multi-meter.js
+tsc_errors.txt
 
 # Old backup files
 *.old.json

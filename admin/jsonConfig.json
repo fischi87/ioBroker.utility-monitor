@@ -1563,6 +1563,38 @@
                 }
             }
         },
+        "tabImport": {
+            "type": "panel",
+            "label": "📥 Import",
+            "items": {
+                "_importHeader": {
+                    "type": "header",
+                    "text": "CSV Daten-Import",
+                    "size": 3
+                },
+                "_importInfo": {
+                    "type": "staticText",
+                    "text": "Hier kannst du historische Zählerstände importieren. Diese Funktion hilft dir, den Adapter schnell mit alten Daten zu füttern.\n\n⚠️ **Wichtig:** Wähle zuerst den Typ und den Zähler aus, für den die Daten bestimmt sind.",
+                    "xs": 12,
+                    "sm": 12,
+                    "md": 12,
+                    "lg": 12,
+                    "xl": 12
+                },
+                "importCustom": {
+                    "type": "custom",
+                    "name": "UtilityMonitor/Components/CSVImporter",
+                    "url": "custom/CSVImporter_v15_11.js",
+                    "bundlerType": "module",
+                    "newLine": true,
+                    "xs": 12,
+                    "sm": 12,
+                    "md": 12,
+                    "lg": 12,
+                    "xl": 12
+                }
+            }
+        },
         "tabInfo": {
             "type": "panel",
             "label": "ℹ️ Info & Hilfe",
@@ -1574,7 +1606,7 @@
                 },
                 "_infoVersion": {
                     "type": "staticText",
-                    "text": "**Version:** 1.4.6\n\n**Autor:** fischi87\n\n⚠️ **Breaking Change in v1.4.6:** State-Pfade haben sich geändert! Siehe unten.",
+                    "text": "**Version:** 1.5.0\n\n**Autor:** fischi87",
                     "sm": 12,
                     "xs": 12,
                     "md": 12,
@@ -1660,6 +1692,33 @@
                 },
                 "_divider4": {
                     "type": "divider"
+                },
+                "_advancedHeader": {
+                    "type": "header",
+                    "text": "⚙️ Erweiterte Einstellungen",
+                    "size": 4
+                },
+                "_advancedInfo": {
+                    "type": "staticText",
+                    "text": "Technische Einstellungen für fortgeschrittene Benutzer.",
+                    "sm": 12,
+                    "xs": 12,
+                    "md": 12,
+                    "lg": 12,
+                    "xl": 12
+                },
+                "sensorSpikeThreshold": {
+                    "type": "number",
+                    "label": "Sensor-Spike-Schwellwert (kWh/m³)",
+                    "help": "Delta-Werte über diesem Schwellwert werden als Spikes ignoriert und nicht zum Verbrauch addiert. Standard: 500",
+                    "default": 500,
+                    "min": 10,
+                    "max": 10000,
+                    "sm": 12,
+                    "md": 6,
+                    "xs": 12,
+                    "lg": 4,
+                    "xl": 3
                 }
             }
         }

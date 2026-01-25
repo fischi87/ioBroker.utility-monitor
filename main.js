@@ -10,6 +10,7 @@ const ConsumptionManager = require('./lib/consumptionManager');
 const BillingManager = require('./lib/billingManager');
 const MessagingHandler = require('./lib/messagingHandler');
 const MultiMeterManager = require('./lib/multiMeterManager');
+const ImportManager = require('./lib/importManager');
 const calculator = require('./lib/calculator');
 
 class UtilityMonitor extends utils.Adapter {
@@ -30,6 +31,7 @@ class UtilityMonitor extends utils.Adapter {
         this.consumptionManager = new ConsumptionManager(this);
         this.billingManager = new BillingManager(this);
         this.messagingHandler = new MessagingHandler(this);
+        this.importManager = new ImportManager(this);
         this.multiMeterManager = null; // Initialized in onReady after other managers
 
         this.periodicTimers = {};
@@ -43,6 +45,9 @@ class UtilityMonitor extends utils.Adapter {
 
         // Initialize MultiMeterManager
         this.multiMeterManager = new MultiMeterManager(this, this.consumptionManager, this.billingManager);
+
+        // Validate configuration before starting
+        this.validateConfiguration();
 
         // Initialize each utility type based on configuration
         // Note: initializeUtility() internally calls multiMeterManager.initializeType()
@@ -83,14 +88,62 @@ class UtilityMonitor extends utils.Adapter {
         this.log.info('Nebenkosten-Monitor initialized successfully');
     }
 
+    /**
+     * Validates the adapter configuration and logs warnings for missing settings
+     */
+    validateConfiguration() {
+        const types = [
+            { key: 'gas', configKey: 'gas', label: 'Gas' },
+            { key: 'water', configKey: 'wasser', label: 'Wasser' },
+            { key: 'electricity', configKey: 'strom', label: 'Strom' },
+            { key: 'pv', configKey: 'pv', label: 'PV' },
+        ];
+
+        for (const type of types) {
+            const isActive = this.config[`${type.configKey}Aktiv`];
+            if (!isActive) {
+                continue;
+            }
+
+            // Check main meter contract start
+            const contractStart = this.config[`${type.configKey}ContractStart`];
+            if (!contractStart) {
+                this.log.warn(
+                    `${type.label}: Kein Vertragsbeginn konfiguriert! Für korrekte Jahresberechnungen und Abrechnungsperioden sollte ein Vertragsbeginn gesetzt werden.`,
+                );
+            }
+
+            // Check main meter sensor
+            const sensorDP = this.config[`${type.configKey}SensorDP`];
+            if (!sensorDP) {
+                this.log.warn(`${type.label}: Kein Sensor-Datenpunkt konfiguriert!`);
+            }
+
+            // Check additional meters
+            const additionalMeters = this.config[`${type.configKey}AdditionalMeters`];
+            if (Array.isArray(additionalMeters)) {
+                for (const meter of additionalMeters) {
+                    if (meter && meter.name) {
+                        if (!meter.contractStart) {
+                            this.log.warn(
+                                `${type.label} Zähler "${meter.name}": Kein Vertragsbeginn konfiguriert!`,
+                            );
+                        }
+                        if (!meter.sensorDP) {
+                            this.log.warn(
+                                `${type.label} Zähler "${meter.name}": Kein Sensor-Datenpunkt konfiguriert!`,
+                            );
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     // --- Delegation Methods (backward compatibility for internal calls) ---
 
     async initializeUtility(type, isActive) {
         return this.consumptionManager.initializeUtility(type, isActive);
-    }
-
-    async handleSensorUpdate(type, sensorDP, value) {
-        return this.consumptionManager.handleSensorUpdate(type, sensorDP, value);
     }
 
     async updateCurrentPrice(type) {
@@ -254,11 +307,14 @@ class UtilityMonitor extends utils.Adapter {
         // Determine which utility this sensor belongs to
         // All meters (including main) are now handled by multiMeterManager
         if (this.multiMeterManager) {
-            const meterInfo = this.multiMeterManager.findMeterBySensor(id);
-            if (meterInfo && state.val != null) {
+            const meters = this.multiMeterManager.findMeterBySensor(id);
+            if (meters.length > 0 && state.val != null) {
                 // Convert sensor value to number (handles strings, German commas, etc.)
                 const numValue = calculator.ensureNumber(state.val);
-                await this.multiMeterManager.handleSensorUpdate(meterInfo.type, meterInfo.meterName, id, numValue);
+                // Call handleSensorUpdate for each meter using this sensor
+                for (const meterInfo of meters) {
+                    await this.multiMeterManager.handleSensorUpdate(meterInfo.type, meterInfo.meterName, id, numValue);
+                }
                 return;
             }
         }
@@ -270,7 +326,11 @@ class UtilityMonitor extends utils.Adapter {
      * @param {Record<string, any>} obj - Message object from config
      */
     async onMessage(obj) {
-        await this.messagingHandler.handleMessage(obj);
+        if (obj.command === 'importCSV') {
+            await this.importManager.handleImportCSV(obj);
+        } else {
+            await this.messagingHandler.handleMessage(obj);
+        }
     }
 }
 
