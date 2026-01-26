@@ -1,8 +1,21 @@
 {
     "common": {
         "name": "utility-monitor",
-        "version": "1.5.0",
+        "version": "1.5.1",
         "news": {
+            "1.5.1": {
+                "en": "Fix: Reset timing and monthly calculation logic. Fix: JSDoc type definitions.",
+                "de": "Fix: Reset-Timing und monatliche Berechnungslogik. Fix: JSDoc Typ-Definitionen.",
+                "ru": "Исправление: время сброса и логика ежемесячного расчета. Исправление: определения типов JSDoc.",
+                "pt": "Correção: tempo de redefinição e lógica de cálculo mensal. Correção: definições de tipo JSDoc.",
+                "nl": "Fix: Reset timing en maandelijkse berekeningslogica. Fix: JSDoc type definities.",
+                "fr": "Correctif : synchronisation de la réinitialisation et logique de calcul mensuel. Correctif : définitions de type JSDoc.",
+                "it": "Correzione: tempi di ripristino e logica di calcolo mensile. Correzione: definizioni dei tipi JSDoc.",
+                "es": "Solución: sincronización de reinicio y lógica de cálculo mensual. Solución: definiciones de tipos de JSDoc.",
+                "pl": "Naprawa: czas resetowania i logika obliczeń miesięcznych. Naprawa: definicje typów JSDoc.",
+                "uk": "Виправлення: час скидання та логіка щомісячного розрахунку. Виправлення: визначення типів JSDoc.",
+                "zh-cn": "修复：重置时间和每月计算逻辑。修复：JSDoc 类型定义。"
+            },
             "1.5.0": {
                 "en": "New: CSV Import feature with drag and drop support. New: Weekly tracking points. Fix: Resets now performed at 23:59. Refactoring: Modular backend architecture.",
                 "de": "Neu: CSV-Import mit Drag-and-Drop. Neu: Wöchentliche Datenpunkte. Fix: Resets werden jetzt um 23:59 Uhr ausgeführt. Refactoring: Modulare Backend-Architektur.",
