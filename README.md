@@ -212,17 +212,17 @@ Balance:           +62,64 € → Nachzahlung
 
 ### 📈 **statistics** (Statistiken)
 
-| Datenpunkt       | Beschreibung                         |
-| ---------------- | ------------------------------------ |
-| `averageDaily`   | Durchschnittlicher Tagesverbrauch    |
-| `averageMonthly` | Durchschnittlicher Monatsverbrauch   |
-| `lastDay`        | Verbrauch **gesten** (Vortag)        |
-| `lastWeek`       | Verbrauch **letzte Woche**           |
-| `lastMonth`      | Verbrauch **letzter Monat**          |
-| `lastDayStart`   | Letzter Tages-Reset (00:00 Uhr)      |
-| `lastWeekStart`  | Letzter Wochen-Reset (Montag)        |
-| `lastMonthStart` | Letzter Monats-Reset (1. des Monats) |
-| `lastYearStart`  | Vertragsbeginn / Jahresstart         |
+| Datenpunkt       | Beschreibung                             |
+| ---------------- | ---------------------------------------- |
+| `averageDaily`   | Durchschnittlicher Tagesverbrauch        |
+| `averageMonthly` | Durchschnittlicher Monatsverbrauch       |
+| `lastDay`        | Verbrauch **gestern** (Vortag)           |
+| `lastWeek`       | Verbrauch **letzte Woche**               |
+| `lastMonth`      | Verbrauch **letzter Monat**              |
+| `lastDayStart`   | Letzter Tages-Reset (23:59 Uhr)          |
+| `lastWeekStart`  | Letzter Wochen-Reset (Sonntag 23:59)     |
+| `lastMonthStart` | Letzter Monats-Reset (letzter Tag 23:59) |
+| `lastYearStart`  | Vertragsbeginn / Jahresstart             |
 
 ---
 
@@ -307,6 +307,12 @@ Der Adapter setzt Zähler automatisch zurück:
 ---
 
 ## Changelog
+
+### 1.5.1 (2026-01-26)
+
+- **FIX:** 🕛 **Reset-Timing** - Automatische Resets werden nun um 23:59 Uhr ausgeführt (statt 00:00 Uhr)
+- **FIX:** Utopische Werte in Monthly/MonthlyVolume (DP Monthly)
+
 ### 1.5.0 (2026-01-25)
 
 - **NEU:** 📥 **CSV Import** - Importiere historische Zählerstände einfach per Drag-and-Drop:
