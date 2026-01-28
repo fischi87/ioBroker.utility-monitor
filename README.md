@@ -108,6 +108,36 @@ wasser.main.consumption.daily
 - **Klarheit**: Keine Special-Case Logik mehr im Code
 - **Multi-Meter**: Bessere Unterstützung für mehrere Zähler pro Typ
 - **CSV Import**: Einfaches Nachpflegen von historischen Daten via Drag-and-Drop im Admin-Interface
+- **Strukturierte Statistiken (v1.6.0)**: Klare Trennung von Verbrauch, Kosten und Zeitstempeln
+
+---
+
+## ⚠️ Breaking Changes in Version 1.6.0
+
+**WICHTIG:** Version 1.6.0 strukturiert das Statistik-Objekt um!
+
+### Was hat sich geändert?
+
+**Vorher (bis 1.5.1):**
+
+```
+gas.main.statistics.lastDay
+gas.main.statistics.lastMonth
+gas.main.statistics.lastDayStart
+```
+
+**Jetzt (ab 1.6.0):**
+
+```
+gas.main.statistics.consumption.lastDay      ← Verbrauchswerte
+gas.main.statistics.cost.lastDay             ← Kostenwerte (NEU!)
+gas.main.statistics.timestamps.lastDayStart   ← Zeitstempel der Resets
+```
+
+### 🔧 Migration erforderlich
+
+1. **Skripte/VIS anpassen**: Falls du direkt auf Statistik-Datenpunkte zugreifst, musst du die Pfade anpassen.
+2. **Kostenstatistiken**: Du profitierst nun von historischen Kostenübersichten (Tag/Woche/Monat).
 
 ---
 
@@ -212,13 +242,34 @@ Balance:           +62,64 € → Nachzahlung
 
 ### 📈 **statistics** (Statistiken)
 
+Seit Version 1.6.1 sind Statistiken in drei Unterkanäle unterteilt:
+
+#### 📊 **consumption** (Verbrauchshistorie)
+
+| Datenpunkt       | Beschreibung                         |
+| ---------------- | ------------------------------------ |
+| `lastDay`        | Verbrauch **gestern** (Vortag)       |
+| `lastWeek`       | Verbrauch **letzte Woche**           |
+| `lastMonth`      | Verbrauch **letzter Monat**          |
+| `lastYear`       | Verbrauch **letztes Jahr** (Vorjahr) |
+| `averageDaily`   | Durchschnittlicher Tagesverbrauch    |
+| `averageMonthly` | Durchschnittlicher Monatsverbrauch   |
+
+#### 💰 **cost** (Kostenhistorie - NEU in 1.6.0)
+
+| Datenpunkt       | Beschreibung                      |
+| ---------------- | --------------------------------- |
+| `lastDay`        | Kosten **gestern** (Vortag)       |
+| `lastWeek`       | Kosten **letzte Woche**           |
+| `lastMonth`      | Kosten **letzter Monat**          |
+| `lastYear`       | Kosten **letztes Jahr** (Vorjahr) |
+| `averageDaily`   | Durchschnittliche Tageskosten     |
+| `averageMonthly` | Durchschnittliche Monatskosten    |
+
+#### 📅 **timestamps** (Reset-Zeitstempel)
+
 | Datenpunkt       | Beschreibung                             |
 | ---------------- | ---------------------------------------- |
-| `averageDaily`   | Durchschnittlicher Tagesverbrauch        |
-| `averageMonthly` | Durchschnittlicher Monatsverbrauch       |
-| `lastDay`        | Verbrauch **gestern** (Vortag)           |
-| `lastWeek`       | Verbrauch **letzte Woche**               |
-| `lastMonth`      | Verbrauch **letzter Monat**              |
 | `lastDayStart`   | Letzter Tages-Reset (23:59 Uhr)          |
 | `lastWeekStart`  | Letzter Wochen-Reset (Sonntag 23:59)     |
 | `lastMonthStart` | Letzter Monats-Reset (letzter Tag 23:59) |
@@ -307,6 +358,28 @@ Der Adapter setzt Zähler automatisch zurück:
 ---
 
 ## Changelog
+
+### 1.6.1 (2026-01-28)
+
+- **NEU:** 📊 **Erweiterte Jahresstatistiken** - Einführung von `lastYear` Datenpunkten in den Statistiken:
+    - `statistics.consumption.lastYear`: Gesamtverbrauch des Vorjahres
+    - `statistics.cost.lastYear`: Gesamtkosten des Vorjahres
+    - Unterstützung für HT/NT und Gas-Volumen in der Vorjahresansicht
+- **NEU:** 🔄 **Automatisches Sichern** - Vorjahreswerte werden beim jährlichen Reset automatisch in die Statistik archiviert
+- **FIX:** 🛠️ **Syntax & Einheiten** - Korrektur von Einheiten-Inkonsistenzen (speziell Wasser/m³) und Linter-Fehlern
+- **DOCS:** 🌐 **Übersetzungen** - News-Einträge in alle unterstützten Sprachen übersetzt
+
+### 1.6.0 (2026-01-28)
+
+- **NEU:** 📊 **Strukturierte Statistiken** - Einführung von Unterkanälen für bessere Übersicht:
+    - `statistics.consumption`: Alle historischen Verbrauchswerte
+    - `statistics.cost`: Alle historischen Kostenwerte (Tag/Woche/Monat)
+    - `statistics.timestamps`: Alle Reset-Zeitstempel an einem Ort
+- **NEU:** 💰 **Kostenstatistiken** - Verfolge deine Kosten nun auch für gestern, letzte Woche und letzten Monat
+- **REFACTORING:** 🏗️ **Modulare State-Verwaltung**:
+    - `stateManager.js` wurde in spezialisierte Module aufgeteilt (`lib/state/`)
+    - Verbesserte Wartbarkeit und Testbarkeit
+- **CLEANUP:** 🧹 **Bereinigung** - Automatische Entfernung veralteter Statistik-Datenpunkte beim ersten Start
 
 ### 1.5.1 (2026-01-26)
 

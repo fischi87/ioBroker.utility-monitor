@@ -56,7 +56,7 @@ function createMockAdapter(config = {}) {
             delete objects[id];
         },
         async getObjectListAsync(opts) {
-            return { rows: [] };
+            return { rows: /** @type {any[]} */ ([]) };
         },
         subscribeForeignStates: () => {},
     };
@@ -273,7 +273,7 @@ describe('MultiMeterManager Module', () => {
             adapter.states['gas.main.consumption.weekly'] = { val: 50, ack: true };
             adapter.states['gas.main.consumption.monthly'] = { val: 100, ack: true };
             adapter.states['gas.main.consumption.yearly'] = { val: 500, ack: true };
-            adapter.states['gas.main.statistics.lastYearStart'] = { val: Date.now(), ack: true };
+            adapter.states['gas.main.statistics.timestamps.lastYearStart'] = { val: Date.now(), ack: true };
 
             const config = { preis: 0.12, grundgebuehr: 15, jahresgebuehr: 0, abschlag: 100 };
             await manager.updateCosts('gas', 'main', config);
@@ -301,7 +301,7 @@ describe('MultiMeterManager Module', () => {
             // Set lastYearStart to 6 months ago
             const sixMonthsAgo = new Date();
             sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
-            adapter.states['gas.main.statistics.lastYearStart'] = { val: sixMonthsAgo.getTime(), ack: true };
+            adapter.states['gas.main.statistics.timestamps.lastYearStart'] = { val: sixMonthsAgo.getTime(), ack: true };
 
             const config = { preis: 0.12, grundgebuehr: 15, jahresgebuehr: 0, abschlag: 100 };
             await manager.updateCosts('gas', 'main', config);
@@ -403,7 +403,7 @@ describe('MultiMeterManager Module', () => {
             // Set up initial state (in kWh after conversion)
             manager.lastSensorValues['test.0.gas.sensor'] = 1092.5; // 100 m³ converted
             adapter.states['gas.main.info.meterReading'] = { val: 1092.5, ack: true };
-            adapter.states['gas.main.statistics.lastYearStart'] = { val: Date.now(), ack: true };
+            adapter.states['gas.main.statistics.timestamps.lastYearStart'] = { val: Date.now(), ack: true };
 
             let warnCalled = false;
             adapter.log.warn = msg => {
@@ -447,13 +447,16 @@ describe('MultiMeterManager Module', () => {
             // Set up unrealistically high monthly consumption
             adapter.states['gas.main.consumption.monthly'] = { val: 50000, ack: true }; // Way too high
             adapter.states['gas.main.consumption.monthlyVolume'] = { val: 5000, ack: true };
-            adapter.states['gas.main.statistics.lastMonthlyStart'] = { val: twoDaysAgo, ack: true };
+            adapter.states['gas.main.statistics.timestamps.lastMonthStart'] = { val: twoDaysAgo, ack: true };
 
             // Set up reasonable daily/weekly values
             adapter.states['gas.main.consumption.daily'] = { val: 10, ack: true };
-            adapter.states['gas.main.statistics.lastDailyStart'] = { val: now - 12 * 60 * 60 * 1000, ack: true };
+            adapter.states['gas.main.statistics.timestamps.lastDayStart'] = {
+                val: now - 12 * 60 * 60 * 1000,
+                ack: true,
+            };
             adapter.states['gas.main.consumption.weekly'] = { val: 50, ack: true };
-            adapter.states['gas.main.statistics.lastWeeklyStart'] = { val: twoDaysAgo, ack: true };
+            adapter.states['gas.main.statistics.timestamps.lastWeekStart'] = { val: twoDaysAgo, ack: true };
 
             await manager._validatePeriodConsumption('gas', 'gas.main', now);
 
@@ -476,7 +479,7 @@ describe('MultiMeterManager Module', () => {
 
             // Set up reasonable monthly consumption
             adapter.states['gas.main.consumption.monthly'] = { val: 100, ack: true };
-            adapter.states['gas.main.statistics.lastMonthlyStart'] = { val: fiveDaysAgo, ack: true };
+            adapter.states['gas.main.statistics.timestamps.lastMonthStart'] = { val: fiveDaysAgo, ack: true };
 
             await manager._validatePeriodConsumption('gas', 'gas.main', now);
 
@@ -506,11 +509,11 @@ describe('MultiMeterManager Module', () => {
             const threeDaysAgo = now - 3 * 24 * 60 * 60 * 1000; // 3 days ago
 
             // Set up states simulating adapter restart after daily reset
-            adapter.states['gas.main.statistics.lastWeekStart'] = { val: threeDaysAgo, ack: true };
-            adapter.states['gas.main.statistics.lastDayStart'] = { val: halfDayAgo, ack: true };
+            adapter.states['gas.main.statistics.timestamps.lastWeekStart'] = { val: threeDaysAgo, ack: true };
+            adapter.states['gas.main.statistics.timestamps.lastDayStart'] = { val: halfDayAgo, ack: true };
             adapter.states['gas.main.consumption.weekly'] = { val: 10, ack: true };
             adapter.states['gas.main.consumption.daily'] = { val: 5, ack: true };
-            adapter.states['gas.main.statistics.lastDay'] = { val: 15, ack: true };
+            adapter.states['gas.main.statistics.consumption.lastDay'] = { val: 15, ack: true };
 
             await manager.reconstructPeriodConsumption('gas', 'main', 'gas.main');
 
@@ -525,8 +528,8 @@ describe('MultiMeterManager Module', () => {
             const now = Date.now();
             const tenDaysAgo = now - 10 * 24 * 60 * 60 * 1000; // 10 days ago
 
-            adapter.states['gas.main.statistics.lastWeekStart'] = { val: tenDaysAgo, ack: true };
-            adapter.states['gas.main.statistics.lastDayStart'] = { val: now, ack: true };
+            adapter.states['gas.main.statistics.timestamps.lastWeekStart'] = { val: tenDaysAgo, ack: true };
+            adapter.states['gas.main.statistics.timestamps.lastDayStart'] = { val: now, ack: true };
             adapter.states['gas.main.consumption.weekly'] = { val: 10, ack: true };
 
             await manager.reconstructPeriodConsumption('gas', 'main', 'gas.main');
@@ -554,7 +557,7 @@ describe('MultiMeterManager Module', () => {
             // Set yearStart to 6 months ago
             const sixMonthsAgo = new Date();
             sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
-            adapter.states['gas.main.statistics.lastYearStart'] = { val: sixMonthsAgo.getTime(), ack: true };
+            adapter.states['gas.main.statistics.timestamps.lastYearStart'] = { val: sixMonthsAgo.getTime(), ack: true };
 
             const months = await manager._calculateMonthsSinceYearStart('gas.main');
 
@@ -569,6 +572,7 @@ describe('MultiMeterManager Module', () => {
             const manager = new MultiMeterManager(adapter, null, null);
 
             // Mock object list with protected and custom meter
+            // @ts-ignore - Mock implementation return type mismatch
             adapter.getObjectListAsync = async () => ({
                 rows: [
                     { id: 'utility-monitor.0.gas.main' },

@@ -1,8 +1,25 @@
 {
     "common": {
         "name": "utility-monitor",
-        "version": "1.5.1",
+        "version": "1.6.1",
         "news": {
+            "1.6.1": {
+                "en": "New statistics data points: lastDay, lastWeek, lastMonth, and lastYear for costs and consumption.",
+                "de": "Neue Statistik-Datenpunkte: lastDay, lastWeek, lastMonth, lastYear für Kosten und Verbrauch.",
+                "ru": "Новые точки статистических данных: lastDay, lastWeek, lastMonth и lastYear для затрат и потребления.",
+                "pt": "Novos pontos de dados estatísticos: lastDay, lastWeek, lastMonth e lastYear para custos e consumo.",
+                "nl": "Nieuwe statistiekgegevenspunten: lastDay, lastWeek, lastMonth en lastYear voor kosten en verbruik.",
+                "fr": "Nouveaux points de données statistiques : lastDay, lastWeek, lastMonth et lastYear pour les coûts et la consommation.",
+                "it": "Nuovi punti dati statistici: lastDay, lastWeek, lastMonth e lastYear per costi e consumi.",
+                "es": "Nuevos puntos de datos estadísticos: lastDay, lastWeek, lastMonth y lastYear para costes y consumo.",
+                "pl": "Nowe punkty danych statystycznych: lastDay, lastWeek, lastMonth i lastYear dla kosztów i zużycia.",
+                "uk": "Нові статистичні дані: lastDay, lastWeek, lastMonth і lastYear для витрат і споживання.",
+                "zh-cn": "新的统计数据点：成本和消耗的 lastDay、lastWeek、lastMonth 和 lastYear。"
+            },
+            "1.6.0": {
+                "en": "New: Structured statistics with consumption and cost sub-channels. New: Weekly and monthly cost tracking. Refactoring: Split stateManager.js into modular files. Cleanup: Removed redundant old statistics states.",
+                "de": "Neu: Strukturierte Statistiken mit Unterkanälen für Verbrauch und Kosten. Neu: Wöchentliche und monatliche Kostenverfolgung. Refactoring: stateManager.js in modulare Dateien aufgeteilt. Bereinigung: Veraltete Statistik-Datenpunkte entfernt."
+            },
             "1.5.1": {
                 "en": "Fix: Reset timing and monthly calculation logic. Fix: JSDoc type definitions.",
                 "de": "Fix: Reset-Timing und monatliche Berechnungslogik. Fix: JSDoc Typ-Definitionen.",
