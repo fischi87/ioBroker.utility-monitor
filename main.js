@@ -75,12 +75,34 @@ class UtilityMonitor extends utils.Adapter {
             native: {},
         });
 
+        // Initialize Notifications Channel
+        await this.setObjectNotExistsAsync('notifications', {
+            type: 'channel',
+            common: { name: 'Notification Controls' },
+            native: {},
+        });
+        await this.setObjectNotExistsAsync('notifications.triggerMonthlyReport', {
+            type: 'state',
+            common: {
+                name: 'Trigger Monthly Report Now',
+                type: 'boolean',
+                role: 'button',
+                read: false,
+                write: true,
+                def: false,
+            },
+            native: {},
+        });
+
         // Subscribe to billing period closure triggers
         this.subscribeStates('*.billing.closePeriod');
 
         // Subscribe to manual adjustment changes
         this.subscribeStates('*.adjustment.value');
         this.subscribeStates('*.adjustment.note');
+
+        // Subscribe to notification triggers
+        this.subscribeStates('notifications.triggerMonthlyReport');
 
         // Set up periodic tasks
         this.setupPeriodicTasks();
@@ -238,6 +260,20 @@ class UtilityMonitor extends utils.Adapter {
      */
     async onStateChange(id, state) {
         if (!state || state.val === null || state.val === undefined) {
+            return;
+        }
+
+        // Check if this is a manual monthly report trigger
+        if (id.includes('notifications.triggerMonthlyReport') && state.val === true && !state.ack) {
+            this.log.info('User triggered manual monthly report');
+            try {
+                await this.messagingHandler.checkMonthlyReport(true); // forceRun = true
+                this.log.info('Manual monthly report sent successfully');
+            } catch (error) {
+                this.log.error(`Failed to send manual monthly report: ${error.message}`);
+            }
+            // Reset button
+            await this.setStateAsync('notifications.triggerMonthlyReport', false, true);
             return;
         }
 

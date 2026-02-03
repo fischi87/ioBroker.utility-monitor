@@ -1,8 +1,21 @@
 {
     "common": {
         "name": "utility-monitor",
-        "version": "1.6.1",
+        "version": "1.6.2",
         "news": {
+            "1.6.2": {
+                "en": "Fix: Monthly reset logic for last day of month.",
+                "de": "Fix: Monatliche Reset-Logik für den letzten Tag des Monats.",
+                "ru": "Исправление: логика ежемесячного сброса для последнего дня месяца.",
+                "pt": "Correção: lógica de reinicialização mensal para o último dia do mês.",
+                "nl": "Fix: Maandelijkse resetlogica voor de laatste dag van de maand.",
+                "fr": "Correction : logique de réinitialisation mensuelle pour le dernier jour du mois.",
+                "it": "Correzione: logica di ripristino mensile per l'ultimo giorno del mese.",
+                "es": "Solución: lógica de reinicio mensual para el último día del mes.",
+                "pl": "Naprawa: logika resetowania miesięcznego dla ostatniego dnia miesiąca.",
+                "uk": "Виправлення: логіка щомісячного скидання для останнього дня місяця.",
+                "zh-cn": "修复：每月最后一天重置逻辑。"
+            },
             "1.6.1": {
                 "en": "New statistics data points: lastDay, lastWeek, lastMonth, and lastYear for costs and consumption.",
                 "de": "Neue Statistik-Datenpunkte: lastDay, lastWeek, lastMonth, lastYear für Kosten und Verbrauch.",

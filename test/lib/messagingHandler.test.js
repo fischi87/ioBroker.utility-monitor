@@ -14,6 +14,10 @@ describe('MessagingHandler', () => {
                 notificationInstance: 'telegram.0',
                 notificationMonthlyEnabled: true,
                 notificationMonthlyDay: new Date().getDate(), // Set to today
+                notificationStromEnabled: true,
+                notificationGasEnabled: true,
+                notificationWasserEnabled: true,
+                notificationPvEnabled: true,
                 gasAktiv: true,
                 wasserAktiv: true,
                 stromAktiv: true,
@@ -78,12 +82,12 @@ describe('MessagingHandler', () => {
             expect(callArgs[1]).to.equal('send');
 
             const message = callArgs[2].text;
-            expect(message).to.contain('*⚡ Strom*');
+            expect(message).to.contain('⚡️ Strom');
             expect(message).to.contain('Verbrauch (Jahr): 1000 kWh');
             expect(message).to.contain('Verbrauchs-Kosten: 300.00 €');
             expect(message).to.contain('❌ Nachzahlung');
 
-            expect(message).to.contain('*🔥 Gas*');
+            expect(message).to.contain('🔥 Gas');
             expect(message).to.contain('Verbrauch (Jahr): 5000 kWh');
             expect(message).to.contain('✅ Guthaben');
 
