@@ -359,6 +359,14 @@ Der Adapter setzt Zähler automatisch zurück:
 
 ## Changelog
 
+### 1.6.3 (2026-02-04)
+
+- **FIX:** 🛠️ **Daily und Monthly start Wert auf 0 setzen**
+
+### 1.6.2 (2026-01-28)
+
+- **FIX:** 🛠️ **Monthly reset logic for last day of month**
+
 ### 1.6.1 (2026-01-28)
 
 - **NEU:** 📊 **Erweiterte Jahresstatistiken** - Einführung von `lastYear` Datenpunkten in den Statistiken:
@@ -439,25 +447,6 @@ Der Adapter setzt Zähler automatisch zurück:
         - Negative Balance = Guthaben (Rückerstattung)
 - **VERBESSERT:** 📦 **Entwickler-Abhängigkeiten**: Umstellung von Tilde (~) auf Caret (^) Versionierung für bessere Sicherheitsupdates
 - **CLEANUP:** 🧹 **Repository Compliance**: Unveröffentlichte Versionen aus dem Changelog entfernt (löst ioBroker Bot Issue #1)
-
-### 1.4.2 (2026-01-18)
-
-- **FIX:** 🔧 **TypeScript Fehler behoben** - Alle Kompilierungsfehler behoben:
-    - `formatDateString()` fehlendes Argument im multiMeterManager korrigiert
-    - Datums-Arithmetik Typfehler behoben
-    - `@ts-ignore` Kommentare für absichtliche Fehlertests hinzugefügt
-- **FIX:** 🐛 **Kritischer Multi-Meter Balance-Bug** - Korrektur fehlerhafter Bilanzberechnung:
-    - `totalYearly` nutzte hartcodierte 12 Monate für die Grundgebühr statt der tatsächlichen Monate seit Vertragsstart
-    - Berechnet nun korrekt `basicChargeAccumulated = Grundgebühr × MonateSeitJahresstart`
-- **NEU:** ✅ **Erweiterte Eingabevalidierung** - Robuste Validierung von Konfigurationswerten:
-    - `isValidSensorDP()` - Validiert Sensor-Datenpunkt-IDs
-    - `parseConfigDate()` - Validiert deutsche und ISO Datumsformate
-    - `parseConfigPrice()` - Stellt sicher, dass Preise nicht negativ sind
-- **NEU:** 📋 **Zentrale Konstanten** - Zentralisierte Konstantendefinitionen:
-    - Rundungspräzision, Zeitkonstanten, Validierungsregeln
-- **NEU:** 🛡️ **Fehlerbehandlung** - Sicherer Wrapper für State-Erstellung:
-    - `safeSetObjectNotExists()` fängt Fehler bei der State-Erstellung ab
-- **VERBESSERT:** 🧪 **Code-Qualität** - Alle Tests erfolgreich (31 Unit + 57 Paket-Tests)
 
 ---
 

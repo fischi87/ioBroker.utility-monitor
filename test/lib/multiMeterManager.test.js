@@ -566,6 +566,95 @@ describe('MultiMeterManager Module', () => {
         });
     });
 
+    describe('_handleFirstSensorValue()', () => {
+        it('should reset period counters to 0 on first-time setup', async () => {
+            const adapter = createMockAdapter();
+            const manager = new MultiMeterManager(adapter, null, null);
+
+            // Simulate first-time setup: meterReading is 0 (default)
+            adapter.states['gas.main.info.meterReading'] = { val: 0, ack: true };
+
+            // Set some pre-existing (bad) consumption values that might exist from a previous install
+            adapter.states['gas.main.consumption.daily'] = { val: 999, ack: true };
+            adapter.states['gas.main.consumption.weekly'] = { val: 999, ack: true };
+            adapter.states['gas.main.consumption.monthly'] = { val: 999, ack: true };
+            adapter.states['gas.main.costs.daily'] = { val: 99, ack: true };
+            adapter.states['gas.main.costs.weekly'] = { val: 99, ack: true };
+            adapter.states['gas.main.costs.monthly'] = { val: 99, ack: true };
+
+            const config = { offset: 0, initialReading: 0, htNtEnabled: false };
+            const processed = { consumption: 250, consumptionM3: null };
+            const now = Date.now();
+
+            await manager._handleFirstSensorValue('gas', 'main', 'test.0.gas.sensor', processed, 'gas.main', config, now);
+
+            // Period counters should be reset to 0
+            expect(adapter.states['gas.main.consumption.daily'].val).to.equal(0);
+            expect(adapter.states['gas.main.consumption.weekly'].val).to.equal(0);
+            expect(adapter.states['gas.main.consumption.monthly'].val).to.equal(0);
+            expect(adapter.states['gas.main.costs.daily'].val).to.equal(0);
+            expect(adapter.states['gas.main.costs.weekly'].val).to.equal(0);
+            expect(adapter.states['gas.main.costs.monthly'].val).to.equal(0);
+
+            // meterReading should be set to the sensor value (baseline)
+            expect(adapter.states['gas.main.info.meterReading'].val).to.equal(250);
+
+            // lastSensorValues should be set to prevent delta calculation
+            expect(manager.lastSensorValues['test.0.gas.sensor']).to.equal(250);
+        });
+
+        it('should NOT reset period counters when recovering from valid state', async () => {
+            const adapter = createMockAdapter();
+            const manager = new MultiMeterManager(adapter, null, null);
+
+            // Simulate recovery: meterReading has a valid value close to current sensor
+            adapter.states['gas.main.info.meterReading'] = { val: 248, ack: true };
+
+            // Set some valid consumption values
+            adapter.states['gas.main.consumption.daily'] = { val: 5, ack: true };
+            adapter.states['gas.main.consumption.monthly'] = { val: 50, ack: true };
+            adapter.states['gas.main.statistics.timestamps.lastDayStart'] = { val: Date.now(), ack: true };
+            adapter.states['gas.main.statistics.timestamps.lastMonthStart'] = { val: Date.now(), ack: true };
+
+            const config = { offset: 0, initialReading: 0, htNtEnabled: false };
+            const processed = { consumption: 250, consumptionM3: null };
+            const now = Date.now();
+
+            await manager._handleFirstSensorValue('gas', 'main', 'test.0.gas.sensor', processed, 'gas.main', config, now);
+
+            // Period counters should NOT be reset (valid recovery, difference < 100)
+            expect(adapter.states['gas.main.consumption.daily'].val).to.equal(5);
+            expect(adapter.states['gas.main.consumption.monthly'].val).to.equal(50);
+
+            // lastSensorValues should be set to the RECOVERED value
+            expect(manager.lastSensorValues['test.0.gas.sensor']).to.equal(248);
+        });
+
+        it('should reset gas volume counters on first-time setup', async () => {
+            const adapter = createMockAdapter();
+            const manager = new MultiMeterManager(adapter, null, null);
+
+            // Simulate first-time setup for gas
+            adapter.states['gas.main.info.meterReading'] = { val: 0, ack: true };
+
+            // Set some pre-existing values
+            adapter.states['gas.main.consumption.dailyVolume'] = { val: 99, ack: true };
+            adapter.states['gas.main.consumption.weeklyVolume'] = { val: 99, ack: true };
+            adapter.states['gas.main.consumption.monthlyVolume'] = { val: 99, ack: true };
+
+            const config = { offset: 0, initialReading: 0, htNtEnabled: false };
+            const processed = { consumption: 1092.5, consumptionM3: 100 };
+            const now = Date.now();
+
+            await manager._handleFirstSensorValue('gas', 'main', 'test.0.gas.sensor', processed, 'gas.main', config, now);
+
+            // Gas volume counters should be reset
+            expect(adapter.states['gas.main.consumption.dailyVolume'].val).to.equal(0);
+            expect(adapter.states['gas.main.consumption.weeklyVolume'].val).to.equal(0);
+            expect(adapter.states['gas.main.consumption.monthlyVolume'].val).to.equal(0);
+        });
+    });
+
     describe('cleanupRemovedMeters()', () => {
         it('should not delete protected categories', async () => {
             const adapter = createMockAdapter();

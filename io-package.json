@@ -1,8 +1,21 @@
 {
     "common": {
         "name": "utility-monitor",
-        "version": "1.6.2",
+        "version": "1.6.3",
         "news": {
+            "1.6.3": {
+                "en": "Fix: Daily and Monthly start value reset to 0.",
+                "de": "Fix: Daily und Monthly start Wert auf 0 setzen",
+                "ru": "Исправление: Daily и Monthly start значение сбросить на 0.",
+                "pt": "Correção: Daily e Monthly start valor reset para 0.",
+                "nl": "Fix: Daily en Monthly start waarde reset naar 0.",
+                "fr": "Correction : Daily et Monthly start valeur reset à 0.",
+                "it": "Correzione: Daily e Monthly start valore reset a 0.",
+                "es": "Solución: Daily y Monthly start valor reset a 0.",
+                "pl": "Naprawa: Daily i Monthly start wartość reset do 0.",
+                "uk": "Виправлення: Daily та Monthly start значення скинути на 0.",
+                "zh-cn": "修复：Daily和Monthly start值重置为0。"
+            },
             "1.6.2": {
                 "en": "Fix: Monthly reset logic for last day of month.",
                 "de": "Fix: Monatliche Reset-Logik für den letzten Tag des Monats.",
@@ -45,19 +58,6 @@
                 "pl": "Naprawa: czas resetowania i logika obliczeń miesięcznych. Naprawa: definicje typów JSDoc.",
                 "uk": "Виправлення: час скидання та логіка щомісячного розрахунку. Виправлення: визначення типів JSDoc.",
                 "zh-cn": "修复：重置时间和每月计算逻辑。修复：JSDoc 类型定义。"
-            },
-            "1.5.0": {
-                "en": "New: CSV Import feature with drag and drop support. New: Weekly tracking points. Fix: Resets now performed at 23:59. Refactoring: Modular backend architecture.",
-                "de": "Neu: CSV-Import mit Drag-and-Drop. Neu: Wöchentliche Datenpunkte. Fix: Resets werden jetzt um 23:59 Uhr ausgeführt. Refactoring: Modulare Backend-Architektur.",
-                "ru": "Новое: функция импорта CSV с поддержкой перетаскивания. Новое: точки еженедельного отслеживания. Исправление: сброс теперь выполняется в 23:59. Рефакторинг: модульная архитектура бэкенда.",
-                "pt": "Novo: recurso de importação de CSV com suporte para arrastar e soltar. Novo: pontos de rastreamento semanais. Correção: as reinicializações agora são realizadas às 23:59. Refatoração: arquitetura de back-end modular.",
-                "nl": "Nieuw: CSV-importfunctie met drag-and-drop-ondersteuning. Nieuw: Wekelijkse trackingpunten. Fix: Resets worden nu uitgevoerd om 23:59 uur. Refactoring: Modulaire backend-architectuur.",
-                "fr": "Nouveau : fonctionnalité d'importation CSV avec prise en charge du glisser-déposer. Nouveau : points de suivi hebdomadaires. Correction : les réinitialisations sont désormais effectuées à 23:59. Refactorisation : architecture backend modulaire.",
-                "it": "Nuovo: funzione di importazione CSV con supporto drag-and-drop. Nuovo: punti di tracciamento settimanali. Correzione: i ripristini vengono ora eseguiti alle 23:59. Refactoring: architettura backend modulare.",
-                "es": "Nuevo: función de importación de CSV con soporte para arrastrar y soltar. Nuevo: puntos de seguimiento semanali. Corrección: los reinicios ahora se realizan a las 23:59. Re-factorización: arquitectura de backend modular.",
-                "pl": "Nowość: funkcja importu CSV z obsługą przeciągnij i upuść. Nowość: tygodniowe punkty śledzenia. Naprawa: resety wykonywane teraz o 23:59. Refaktoryzacja: modułowa architektura backendu.",
-                "uk": "Нове: функція імпорту CSV з підтримкою перетягування. Нове: щотижневі точки відстеження. Виправлення: скидання тепер виконується о 23:59. Рефакторинг: модульна архітектура бекенда.",
-                "zh-cn": "新增：支持拖放的 CSV 导入功能。新增：每周跟踪点。修复：现在在 23:59 执行重置。重构：模块化后端架构。"
             }
         },
         "titleLang": {
