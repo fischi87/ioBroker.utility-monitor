@@ -39,8 +39,15 @@ jobs:
 
     runs-on: ${{ matrix.os }}
     strategy:
+      # Report every combination instead of cancelling the whole matrix on the
+      # first failure - otherwise a single broken runner hides the real picture
+      fail-fast: false
       matrix:
-        node-version: [20.x, 22.x, 24.x]
+        # Node 20 is not tested anymore: the integration tests install the "dev"
+        # version of the js-controller, which requires Node >= 22 since 7.2.3.
+        # The adapter itself still runs on Node 20 (see engines in package.json)
+        # together with a stable js-controller.
+        node-version: [22.x, 24.x]
         os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
