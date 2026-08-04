@@ -1,8 +1,21 @@
 {
     "common": {
         "name": "utility-monitor",
-        "version": "1.6.3",
+        "version": "1.6.4",
         "news": {
+            "1.6.4": {
+                "en": "Fix: billing countdown is now refreshed continuously instead of only at adapter start; monthly report is no longer sent twice",
+                "de": "Fix: Abrechnungs-Countdown wird jetzt laufend statt nur beim Adapterstart aktualisiert; Monats-Report wird nicht mehr doppelt versendet",
+                "ru": "\u0418\u0441\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435: \u043e\u0431\u0440\u0430\u0442\u043d\u044b\u0439 \u043e\u0442\u0441\u0447\u0451\u0442 \u0440\u0430\u0441\u0447\u0451\u0442\u043d\u043e\u0433\u043e \u043f\u0435\u0440\u0438\u043e\u0434\u0430 \u0442\u0435\u043f\u0435\u0440\u044c \u043e\u0431\u043d\u043e\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043f\u043e\u0441\u0442\u043e\u044f\u043d\u043d\u043e, \u0430 \u043d\u0435 \u0442\u043e\u043b\u044c\u043a\u043e \u043f\u0440\u0438 \u0437\u0430\u043f\u0443\u0441\u043a\u0435 \u0430\u0434\u0430\u043f\u0442\u0435\u0440\u0430; \u0435\u0436\u0435\u043c\u0435\u0441\u044f\u0447\u043d\u044b\u0439 \u043e\u0442\u0447\u0451\u0442 \u0431\u043e\u043b\u044c\u0448\u0435 \u043d\u0435 \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0434\u0432\u0430\u0436\u0434\u044b",
+                "pt": "Corre\u00e7\u00e3o: a contagem regressiva do per\u00edodo de fatura\u00e7\u00e3o \u00e9 agora atualizada continuamente e n\u00e3o apenas no arranque do adaptador; o relat\u00f3rio mensal j\u00e1 n\u00e3o \u00e9 enviado duas vezes",
+                "nl": "Fix: de aftelling van de afrekenperiode wordt nu doorlopend bijgewerkt in plaats van alleen bij het starten van de adapter; het maandrapport wordt niet meer dubbel verzonden",
+                "fr": "Correction : le compte \u00e0 rebours de la p\u00e9riode de facturation est d\u00e9sormais actualis\u00e9 en continu et non plus uniquement au d\u00e9marrage de l'adaptateur ; le rapport mensuel n'est plus envoy\u00e9 deux fois",
+                "it": "Correzione: il conto alla rovescia del periodo di fatturazione viene ora aggiornato continuamente e non solo all'avvio dell'adattatore; il report mensile non viene pi\u00f9 inviato due volte",
+                "es": "Correcci\u00f3n: la cuenta atr\u00e1s del per\u00edodo de facturaci\u00f3n ahora se actualiza continuamente y no solo al iniciar el adaptador; el informe mensual ya no se env\u00eda dos veces",
+                "pl": "Poprawka: odliczanie okresu rozliczeniowego jest teraz aktualizowane na bie\u017c\u0105co, a nie tylko przy starcie adaptera; raport miesi\u0119czny nie jest ju\u017c wysy\u0142any dwukrotnie",
+                "uk": "\u0412\u0438\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u043d\u044f: \u0437\u0432\u043e\u0440\u043e\u0442\u043d\u0438\u0439 \u0432\u0456\u0434\u043b\u0456\u043a \u0440\u043e\u0437\u0440\u0430\u0445\u0443\u043d\u043a\u043e\u0432\u043e\u0433\u043e \u043f\u0435\u0440\u0456\u043e\u0434\u0443 \u0442\u0435\u043f\u0435\u0440 \u043e\u043d\u043e\u0432\u043b\u044e\u0454\u0442\u044c\u0441\u044f \u043f\u043e\u0441\u0442\u0456\u0439\u043d\u043e, \u0430 \u043d\u0435 \u043b\u0438\u0448\u0435 \u043f\u0440\u0438 \u0437\u0430\u043f\u0443\u0441\u043a\u0443 \u0430\u0434\u0430\u043f\u0442\u0435\u0440\u0430; \u0449\u043e\u043c\u0456\u0441\u044f\u0447\u043d\u0438\u0439 \u0437\u0432\u0456\u0442 \u0431\u0456\u043b\u044c\u0448\u0435 \u043d\u0435 \u043d\u0430\u0434\u0441\u0438\u043b\u0430\u0454\u0442\u044c\u0441\u044f \u0434\u0432\u0456\u0447\u0456",
+                "zh-cn": "\u4fee\u590d\uff1a\u8ba1\u8d39\u5468\u671f\u5012\u8ba1\u65f6\u73b0\u5728\u4f1a\u6301\u7eed\u66f4\u65b0\uff0c\u800c\u4e0d\u518d\u4ec5\u5728\u9002\u914d\u5668\u542f\u52a8\u65f6\u8ba1\u7b97\uff1b\u6708\u5ea6\u62a5\u544a\u4e0d\u518d\u91cd\u590d\u53d1\u9001"
+            },
             "1.6.3": {
                 "en": "Fix: Daily and Monthly start value reset to 0.",
                 "de": "Fix: Daily und Monthly start Wert auf 0 setzen",
