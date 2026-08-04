@@ -359,6 +359,12 @@ Der Adapter setzt Zähler automatisch zurück:
 
 ## Changelog
 
+### **WORK IN PROGRESS**
+
+- **FIX:** 🛠️ **Falscher Abrechnungszeitraum (#9)** - `daysRemaining` und `periodEnd` wurden nur beim Adapterstart berechnet und blieben danach eingefroren. Der Countdown wird jetzt laufend aktualisiert und rollt am Vertragsjubiläum automatisch in den neuen Zeitraum weiter.
+- **FIX:** 🛠️ **Tagesgenaue Berechnung** - Der Restzeitraum schwankt nicht mehr je nach Uhrzeit oder Sommer-/Winterzeit-Umstellung.
+- **FIX:** 🛠️ **Schaltjahre** - Ein Vertragsbeginn am 29.02. rutscht in Nicht-Schaltjahren nicht mehr in den März.
+
 ### 1.6.3 (2026-02-04)
 
 - **FIX:** 🛠️ **Daily und Monthly start Wert auf 0 setzen**
