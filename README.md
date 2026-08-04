@@ -364,6 +364,8 @@ Der Adapter setzt Zähler automatisch zurück:
 - **FIX:** 🛠️ **Falscher Abrechnungszeitraum (#9)** - `daysRemaining` und `periodEnd` wurden nur beim Adapterstart berechnet und blieben danach eingefroren. Der Countdown wird jetzt laufend aktualisiert und rollt am Vertragsjubiläum automatisch in den neuen Zeitraum weiter.
 - **FIX:** 🛠️ **Tagesgenaue Berechnung** - Der Restzeitraum schwankt nicht mehr je nach Uhrzeit oder Sommer-/Winterzeit-Umstellung.
 - **FIX:** 🛠️ **Schaltjahre** - Ein Vertragsbeginn am 29.02. rutscht in Nicht-Schaltjahren nicht mehr in den März.
+- **FIX:** 🛠️ **Monats-Report wurde doppelt verschickt** - Die Merker-Prüfung rechnete in UTC statt in lokaler Zeit, dadurch kam der Report einmal um 00:00 und erneut um 02:00 Uhr (Sommerzeit). Es wird jetzt nur noch ein Report pro Tag versendet.
+- **FIX:** 🛠️ **Darstellung im Monats-Report** - Statt eines Zeilenumbruchs erschien ein literales `\n` im Text.
 
 ### 1.6.3 (2026-02-04)
 

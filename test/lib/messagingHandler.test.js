@@ -2,6 +2,7 @@
 const expect = require('chai').expect;
 const sinon = require('sinon');
 const MessagingHandler = require('../../lib/messagingHandler');
+const { formatLocalDate } = require('../../lib/utils/helpers');
 
 describe('MessagingHandler', () => {
     let messagingHandler;
@@ -91,7 +92,7 @@ describe('MessagingHandler', () => {
             expect(message).to.contain('Verbrauch (Jahr): 5000 kWh');
             expect(message).to.contain('✅ Guthaben');
 
-            const todayStr = new Date().toISOString().split('T')[0];
+            const todayStr = formatLocalDate(new Date());
             expect(adapterMock.setStateAsync.calledWith('info.lastMonthlyReport', todayStr, true)).to.be.true;
         });
 
@@ -109,10 +110,37 @@ describe('MessagingHandler', () => {
         });
 
         it('should NOT send a report if already sent today', async () => {
-            const todayStr = new Date().toISOString().split('T')[0];
+            const todayStr = formatLocalDate(new Date());
             adapterMock.getStateAsync.withArgs('info.lastMonthlyReport').resolves({ val: todayStr });
             await messagingHandler.checkMonthlyReport();
             expect(adapterMock.sendToAsync.called).to.be.false;
+        });
+
+        it('should NOT send a second report later the same day (UTC offset regression)', async () => {
+            // The stored marker must be the local date. With toISOString() the
+            // report sent at 00:00 CEST was stored under the previous day, so the
+            // guard no longer matched at 02:00 and a duplicate was sent.
+            const todayStr = formatLocalDate(new Date());
+            adapterMock.getStateAsync.withArgs('info.lastMonthlyReport').resolves({ val: todayStr });
+
+            await messagingHandler.checkMonthlyReport();
+            await messagingHandler.checkMonthlyReport();
+
+            expect(adapterMock.sendToAsync.called).to.be.false;
+            expect(todayStr).to.not.equal(new Date(Date.now() - 86400000).toISOString().split('T')[0]);
+        });
+
+        it('should not contain escaped newlines in the report', async () => {
+            adapterMock.getStateAsync.withArgs('info.lastMonthlyReport').resolves({ val: '2020-01-01' });
+            adapterMock.getStateAsync.withArgs('electricity.main.consumption.yearly').resolves({ val: 1000 });
+            adapterMock.getStateAsync.withArgs('electricity.main.costs.totalYearly').resolves({ val: 300 });
+            adapterMock.getStateAsync.withArgs('electricity.main.costs.paidTotal').resolves({ val: 240 });
+            adapterMock.getStateAsync.withArgs('electricity.main.costs.balance').resolves({ val: 60 });
+
+            await messagingHandler.checkMonthlyReport();
+
+            const message = adapterMock.sendToAsync.getCall(0).args[2].text;
+            expect(message).to.not.contain('\\n');
         });
     });
 });
