@@ -1606,7 +1606,7 @@
                 },
                 "_infoVersion": {
                     "type": "staticText",
-                    "text": "**Version:** 1.6.4\n\n**Autor:** fischi87",
+                    "text": "**Autor:** fischi87",
                     "sm": 12,
                     "xs": 12,
                     "md": 12,

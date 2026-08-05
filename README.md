@@ -359,6 +359,13 @@ Der Adapter setzt Zähler automatisch zurück:
 
 ## Changelog
 
+### **WORK IN PROGRESS**
+
+- **FIX:** 🛠️ **Info-Seite** - Der Link zum GitHub-Repository zeigte noch auf den alten Namen `ioBroker.nebenkosten-monitor` und lief ins Leere.
+- **FIX:** 🛠️ **Beschreibung von `daysRemaining`** - Der Datenpunkt war als „Tage bis zum Vertragsende" beschrieben, zählt aber bis zum Ende des Abrechnungszeitraums. Diese Formulierung hatte zu Missverständnissen geführt.
+- **DOCS:** 🧹 **Info-Seite entrümpelt** - Fest eingetragene Versionsnummer entfernt (Admin zeigt sie ohnehin an) und veraltete „NEU in 1.4.6"-Hinweise gestrichen.
+- **CHORE:** ⬆️ **Release-Werkzeuge aktualisiert** - `@alcalzone/release-script` und Plugins auf 5.x angehoben.
+
 ### 1.6.4 (2026-08-04)
 
 - **FIX:** 🛠️ **Falscher Abrechnungszeitraum (#9)** - `daysRemaining` und `periodEnd` wurden nur beim Adapterstart berechnet und blieben danach eingefroren. Der Countdown wird jetzt laufend aktualisiert und rollt am Vertragsjubiläum automatisch in den neuen Zeitraum weiter.
