@@ -1606,7 +1606,7 @@
                 },
                 "_infoVersion": {
                     "type": "staticText",
-                    "text": "**Version:** 1.5.0\n\n**Autor:** fischi87",
+                    "text": "**Version:** 1.6.4\n\n**Autor:** fischi87",
                     "sm": 12,
                     "xs": 12,
                     "md": 12,
@@ -1615,7 +1615,7 @@
                 },
                 "donation": {
                     "type": "staticText",
-                    "text": "☕ [PayPal Spenden](https://paypal.me/bigplay87) | 📁 [GitHub Repository](https://github.com/fischi87/ioBroker.nebenkosten-monitor)",
+                    "text": "☕ [PayPal Spenden](https://paypal.me/bigplay87) | 📁 [GitHub Repository](https://github.com/fischi87/ioBroker.utility-monitor)",
                     "xs": 12,
                     "sm": 12,
                     "md": 12,
@@ -1632,7 +1632,7 @@
                 },
                 "_features": {
                     "type": "staticText",
-                    "text": "📊 **Verbrauchsüberwachung** - Gas, Wasser, Strom & PV/Einspeisung\n\n🔢 **Multi-Meter Support** *(NEU in 1.4.6)* - Mehrere Zähler pro Typ (z.B. Haus + Werkstatt)\n\n📛 **Konfigurierbare Namen** *(NEU in 1.4.6)* - Gib jedem Zähler einen individuellen Namen\n\n💰 **Automatische Kostenberechnung** - Mit Arbeitspreis & Grundgebühren\n\n☀️ **PV-Integration** - Überwachung von Einspeisung & Vergütung\n\n💳 **Abschlagsüberwachung** - Direkter Vergleich: Bezahlt vs. Verbraucht\n\n🔄 **Gas-Spezial** - Automatische m³ zu kWh Umrechnung\n\n⚡ **HT/NT-Unterstützung** - Volle Unterstützung für Doppeltarife\n\n📅 **Jahres-Historie** - Automatische Archivierung zum Vertragsbeginn\n\n🔔 **Smart Notifications** - Wähle für welche Zähler du benachrichtigt werden möchtest",
+                    "text": "📊 **Verbrauchsüberwachung** - Gas, Wasser, Strom & PV/Einspeisung\n\n🔢 **Multi-Meter Support** - Mehrere Zähler pro Typ (z.B. Haus + Werkstatt)\n\n📛 **Konfigurierbare Namen** - Gib jedem Zähler einen individuellen Namen\n\n💰 **Automatische Kostenberechnung** - Mit Arbeitspreis & Grundgebühren\n\n☀️ **PV-Integration** - Überwachung von Einspeisung & Vergütung\n\n💳 **Abschlagsüberwachung** - Direkter Vergleich: Bezahlt vs. Verbraucht\n\n🔄 **Gas-Spezial** - Automatische m³ zu kWh Umrechnung\n\n⚡ **HT/NT-Unterstützung** - Volle Unterstützung für Doppeltarife\n\n📅 **Jahres-Historie** - Automatische Archivierung zum Vertragsbeginn\n\n🔔 **Smart Notifications** - Wähle für welche Zähler du benachrichtigt werden möchtest",
                     "sm": 12,
                     "xs": 12,
                     "md": 12,
@@ -1666,7 +1666,7 @@
                 },
                 "_usage": {
                     "type": "staticText",
-                    "text": "**1. Abrechnungsende** 📅\n• Erinnert dich (z.B. 7 Tage vorher) daran, den Zählerstand abzulesen und den Zeitraum abzuschließen.\n\n**2. Vertragswechsel** 📋\n• Erinnert dich frühzeitig (z.B. 60 Tage vorher) daran, Tarife zu vergleichen oder die Kündigungsfrist zu prüfen.\n\n**3. Monatlicher Bericht** 📈\n• Optionaler Status-Bericht am 1. jedes Monats via Benachrichtigung.\n\n**4. Zählerauswahl** 🎯 *(NEU in 1.4.6)*\n• Wähle aus, für welche Zähler du Benachrichtigungen erhalten möchtest\n• Wenn leer: Alle Zähler werden benachrichtigt\n\n**💡 Tipp:** Nutze den **Test-Button** zum Prüfen deiner Einstellungen. Du bekommst sofort ein Popup mit dem Ergebnis!",
+                    "text": "**1. Abrechnungsende** 📅\n• Erinnert dich (z.B. 7 Tage vorher) daran, den Zählerstand abzulesen und den Zeitraum abzuschließen.\n\n**2. Vertragswechsel** 📋\n• Erinnert dich frühzeitig (z.B. 60 Tage vorher) daran, Tarife zu vergleichen oder die Kündigungsfrist zu prüfen.\n\n**3. Monatlicher Bericht** 📈\n• Optionaler Status-Bericht am 1. jedes Monats via Benachrichtigung.\n\n**4. Zählerauswahl** 🎯\n• Wähle aus, für welche Zähler du Benachrichtigungen erhalten möchtest\n• Wenn leer: Alle Zähler werden benachrichtigt\n\n**💡 Tipp:** Nutze den **Test-Button** zum Prüfen deiner Einstellungen. Du bekommst sofort ein Popup mit dem Ergebnis!",
                     "sm": 12,
                     "xs": 12,
                     "md": 12,
@@ -1683,7 +1683,7 @@
                 },
                 "_statesInfo": {
                     "type": "staticText",
-                    "text": "**⚠️ Neue Struktur ab v1.4.6:**\n\nAlle Datenpunkte sind jetzt unter `TYPE.METER_NAME.*` zu finden!\n\n**Beispiel Single-Meter:**\n• `gas.main.consumption.daily`\n• `gas.main.costs.totalYearly`\n• `gas.main.billing.closePeriod`\n\n**Beispiel Multi-Meter:**\n• `gas.haus.consumption.yearly` ← Zähler 1\n• `gas.werkstatt.consumption.yearly` ← Zähler 2\n• `gas.totals.consumption.yearly` ← Summe\n\n**📅 billing/** (Abrechnung)\n• **daysRemaining** - Tage bis zum Vertragsende\n• **closePeriod** - Button zum Zeitraum-Abschluss\n• **endReading** - Hier Endzählerstand eintragen\n\n**💰 costs/** (Kosten)\n• **balance** - Aktuelle Bilanz (Nachzahlung/Guthaben)\n• **totalYearly** - Gesamtkosten inkl. Gebühren\n• **yearly** - Nur Verbrauchskosten\n\n**📈 statistics/** (Statistiken)\n• **lastDay** - Gestern-Verbrauch\n• **averageDaily** - Durchschnitt pro Tag\n• **averageMonthly** - Durchschnitt pro Monat",
+                    "text": "**⚠️ Neue Struktur ab v1.4.6:**\n\nAlle Datenpunkte sind jetzt unter `TYPE.METER_NAME.*` zu finden!\n\n**Beispiel Single-Meter:**\n• `gas.main.consumption.daily`\n• `gas.main.costs.totalYearly`\n• `gas.main.billing.closePeriod`\n\n**Beispiel Multi-Meter:**\n• `gas.haus.consumption.yearly` ← Zähler 1\n• `gas.werkstatt.consumption.yearly` ← Zähler 2\n• `gas.totals.consumption.yearly` ← Summe\n\n**📅 billing/** (Abrechnung)\n• **daysRemaining** - Tage bis zum Ende des Abrechnungszeitraums\n• **closePeriod** - Button zum Zeitraum-Abschluss\n• **endReading** - Hier Endzählerstand eintragen\n\n**💰 costs/** (Kosten)\n• **balance** - Aktuelle Bilanz (Nachzahlung/Guthaben)\n• **totalYearly** - Gesamtkosten inkl. Gebühren\n• **yearly** - Nur Verbrauchskosten\n\n**📈 statistics/** (Statistiken)\n• **lastDay** - Gestern-Verbrauch\n• **averageDaily** - Durchschnitt pro Tag\n• **averageMonthly** - Durchschnitt pro Monat",
                     "sm": 12,
                     "xs": 12,
                     "md": 12,
