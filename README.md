@@ -361,6 +361,8 @@ Der Adapter setzt Zähler automatisch zurück:
 
 ### **WORK IN PROGRESS**
 
+- **BREAKING:** ⚠️ **`info.monthlyInstallment` ist jetzt eine Zahl (#11)** - Der Abschlag wurde bisher als formatierter Text abgelegt (`"25.00 €"`) und war dadurch für History, Diagramme und Skripte unbrauchbar. Er ist jetzt ein numerischer Datenpunkt mit Einheit `€`. Bestehende Installationen werden beim Start automatisch umgestellt. **Skripte, die den Text ausgewertet haben, müssen angepasst werden.**
+
 - **FIX:** 🛠️ **Info-Seite** - Der Link zum GitHub-Repository zeigte noch auf den alten Namen `ioBroker.nebenkosten-monitor` und lief ins Leere.
 - **FIX:** 🛠️ **Beschreibung von `daysRemaining`** - Der Datenpunkt war als „Tage bis zum Vertragsende" beschrieben, zählt aber bis zum Ende des Abrechnungszeitraums. Diese Formulierung hatte zu Missverständnissen geführt.
 - **DOCS:** 🧹 **Info-Seite entrümpelt** - Fest eingetragene Versionsnummer entfernt (Admin zeigt sie ohnehin an) und veraltete „NEU in 1.4.6"-Hinweise gestrichen.
