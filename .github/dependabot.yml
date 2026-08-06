@@ -1,24 +1,36 @@
 version: 2
 updates:
-  - package-ecosystem: npm
-    directory: "/"
-    schedule:
-      interval: monthly
-      day: 27
-      time: "00:05"
-      timezone: Europe/Berlin
-    open-pull-requests-limit: 5
-    assignees:
-      - fischi87
-    versioning-strategy: increase
+    - package-ecosystem: npm
+      directory: "/"
+      schedule:
+          interval: monthly
+          day: 27
+          time: "00:05"
+          timezone: Europe/Berlin
+      open-pull-requests-limit: 5
+      assignees:
+          - fischi87
+      versioning-strategy: increase
+      # Wait before picking up a freshly published release to reduce supply chain risk
+      cooldown:
+          default: 7
+      ignore:
+          # @types/node must follow the Node version the adapter supports,
+          # so it is bumped deliberately instead of automatically
+          - dependency-name: "@types/node"
+            update-types:
+                - "version-update:semver-major"
+                - "version-update:semver-minor"
 
-  - package-ecosystem: github-actions
-    directory: "/"
-    schedule:
-      interval: monthly
-      day: 27
-      time: "00:05"
-      timezone: Europe/Berlin
-    open-pull-requests-limit: 5
-    assignees:
-      - fischi87
+    - package-ecosystem: github-actions
+      directory: "/"
+      schedule:
+          interval: monthly
+          day: 27
+          time: "00:05"
+          timezone: Europe/Berlin
+      open-pull-requests-limit: 5
+      assignees:
+          - fischi87
+      cooldown:
+          default: 7

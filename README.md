@@ -359,6 +359,13 @@ Der Adapter setzt Zähler automatisch zurück:
 
 ## Changelog
 
+### **WORK IN PROGRESS**
+
+- **FIX:** 🛠️ **Timer werden jetzt beim Adapter registriert** - `setInterval` und `setTimeout` liefen an der Adapter-Verwaltung vorbei und wurden vom js-controller beim Entladen nicht aufgeräumt. Jetzt über `this.setInterval()` bzw. `adapter.setTimeout()`.
+- **CHORE:** ⬆️ **Node 22 als Mindestversion** - `engines.node` von `>= 20` auf `>= 22` angehoben, passend zum aktuellen js-controller.
+- **CHORE:** 🔧 **CI und Dependabot** - Workflow-Vorgaben des ioBroker-Checkers umgesetzt (Node-Versionen, Job-Abhängigkeiten, Automerge-Action, Cooldown für Abhängigkeits-Updates).
+- **CHORE:** 🧹 **Ungenutzte `debounce`-Hilfsfunktion entfernt.**
+
 ### 1.6.5 (2026-08-06)
 
 - **BREAKING:** ⚠️ **`info.monthlyInstallment` ist jetzt eine Zahl (#11)** - Der Abschlag wurde bisher als formatierter Text abgelegt (`"25.00 €"`) und war dadurch für History, Diagramme und Skripte unbrauchbar. Er ist jetzt ein numerischer Datenpunkt mit Einheit `€`. Bestehende Installationen werden beim Start automatisch umgestellt. **Skripte, die den Text ausgewertet haben, müssen angepasst werden.**

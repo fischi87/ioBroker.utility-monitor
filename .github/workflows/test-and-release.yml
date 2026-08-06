@@ -13,12 +13,10 @@ on:
       - "v[0-9]+.[0-9]+.[0-9]+-**"
   pull_request: {}
 
-# Cancel previous PR/branch runs when a new commit is pushed.
-# Runs on main are never cancelled: main and its re-runs share this group, so a
-# re-run of an older main build used to abort the build of the newest commit.
+# Cancel previous PR/branch runs when a new commit is pushed
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+  group: ${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   # Performs quick checks before the expensive test runs
@@ -30,13 +28,15 @@ jobs:
     steps:
       - uses: ioBroker/testing-action-check@v1
         with:
-          node-version: '20.x'
+          node-version: '22.x'
           # Uncomment the following line if your adapter cannot be installed using 'npm ci'
           # install-command: 'npm install'
           lint: true
 
   # Runs adapter tests on all supported node versions and OSes
   adapter-tests:
+    needs: [check-and-lint]
+
     if: contains(github.event.head_commit.message, '[skip ci]') == false
 
     runs-on: ${{ matrix.os }}
@@ -84,7 +84,7 @@ jobs:
     steps:
       - uses: ioBroker/testing-action-deploy@v1
         with:
-          node-version: '22.x'
+          node-version: '24.x'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           # Sentry is intentionally not enabled: this adapter does not use it
           # (no sentry plugin in io-package.json, no code references)

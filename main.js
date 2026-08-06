@@ -221,7 +221,7 @@ class UtilityMonitor extends utils.Adapter {
      */
     setupPeriodicTasks() {
         // Check every minute for period changes
-        this.periodicTimers.checkPeriods = setInterval(async () => {
+        this.periodicTimers.checkPeriods = this.setInterval(async () => {
             await this.checkPeriodResets();
         }, 60000); // Every minute
 
@@ -241,7 +241,7 @@ class UtilityMonitor extends utils.Adapter {
             // Clear all timers
             Object.values(this.periodicTimers).forEach(timer => {
                 if (timer) {
-                    clearInterval(timer);
+                    this.clearInterval(timer);
                 }
             });
 
