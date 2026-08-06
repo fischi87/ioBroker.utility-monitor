@@ -1,8 +1,21 @@
 {
     "common": {
         "name": "utility-monitor",
-        "version": "1.6.4",
+        "version": "1.6.5",
         "news": {
+            "1.6.5": {
+                "en": "Breaking: info.monthlyInstallment is now a number with unit EUR instead of formatted text, so it can be logged, charted and used in scripts. Existing installations are converted automatically. Also fixes the outdated repository link and the misleading description of daysRemaining on the info page.",
+                "de": "Breaking: info.monthlyInstallment ist jetzt eine Zahl mit Einheit EUR statt formatierter Text und damit für History, Diagramme und Skripte nutzbar. Bestehende Installationen werden automatisch umgestellt. Außerdem: veralteter Repository-Link und irreführende Beschreibung von daysRemaining auf der Info-Seite korrigiert.",
+                "ru": "Важно: info.monthlyInstallment теперь число с единицей EUR вместо форматированного текста, поэтому его можно записывать в историю, строить графики и использовать в скриптах. Существующие установки преобразуются автоматически. Также исправлены устаревшая ссылка на репозиторий и неверное описание daysRemaining на информационной странице.",
+                "pt": "Importante: info.monthlyInstallment é agora um número com unidade EUR em vez de texto formatado, podendo assim ser registado, representado em gráficos e usado em scripts. As instalações existentes são convertidas automaticamente. Corrigidos também o link desatualizado do repositório e a descrição enganosa de daysRemaining na página de informação.",
+                "nl": "Belangrijk: info.monthlyInstallment is nu een getal met eenheid EUR in plaats van opgemaakte tekst en daardoor bruikbaar voor history, grafieken en scripts. Bestaande installaties worden automatisch omgezet. Verder zijn de verouderde repositorylink en de misleidende omschrijving van daysRemaining op de infopagina gecorrigeerd.",
+                "fr": "Important : info.monthlyInstallment est désormais un nombre avec l'unité EUR au lieu d'un texte formaté, ce qui permet de l'enregistrer, de le représenter graphiquement et de l'utiliser dans des scripts. Les installations existantes sont converties automatiquement. Le lien obsolète vers le dépôt et la description trompeuse de daysRemaining sur la page d'information ont également été corrigés.",
+                "it": "Importante: info.monthlyInstallment è ora un numero con unità EUR anziché testo formattato, quindi utilizzabile per lo storico, i grafici e gli script. Le installazioni esistenti vengono convertite automaticamente. Corretti inoltre il link obsoleto al repository e la descrizione fuorviante di daysRemaining nella pagina informativa.",
+                "es": "Importante: info.monthlyInstallment es ahora un número con unidad EUR en lugar de texto con formato, por lo que puede registrarse, representarse en gráficos y usarse en scripts. Las instalaciones existentes se convierten automáticamente. También se han corregido el enlace obsoleto al repositorio y la descripción engañosa de daysRemaining en la página de información.",
+                "pl": "Ważne: info.monthlyInstallment jest teraz liczbą z jednostką EUR zamiast sformatowanego tekstu, dzięki czemu nadaje się do historii, wykresów i skryptów. Istniejące instalacje są konwertowane automatycznie. Poprawiono także nieaktualny link do repozytorium oraz mylący opis daysRemaining na stronie informacyjnej.",
+                "uk": "Важливо: info.monthlyInstallment тепер число з одиницею EUR замість форматованого тексту, тож його можна записувати в історію, будувати графіки та використовувати у скриптах. Наявні встановлення перетворюються автоматично. Також виправлено застаріле посилання на репозиторій і хибний опис daysRemaining на інформаційній сторінці.",
+                "zh-cn": "重要变更：info.monthlyInstallment 现在是带单位 EUR 的数值，而非格式化文本，因此可用于历史记录、图表和脚本。现有安装会自动转换。此外修正了信息页中失效的仓库链接以及 daysRemaining 的误导性描述。"
+            },
             "1.6.4": {
                 "en": "Fix: billing countdown is now refreshed continuously instead of only at adapter start; monthly report is no longer sent twice. Also contains the previously unpublished fixes: monthly reset on the last day of the month and daily/monthly start values set to 0.",
                 "de": "Fix: Abrechnungs-Countdown wird jetzt laufend statt nur beim Adapterstart aktualisiert; Monats-Report wird nicht mehr doppelt versendet. Enthält zudem die bisher unveröffentlichten Korrekturen: Monats-Reset am letzten Tag des Monats und Startwerte für Tag/Monat auf 0.",
