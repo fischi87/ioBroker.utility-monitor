@@ -1,37 +1,45 @@
+# Dependabot configuration
+# Cooldown delays updating normal npm dependencies by 7 days but allows security updates to be processed immediately.
+# Note: Cooldown is not supported for the github-actions ecosystem.
+# Reference: https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference
 version: 2
 updates:
-    - package-ecosystem: npm
-      # Cover the adapter itself and the admin frontend build project
-      directories:
-          - "/"
-          - "/admin/src-admin"
+    - package-ecosystem: 'github-actions'
+      directory: '/'
       schedule:
-          interval: monthly
-          time: "04:00"
-          timezone: Europe/Berlin
+          interval: 'cron'
+          timezone: 'Europe/Berlin'
+          cronjob: '23 4 9 * *'
       open-pull-requests-limit: 15
-      assignees:
-          - fischi87
-      versioning-strategy: increase
-      # Wait before picking up a freshly published release to reduce supply chain risk
+
+    - package-ecosystem: 'npm'
+      directory: '/'
+      schedule:
+          interval: 'cron'
+          timezone: 'Europe/Berlin'
+          cronjob: '23 4 9 * *'
+      open-pull-requests-limit: 15
+      versioning-strategy: 'increase'
       cooldown:
-          default: 7
+          default-days: 7
       ignore:
           # @types/node must follow the Node version the adapter supports,
-          # so it is bumped deliberately instead of automatically
-          - dependency-name: "@types/node"
+          # so major bumps are done deliberately instead of automatically
+          - dependency-name: '@types/node'
             update-types:
-                - "version-update:semver-major"
-                - "version-update:semver-minor"
+                - 'version-update:semver-major'
 
-    - package-ecosystem: github-actions
-      directory: "/"
+    - package-ecosystem: 'npm'
+      directory: '/admin/src-admin'
       schedule:
-          interval: monthly
-          time: "04:00"
-          timezone: Europe/Berlin
+          interval: 'cron'
+          timezone: 'Europe/Berlin'
+          cronjob: '23 4 9 * *'
       open-pull-requests-limit: 15
-      assignees:
-          - fischi87
+      versioning-strategy: 'increase'
       cooldown:
-          default: 7
+          default-days: 7
+      ignore:
+          - dependency-name: '@types/node'
+            update-types:
+                - 'version-update:semver-major'
