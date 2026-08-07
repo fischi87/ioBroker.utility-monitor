@@ -103,8 +103,6 @@
     "Zählerstand bei Vertragsbeginn (kWh)": "Показания счетчика в начале контракта (кВтч)",
     "Zählerstand bei Vertragsbeginn (m³)": "Показания счетчика при заключении договора (м³)",
     "nebenkosten-monitor adapter settings": "Настройки адаптера для nebenkosten-monitor",
-    "option1": "вариант 1",
-    "option2": "вариант 2",
     "z.B. 0 (Zählerstand am Stichtag)": "например 0 (отсчет на базовую дату)",
     "z.B. 0 (optional)": "например 0 (необязательно)",
     "z.B. 0.08": "например 0,08",

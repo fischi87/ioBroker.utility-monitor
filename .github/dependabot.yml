@@ -1,13 +1,15 @@
 version: 2
 updates:
     - package-ecosystem: npm
-      directory: "/"
+      # Cover the adapter itself and the admin frontend build project
+      directories:
+          - "/"
+          - "/admin/src-admin"
       schedule:
           interval: monthly
-          day: 27
-          time: "00:05"
+          time: "04:00"
           timezone: Europe/Berlin
-      open-pull-requests-limit: 5
+      open-pull-requests-limit: 15
       assignees:
           - fischi87
       versioning-strategy: increase
@@ -26,10 +28,9 @@ updates:
       directory: "/"
       schedule:
           interval: monthly
-          day: 27
-          time: "00:05"
+          time: "04:00"
           timezone: Europe/Berlin
-      open-pull-requests-limit: 5
+      open-pull-requests-limit: 15
       assignees:
           - fischi87
       cooldown:
