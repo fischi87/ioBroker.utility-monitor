@@ -2,6 +2,8 @@
 
 # ioBroker.utility-monitor
 
+> 🇩🇪 **Deutsche Fassung:** [README_de.md](README_de.md)
+
 [![NPM version](https://img.shields.io/npm/v/iobroker.utility-monitor.svg)](https://www.npmjs.com/package/iobroker.utility-monitor)
 [![GitHub release](https://img.shields.io/github/v/release/fischi87/ioBroker.utility-monitor)](https://github.com/fischi87/ioBroker.utility-monitor/releases)
 [![GitHub license](https://img.shields.io/github/license/fischi87/ioBroker.utility-monitor)](https://github.com/fischi87/ioBroker.utility-monitor/blob/main/LICENSE)
@@ -11,65 +13,65 @@
 
 Monitor gas, water, and electricity consumption with automatic cost calculation, advance payment monitoring, and detailed statistics.
 
-### ✨ Hauptfunktionen
+### ✨ Main features
 
-- 📊 **Verbrauchsüberwachung** für Gas, Wasser, Strom und **PV/Einspeisung**
-- 🎯 **Multi-Meter Support** - Mehrere Zähler pro Typ (z.B. Hauptzähler + Werkstatt)
-- 💰 **Automatische Kostenberechnung** mit Arbeitspreis und Grundgebühr
-- ☀️ **PV & Einspeisung** - Überwache deine Einspeisung und Vergütung
-- 💳 **Abschlagsüberwachung** - Sehe sofort ob Nachzahlung oder Guthaben droht
-- 🔄 **Flexible Sensoren** - Nutzt vorhandene Sensoren (Shelly, Tasmota, Homematic, etc.)
-- ⚡ **HT/NT-Tarife** - Volle Unterstützung für Hoch- und Nebentarife (Tag/Nacht)
-- 🔄 **Gas-Spezial** - Automatische Umrechnung von m³ in kWh
-- 🕛 **Automatische Resets** - Täglich, wöchentlich, monatlich und jährlich (Vertragsjubiläum)
-- 🔔 **Intelligente Benachrichtigungen** - Getrennte Erinnerungen für Abrechnungsende (Zählerstand) und Vertragswechsel (Tarif-Check) mit einstellbaren Vorlaufzeiten
-- � **Wöchentliche Auswertung** _(NEU in 1.5.0)_ - Verfolge deinen Verbrauch auch auf Wochenbasis
-- �📥 **CSV Import** _(NEU in 1.5.0)_ - Importiere historische Zählerstände einfach per Drag-and-Drop
-- ⌨️ **Komma-Support** - Admin UI akzeptiert `12,50` oder `12.50` für Dezimalzahlen
+- 📊 **Consumption monitoring** for gas, water, electricity and **PV/feed-in**
+- 🎯 **Multi-meter support** - several meters per type (e.g. main meter + workshop)
+- 💰 **Automatic cost calculation** with unit price and base fee
+- ☀️ **PV & feed-in** - monitor your feed-in and its compensation
+- 💳 **Advance payment monitoring** - see immediately whether an additional payment or a credit is coming
+- 🔄 **Flexible sensors** - works with the sensors you already have (Shelly, Tasmota, Homematic, etc.)
+- ⚡ **Peak/off-peak tariffs** - full support for day/night tariffs
+- 🔄 **Gas specials** - automatic conversion from m³ to kWh
+- 🕛 **Automatic resets** - daily, weekly, monthly and yearly (contract anniversary)
+- 🔔 **Smart notifications** - separate reminders for the end of the billing period (meter reading) and for a contract change (tariff check), each with its own lead time
+- 📈 **Weekly evaluation** - track your consumption on a weekly basis as well
+- 📥 **CSV import** - import historical meter readings by drag and drop
+- ⌨️ **Comma support** - the admin UI accepts `12,50` as well as `12.50` for decimals
 
 ---
 
 ## 💝 Support
 
-Gefällt dir dieser Adapter? Du kannst mich gerne mit einem Kaffee unterstützen! ☕
+Do you like this adapter? Feel free to buy me a coffee! ☕
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/bigplay87)
 
 ---
 
-## 🚀 Schnellstart
+## 🚀 Quick start
 
 ### 1. Installation
 
-1. Adapter über die ioBroker Admin-Oberfläche installieren
-2. Instanz erstellen
-3. Konfiguration öffnen
+1. Install the adapter through the ioBroker admin interface
+2. Create an instance
+3. Open the configuration
 
-### 2. Grundkonfiguration (Beispiel: Gas)
+### 2. Basic configuration (example: gas)
 
-1. ✅ **Gas-Überwachung aktivieren**
-2. 🔍 **Sensor auswählen** - Deinen Gaszähler-Sensor (in m³)
-3. 📝 **Zählerstand bei Vertragsbeginn** - z.B. 10250 m³ (für korrekte Jahresberechnung)
-4. 📅 **Vertragsbeginn** - z.B. 01.01.2026 (für korrekten Jahresreset und Abschlagsberechnung)
-5. 🔧 **Offset** _(optional)_ - Falls dein Hardware-Zähler nicht bei 0 startet
-6. 🔥 **Brennwert & Z-Zahl** - Von deiner Gasrechnung (z.B. 11,5 und 0,95)
-7. 💶 **Preise eintragen**:
-    - Arbeitspreis: 0,1835 €/kWh
-    - Grundgebühr: 15,03 €/Monat
-    - Jahresgebühr: 60,00 €/Jahr (z.B. Zählermiete)
-8. 💳 **Abschlag** - Monatliche Vorauszahlung (z.B. 150 €)
+1. ✅ **Enable gas monitoring**
+2. 🔍 **Select the sensor** - your gas meter sensor (in m³)
+3. 📝 **Meter reading at contract start** - e.g. 10250 m³ (needed for a correct yearly calculation)
+4. 📅 **Contract start** - e.g. 01.01.2026 (needed for the yearly reset and the advance payment calculation)
+5. 🔧 **Offset** _(optional)_ - in case your hardware meter does not start at 0
+6. 🔥 **Calorific value & Z number** - taken from your gas bill (e.g. 11.5 and 0.95)
+7. 💶 **Enter the prices**:
+    - Unit price: 0.1835 €/kWh
+    - Base fee: 15.03 €/month
+    - Annual fee: 60.00 €/year (e.g. meter rent)
+8. 💳 **Advance payment** - monthly prepayment (e.g. 150 €)
 
-**Fertig!** Der Adapter berechnet nun automatisch alle Kosten! 🎉
+**Done!** The adapter now calculates all costs automatically. 🎉
 
 ---
 
-## ⚠️ Breaking Changes in Version 1.4.6
+## ⚠️ Breaking changes in version 1.4.6
 
-**WICHTIG:** Version 1.4.6 ändert die State-Struktur grundlegend!
+**IMPORTANT:** Version 1.4.6 fundamentally changes the state structure.
 
-### Was hat sich geändert?
+### What has changed?
 
-**Vorher (bis 1.4.5):**
+**Before (up to 1.4.5):**
 
 ```
 gas.consumption.daily
@@ -77,48 +79,48 @@ gas.costs.monthly
 wasser.consumption.daily
 ```
 
-**Jetzt (ab 1.4.6):**
+**Now (since 1.4.6):**
 
 ```
-gas.main.consumption.daily          ← Hauptzähler mit Namen "main"
+gas.main.consumption.daily          ← main meter named "main"
 gas.main.costs.monthly
 wasser.main.consumption.daily
 ```
 
-### 🔧 Migration erforderlich
+### 🔧 Migration required
 
-1. **Config öffnen**: Neue Felder "Name des Hauptzählers" für Gas/Wasser/Strom/PV
-2. **Namen eingeben**: Standard ist "main" (empfohlen), oder eigener Name wie "wohnung", "haus"
-3. **Skripte anpassen**: Alle Verweise auf States müssen angepasst werden
+1. **Open the configuration**: new fields "Name of the main meter" for gas/water/electricity/PV
+2. **Enter a name**: the default is "main" (recommended), or your own name such as "flat" or "house"
+3. **Adjust scripts**: every reference to a state has to be updated
 
     ```javascript
-    // Alt:
+    // Old:
     getState('utility-monitor.0.gas.consumption.daily');
 
-    // Neu:
+    // New:
     getState('utility-monitor.0.gas.main.consumption.daily');
     ```
 
-4. **Visualisierungen updaten**: VIS, Grafana, etc. auf neue Pfade anpassen
+4. **Update visualisations**: adjust VIS, Grafana, etc. to the new paths
 
-### 💡 Warum diese Änderung?
+### 💡 Why this change?
 
-- **Konsistenz**: Alle Zähler (Haupt + Zusätzlich) verwenden jetzt die gleiche Struktur
-- **Flexibilität**: Hauptzähler kann jetzt frei benannt werden (z.B. "erdgeschoss", "gesamt")
-- **Klarheit**: Keine Special-Case Logik mehr im Code
-- **Multi-Meter**: Bessere Unterstützung für mehrere Zähler pro Typ
-- **CSV Import**: Einfaches Nachpflegen von historischen Daten via Drag-and-Drop im Admin-Interface
-- **Strukturierte Statistiken (v1.6.0)**: Klare Trennung von Verbrauch, Kosten und Zeitstempeln
+- **Consistency**: all meters (main + additional) now use the same structure
+- **Flexibility**: the main meter can be named freely (e.g. "groundfloor", "total")
+- **Clarity**: no more special-case logic in the code
+- **Multi-meter**: better support for several meters per type
+- **CSV import**: easy way to add historical data by drag and drop in the admin interface
+- **Structured statistics (v1.6.0)**: clear separation of consumption, costs and timestamps
 
 ---
 
-## ⚠️ Breaking Changes in Version 1.6.0
+## ⚠️ Breaking changes in version 1.6.0
 
-**WICHTIG:** Version 1.6.0 strukturiert das Statistik-Objekt um!
+**IMPORTANT:** Version 1.6.0 restructures the statistics object.
 
-### Was hat sich geändert?
+### What has changed?
 
-**Vorher (bis 1.5.1):**
+**Before (up to 1.5.1):**
 
 ```
 gas.main.statistics.lastDay
@@ -126,234 +128,235 @@ gas.main.statistics.lastMonth
 gas.main.statistics.lastDayStart
 ```
 
-**Jetzt (ab 1.6.0):**
+**Now (since 1.6.0):**
 
 ```
-gas.main.statistics.consumption.lastDay      ← Verbrauchswerte
-gas.main.statistics.cost.lastDay             ← Kostenwerte (NEU!)
-gas.main.statistics.timestamps.lastDayStart   ← Zeitstempel der Resets
+gas.main.statistics.consumption.lastDay      ← consumption values
+gas.main.statistics.cost.lastDay             ← cost values (NEW!)
+gas.main.statistics.timestamps.lastDayStart   ← timestamps of the resets
 ```
 
-### 🔧 Migration erforderlich
+### 🔧 Migration required
 
-1. **Skripte/VIS anpassen**: Falls du direkt auf Statistik-Datenpunkte zugreifst, musst du die Pfade anpassen.
-2. **Kostenstatistiken**: Du profitierst nun von historischen Kostenübersichten (Tag/Woche/Monat).
+1. **Adjust scripts/VIS**: if you access statistics states directly, the paths have to be updated.
+2. **Cost statistics**: you now benefit from historical cost overviews (day/week/month).
 
 ---
 
-## 📥 CSV Import (v1.5.0)
+## 📥 CSV import
 
-Der neue Import-Tab ermöglicht es dir, historische Zählerstände bequem hochzuladen.
+The import tab lets you upload historical meter readings comfortably.
 
-### Unterstützte Formate
+### Supported formats
 
-- **Generic CSV**: Datum (DD.MM.YYYY), Zählerstand
-- **EhB+ App**: Direkter Import aus der EhB+ App möglich
+- **Generic CSV**: date (DD.MM.YYYY), meter reading
+- **EhB+ app**: direct import from the EhB+ app
 
-### So funktioniert's
+### How it works
 
-1. Gehe zum Tab **Import**
-2. Wähle den **Zählertyp** (Gas/Wasser/Strom) und den **Zähler** aus
-3. Ziehe deine CSV-Datei in das Upload-Feld
-4. Klicke auf **Daten importieren**
-
----
-
-## 📊 Datenpunkte erklärt
-
-Für jede aktivierte Verbrauchsart (Gas/Wasser/Strom/PV) werden folgende Ordner angelegt:
-
-**Wichtig:** Seit Version 1.4.6 beinhalten alle Pfade den Zähler-Namen (z.B. `gas.main.*` statt `gas.*`)
-
-### 🗂️ **consumption** (Verbrauch)
-
-| Datenpunkt      | Beschreibung                                          | Beispiel         |
-| --------------- | ----------------------------------------------------- | ---------------- |
-| `daily`         | Verbrauch **heute** (seit 00:00 Uhr)                  | 12,02 kWh        |
-| `dailyVolume`   | Verbrauch heute in m³                                 | 1,092 m³         |
-| `weekly`        | Verbrauch **diese Woche** (seit Montag)               | 84,12 kWh        |
-| `weeklyVolume`  | Wöchentlicher Verbrauch in m³                         | 7,65 m³          |
-| `monthly`       | Verbrauch **diesen Monat** (seit 1. des Monats)       | 117,77 kWh       |
-| `monthlyVolume` | Monatlicher Verbrauch in m³                           | 10,69 m³         |
-| `yearly`        | Verbrauch **seit Vertragsbeginn** (this billing year) | 730,01 kWh       |
-| `yearlyVolume`  | Jahresverbrauch in m³                                 | 66,82 m³         |
-| `dailyHT`       | Tagesverbrauch im **Haupttarif** (HT)                 | 8,40 kWh         |
-| `dailyNT`       | Tagesverbrauch im **Nebentarif** (NT)                 | 3,62 kWh         |
-| `weeklyHT`      | Wochenverbrauch im HT                                 | 58,15 kWh        |
-| `weeklyNT`      | Wochenverbrauch im NT                                 | 25,62 kWh        |
-| `monthlyHT`     | Monatsverbrauch im HT                                 | 82,15 kWh        |
-| `monthlyNT`     | Monatsverbrauch im NT                                 | 35,62 kWh        |
-| `yearlyHT`      | Jahresverbrauch im HT                                 | 511,00 kWh       |
-| `yearlyNT`      | Jahresverbrauch im NT                                 | 219,01 kWh       |
-| `lastUpdate`    | Letzte Aktualisierung                                 | 06.01.2026 14:11 |
-
-**💡 Tipp:** `yearly` wird automatisch als `(Aktueller Zählerstand - Offset) - Initial Reading` berechnet!
-
-**📅 Wichtig:** Der Jahresreset erfolgt am **Vertragsbeginn-Datum** (z.B. 12. Mai), NICHT am 1. Januar!
+1. Go to the **Import** tab
+2. Select the **meter type** (gas/water/electricity) and the **meter**
+3. Drag your CSV file into the upload area
+4. Click **Import data**
 
 ---
 
-### 💰 **costs** (Kosten)
+## 📊 States explained
 
-| Datenpunkt    | Was ist das?                                                  | Berechnung                            | Beispiel                       |
-| ------------- | ------------------------------------------------------------- | ------------------------------------- | ------------------------------ |
-| `daily`       | Kosten **heute**                                              | daily × Arbeitspreis                  | 2,27 €                         |
-| `monthly`     | Kosten **diesen Monat**                                       | monthly × Arbeitspreis                | 21,61 €                        |
-| `yearly`      | **Verbrauchskosten** seit Vertragsbeginn                      | yearly × Arbeitspreis                 | 137,61 €                       |
-| `totalYearly` | **Gesamtkosten Jahr** (Verbrauch + alle Fixkosten)            | yearly-cost + basicCharge + annualFee | 212,64 €                       |
-| `basicCharge` | **Grundgebühr akkumuliert**                                   | Grundgebühr × Monate                  | 15,03 €                        |
-| `annualFee`   | **Jahresgebühr** (fester Wert pro Jahr)                       | Jahresgebühr (aus Config)             | 60,00 €                        |
-| `paidTotal`   | **Bezahlt** via Abschlag                                      | Abschlag × Monate                     | 150,00 €                       |
-| `balance`     | **🎯 WICHTIGSTER Wert!**<br>Nachzahlung (+) oder Guthaben (-) | totalYearly - paidTotal               | **+62,64 €**<br>→ Nachzahlung! |
+For every enabled utility type (gas/water/electricity/PV) the following folders are created:
 
-#### 🔍 **balance** genauer erklärt:
+**Important:** Since version 1.4.6 all paths contain the meter name (e.g. `gas.main.*` instead of `gas.*`).
 
-- **Positiv (+50 €)** → ❌ **Nachzahlung**: Du musst am Jahresende zahlen
-- **Negativ (-24 €)** → ✅ **Guthaben**: Du bekommst Geld zurück
-- **Null (0 €)** → ⚖️ **Ausgeglichen**: Verbrauch = Abschlag
+### 🗂️ **consumption**
 
-**Beispiel:**
+| State           | Description                                        | Example          |
+| --------------- | -------------------------------------------------- | ---------------- |
+| `daily`         | Consumption **today** (since 00:00)                | 12.02 kWh        |
+| `dailyVolume`   | Consumption today in m³                            | 1.092 m³         |
+| `weekly`        | Consumption **this week** (since Monday)           | 84.12 kWh        |
+| `weeklyVolume`  | Weekly consumption in m³                           | 7.65 m³          |
+| `monthly`       | Consumption **this month** (since the 1st)         | 117.77 kWh       |
+| `monthlyVolume` | Monthly consumption in m³                          | 10.69 m³         |
+| `yearly`        | Consumption **since contract start** (billing year)| 730.01 kWh       |
+| `yearlyVolume`  | Yearly consumption in m³                           | 66.82 m³         |
+| `dailyHT`       | Daily consumption at the **peak tariff** (HT)      | 8.40 kWh         |
+| `dailyNT`       | Daily consumption at the **off-peak tariff** (NT)  | 3.62 kWh         |
+| `weeklyHT`      | Weekly consumption at the peak tariff              | 58.15 kWh        |
+| `weeklyNT`      | Weekly consumption at the off-peak tariff          | 25.62 kWh        |
+| `monthlyHT`     | Monthly consumption at the peak tariff             | 82.15 kWh        |
+| `monthlyNT`     | Monthly consumption at the off-peak tariff         | 35.62 kWh        |
+| `yearlyHT`      | Yearly consumption at the peak tariff              | 511.00 kWh       |
+| `yearlyNT`      | Yearly consumption at the off-peak tariff          | 219.01 kWh       |
+| `lastUpdate`    | Last update                                        | 06.01.2026 14:11 |
+
+**💡 Tip:** `yearly` is calculated automatically as `(current meter reading - offset) - initial reading`.
+
+**📅 Important:** The yearly reset happens on the **contract start date** (e.g. 12 May), NOT on 1 January.
+
+---
+
+### 💰 **costs**
+
+| State         | What is it?                                                     | Calculation                           | Example                            |
+| ------------- | --------------------------------------------------------------- | ------------------------------------- | ---------------------------------- |
+| `daily`       | Costs **today**                                                 | daily × unit price                    | 2.27 €                             |
+| `monthly`     | Costs **this month**                                            | monthly × unit price                  | 21.61 €                            |
+| `yearly`      | **Consumption costs** since contract start                      | yearly × unit price                   | 137.61 €                           |
+| `totalYearly` | **Total costs of the year** (consumption + all fixed costs)     | yearly-cost + basicCharge + annualFee | 212.64 €                           |
+| `basicCharge` | **Accumulated base fee**                                        | base fee × months                     | 15.03 €                            |
+| `annualFee`   | **Annual fee** (fixed value per year)                           | annual fee (from the configuration)   | 60.00 €                            |
+| `paidTotal`   | **Paid** through the advance payment                            | advance payment × months              | 150.00 €                           |
+| `balance`     | **🎯 THE key value!**<br>Additional payment (+) or credit (-)   | totalYearly - paidTotal               | **+62.64 €**<br>→ additional payment |
+
+#### 🔍 **balance** in detail
+
+- **Positive (+50 €)** → ❌ **Additional payment**: you will have to pay at the end of the year
+- **Negative (-24 €)** → ✅ **Credit**: you will get money back
+- **Zero (0 €)** → ⚖️ **Balanced**: consumption = advance payment
+
+**Example:**
 
 ```
-Verbrauchskosten:  137,61 € (yearly)
-Grundgebühr:      + 15,03 € (basicCharge - 1 Monat × 15,03€)
-Jahresgebühr:     + 60,00 € (annualFee - fester Wert)
+Consumption costs:  137.61 € (yearly)
+Base fee:          + 15.03 € (basicCharge - 1 month × 15.03 €)
+Annual fee:        + 60.00 € (annualFee - fixed value)
 ────────────────────────────
-Gesamtkosten:      212,64 € (totalYearly)
+Total costs:        212.64 € (totalYearly)
 
-Bezahlt (Abschlag): 150,00 € (paidTotal - 1 Monat × 150€)
+Paid (advance):     150.00 € (paidTotal - 1 month × 150 €)
 ────────────────────────────
-Balance:           +62,64 € → Nachzahlung
+Balance:            +62.64 € → additional payment
 ```
 
 ---
 
-### ℹ️ **info** (Informationen)
+### ℹ️ **info**
 
-| Datenpunkt           | Beschreibung                 | Beispiel         |
-| -------------------- | ---------------------------- | ---------------- |
-| `currentPrice`       | Aktueller Arbeitspreis       | 0,1885 €/kWh     |
-| `meterReading`       | Zählerstand in kWh           | 112711,26 kWh    |
-| `meterReadingVolume` | Zählerstand in m³ (nur Gas)  | 10305,03 m³      |
-| `lastSync`           | Letzte Sensor-Aktualisierung | 06.01.2026 14:11 |
-| `sensorActive`       | Sensor verbunden?            | ✅ true          |
-
----
-
-### 📈 **statistics** (Statistiken)
-
-Seit Version 1.6.1 sind Statistiken in drei Unterkanäle unterteilt:
-
-#### 📊 **consumption** (Verbrauchshistorie)
-
-| Datenpunkt       | Beschreibung                         |
-| ---------------- | ------------------------------------ |
-| `lastDay`        | Verbrauch **gestern** (Vortag)       |
-| `lastWeek`       | Verbrauch **letzte Woche**           |
-| `lastMonth`      | Verbrauch **letzter Monat**          |
-| `lastYear`       | Verbrauch **letztes Jahr** (Vorjahr) |
-| `averageDaily`   | Durchschnittlicher Tagesverbrauch    |
-| `averageMonthly` | Durchschnittlicher Monatsverbrauch   |
-
-#### 💰 **cost** (Kostenhistorie - NEU in 1.6.0)
-
-| Datenpunkt       | Beschreibung                      |
-| ---------------- | --------------------------------- |
-| `lastDay`        | Kosten **gestern** (Vortag)       |
-| `lastWeek`       | Kosten **letzte Woche**           |
-| `lastMonth`      | Kosten **letzter Monat**          |
-| `lastYear`       | Kosten **letztes Jahr** (Vorjahr) |
-| `averageDaily`   | Durchschnittliche Tageskosten     |
-| `averageMonthly` | Durchschnittliche Monatskosten    |
-
-#### 📅 **timestamps** (Reset-Zeitstempel)
-
-| Datenpunkt       | Beschreibung                             |
-| ---------------- | ---------------------------------------- |
-| `lastDayStart`   | Letzter Tages-Reset (23:59 Uhr)          |
-| `lastWeekStart`  | Letzter Wochen-Reset (Sonntag 23:59)     |
-| `lastMonthStart` | Letzter Monats-Reset (letzter Tag 23:59) |
-| `lastYearStart`  | Vertragsbeginn / Jahresstart             |
+| State                | Description                     | Example          |
+| -------------------- | ------------------------------- | ---------------- |
+| `currentPrice`       | Current unit price              | 0.1885 €/kWh     |
+| `meterReading`       | Meter reading in kWh            | 112711.26 kWh    |
+| `meterReadingVolume` | Meter reading in m³ (gas only)  | 10305.03 m³      |
+| `monthlyInstallment` | Configured monthly advance payment | 150 €         |
+| `lastSync`           | Last sensor update              | 06.01.2026 14:11 |
+| `sensorActive`       | Sensor connected?               | ✅ true          |
 
 ---
 
-### 📅 **billing** (Abrechnungszeitraum)
+### 📈 **statistics**
 
-| Datenpunkt          | Beschreibung                             | Beispiel    |
-| ------------------- | ---------------------------------------- | ----------- |
-| `endReading`        | Endzählerstand (manuell eintragen)       | 10316.82 m³ |
-| `closePeriod`       | Zeitraum jetzt abschließen (Button)      | true/false  |
-| `periodEnd`         | Abrechnungszeitraum endet am             | 01.01.2027  |
-| `daysRemaining`     | Tage bis Abrechnungsende                 | 359 Tage    |
-| `newInitialReading` | Neuer Startwert (für Config übernehmen!) | 10316.82 m³ |
+Since version 1.6.1 the statistics are split into three sub-channels.
 
-**💡 Workflow am Jahresende:**
+#### 📊 **consumption** (consumption history)
 
-1. Physischen Zähler ablesen (z.B. 10316.82 m³)
-2. Wert in `endReading` eintragen
-3. `closePeriod` auf `true` setzen
-4. ✅ Adapter archiviert automatisch alle Daten in `history.{JAHR}.*`
-5. ⚠️ **Wichtig:** Config aktualisieren mit neuem `initialReading` (siehe `newInitialReading`)
+| State            | Description                     |
+| ---------------- | ------------------------------- |
+| `lastDay`        | Consumption **yesterday**       |
+| `lastWeek`       | Consumption **last week**       |
+| `lastMonth`      | Consumption **last month**      |
+| `lastYear`       | Consumption **last year**       |
+| `averageDaily`   | Average daily consumption       |
+| `averageMonthly` | Average monthly consumption     |
+
+#### 💰 **cost** (cost history)
+
+| State            | Description             |
+| ---------------- | ----------------------- |
+| `lastDay`        | Costs **yesterday**     |
+| `lastWeek`       | Costs **last week**     |
+| `lastMonth`      | Costs **last month**    |
+| `lastYear`       | Costs **last year**     |
+| `averageDaily`   | Average daily costs     |
+| `averageMonthly` | Average monthly costs   |
+
+#### 📅 **timestamps** (reset timestamps)
+
+| State            | Description                                |
+| ---------------- | ------------------------------------------ |
+| `lastDayStart`   | Last daily reset (23:59)                   |
+| `lastWeekStart`  | Last weekly reset (Sunday 23:59)           |
+| `lastMonthStart` | Last monthly reset (last day of the month) |
+| `lastYearStart`  | Contract start / start of the year         |
 
 ---
 
-### 📊 **history** (Jahres-Historie)
+### 📅 **billing**
 
-| Datenpunkt                  | Beschreibung                            | Beispiel   |
-| --------------------------- | --------------------------------------- | ---------- |
-| `history.2024.yearly`       | Jahresverbrauch 2024                    | 730.01 kWh |
-| `history.2024.yearlyVolume` | Jahresverbrauch 2024 in m³ (Gas/Wasser) | 66.82 m³   |
-| `history.2024.totalYearly`  | Gesamtkosten 2024                       | 162.64 €   |
-| `history.2024.balance`      | Bilanz 2024 (Nachzahlung/Guthaben)      | +12.64 €   |
+| State               | Description                                    | Example     |
+| ------------------- | ---------------------------------------------- | ----------- |
+| `endReading`        | Final meter reading (enter manually)           | 10316.82 m³ |
+| `closePeriod`       | Close the period now (button)                  | true/false  |
+| `periodEnd`         | The billing period ends on                     | 01.01.2027  |
+| `daysRemaining`     | Days until the end of the billing period       | 359 days    |
+| `newInitialReading` | New start value (copy it into the config!)     | 10316.82 m³ |
 
-**💡 Automatische Archivierung:**
+**💡 Workflow at the end of the year:**
 
-- Wird beim Abschluss des Abrechnungszeitraums erstellt
-- Speichert alle wichtigen Jahreshöchstwerte inkl. HT/NT
-- Ermöglicht Jahresvergleiche
+1. Read the physical meter (e.g. 10316.82 m³)
+2. Enter the value in `endReading`
+3. Set `closePeriod` to `true`
+4. ✅ The adapter archives all data automatically under `history.{YEAR}.*`
+5. ⚠️ **Important:** update the configuration with the new `initialReading` (see `newInitialReading`)
 
 ---
 
-### 🔧 **adjustment** (Manuelle Anpassung)
+### 📊 **history** (yearly history)
 
-Korrigiere Sensor-Abdrift durch manuelle Anpassung.
+| State                       | Description                                | Example    |
+| --------------------------- | ------------------------------------------ | ---------- |
+| `history.2024.yearly`       | Yearly consumption 2024                    | 730.01 kWh |
+| `history.2024.yearlyVolume` | Yearly consumption 2024 in m³ (gas/water)  | 66.82 m³   |
+| `history.2024.totalYearly`  | Total costs 2024                           | 162.64 €   |
+| `history.2024.balance`      | Balance 2024 (additional payment/credit)   | +12.64 €   |
 
-| Datenpunkt | Beschreibung                         | Beispiel  |
-| ---------- | ------------------------------------ | --------- |
-| `value`    | Korrekturwert (Differenz zum Zähler) | +4.2 m³   |
-| `note`     | Notiz/Grund für Anpassung (optional) | "Ausfall" |
-| `applied`  | Zeitstempel der letzten Anwendung    | 17035...  |
+**💡 Automatic archiving:**
+
+- Created when the billing period is closed
+- Stores all relevant yearly totals including peak/off-peak
+- Makes year-over-year comparisons possible
+
+---
+
+### 🔧 **adjustment** (manual correction)
+
+Correct sensor drift with a manual adjustment.
+
+| State      | Description                                  | Example   |
+| ---------- | -------------------------------------------- | --------- |
+| `value`    | Correction value (difference to the meter)    | +4.2 m³   |
+| `note`     | Note/reason for the adjustment (optional)     | "Outage"  |
+| `applied`  | Timestamp of the last application             | 17035...  |
 
 **💡 Workflow:**
 
-1. Physischen Zähler ablesen: **10350 m³**
-2. Adapter zeigt: **10346 m³**
-3. Differenz in `adjustment.value` eintragen: **+4**
-4. ✅ Alle Berechnungen werden automatisch korrigiert.
-5. **Dank der HT/NT-Integration** werden Anpassungen bei HT/NT-Tarifen automatisch dem Haupttarif (HT) angerechnet.
+1. Read the physical meter: **10350 m³**
+2. The adapter shows: **10346 m³**
+3. Enter the difference in `adjustment.value`: **+4**
+4. ✅ All calculations are corrected automatically.
+5. **Thanks to the peak/off-peak integration** adjustments are booked to the peak tariff (HT) automatically when dual tariffs are in use.
 
 ---
 
-## ⚙️ Spezialfunktionen
+## ⚙️ Special functions
 
-### ⚡ Gas: m³ → kWh Umrechnung
+### ⚡ Gas: m³ → kWh conversion
 
-Gasverbrauch wird in **m³ gemessen**, aber in **kWh abgerechnet**.
+Gas consumption is **measured in m³** but **billed in kWh**.
 
-**Formel:** `kWh = m³ × Brennwert × Z-Zahl`
+**Formula:** `kWh = m³ × calorific value × Z number`
 
-💡 **Tipp:** Brennwert und Z-Zahl findest du auf deiner Gasrechnung!
+💡 **Tip:** You will find the calorific value and the Z number on your gas bill.
 
-### 🔄 Automatische Resets
+### 🔄 Automatic resets
 
-Der Adapter setzt Zähler automatisch zurück:
+The adapter resets the counters automatically:
 
-| Zeitpunkt             | Was passiert  | Beispiel            |
-| --------------------- | ------------- | ------------------- |
-| **23:59 Uhr** täglich | `daily` → 0   | Neuer Tag beginnt   |
-| **Sonntag 23:59**     | `weekly` → 0  | Neue Woche beginnt  |
-| **Monatsende 23:59**  | `monthly` → 0 | Neuer Monat beginnt |
-| **Vertragsjubiläum**  | `yearly` → 0  | Abrechnungsjahr neu |
+| Point in time            | What happens  | Example                     |
+| ------------------------ | ------------- | --------------------------- |
+| **23:59** every day      | `daily` → 0   | A new day starts            |
+| **Sunday 23:59**         | `weekly` → 0  | A new week starts           |
+| **End of month 23:59**   | `monthly` → 0 | A new month starts          |
+| **Contract anniversary** | `yearly` → 0  | A new billing year starts   |
 
 ---
 
@@ -361,115 +364,116 @@ Der Adapter setzt Zähler automatisch zurück:
 
 ### **WORK IN PROGRESS**
 
-- **FIX:** 🛠️ **Timer werden jetzt beim Adapter registriert** - `setInterval` und `setTimeout` liefen an der Adapter-Verwaltung vorbei und wurden vom js-controller beim Entladen nicht aufgeräumt. Jetzt über `this.setInterval()` bzw. `adapter.setTimeout()`.
-- **CHORE:** ⬆️ **Node 22 als Mindestversion** - `engines.node` von `>= 20` auf `>= 22` angehoben, passend zum aktuellen js-controller.
-- **CHORE:** 🔧 **CI und Dependabot** - Workflow-Vorgaben des ioBroker-Checkers umgesetzt (Node-Versionen, Job-Abhängigkeiten, Automerge-Action, Cooldown für Abhängigkeits-Updates).
-- **CHORE:** 🧹 **Ungenutzte `debounce`-Hilfsfunktion entfernt.**
+- **FIX:** 🛠️ **Timers are now registered with the adapter** - `setInterval` and `setTimeout` bypassed the adapter's timer management and were not cleaned up by the js-controller on unload. They now use `this.setInterval()` and `adapter.setTimeout()`.
+- **DOCS:** 🌐 **English documentation** - the README is now in English, the German version moved to `README_de.md`. All configuration texts are available in English.
+- **CHORE:** ⬆️ **Node 22 as the minimum version** - `engines.node` raised from `>= 20` to `>= 22`, matching the current js-controller.
+- **CHORE:** 🔧 **CI and Dependabot** - applied the workflow requirements of the ioBroker checker (node versions, job dependencies, automerge action, cooldown for dependency updates).
+- **CHORE:** 🧹 **Removed the unused `debounce` helper.**
 
 ### 1.6.5 (2026-08-06)
 
-- **BREAKING:** ⚠️ **`info.monthlyInstallment` ist jetzt eine Zahl (#11)** - Der Abschlag wurde bisher als formatierter Text abgelegt (`"25.00 €"`) und war dadurch für History, Diagramme und Skripte unbrauchbar. Er ist jetzt ein numerischer Datenpunkt mit Einheit `€`. Bestehende Installationen werden beim Start automatisch umgestellt. **Skripte, die den Text ausgewertet haben, müssen angepasst werden.**
-- **FIX:** 🛠️ **Info-Seite** - Der Link zum GitHub-Repository zeigte noch auf den alten Namen `ioBroker.nebenkosten-monitor` und lief ins Leere.
-- **FIX:** 🛠️ **Beschreibung von `daysRemaining`** - Der Datenpunkt war als „Tage bis zum Vertragsende" beschrieben, zählt aber bis zum Ende des Abrechnungszeitraums. Diese Formulierung hatte zu Missverständnissen geführt.
-- **DOCS:** 🧹 **Info-Seite entrümpelt** - Fest eingetragene Versionsnummer entfernt (Admin zeigt sie ohnehin an) und veraltete „NEU in 1.4.6"-Hinweise gestrichen.
-- **CHORE:** ⬆️ **Release-Werkzeuge aktualisiert** - `@alcalzone/release-script` und Plugins auf 5.x angehoben.
+- **BREAKING:** ⚠️ **`info.monthlyInstallment` is now a number (#11)** - the advance payment used to be stored as formatted text (`"25.00 €"`), which made it unusable for history, charts and scripts. It is now a numeric state with the unit `€`. Existing installations are converted automatically on startup. **Scripts that parsed the text have to be adjusted.**
+- **FIX:** 🛠️ **Info page** - the link to the GitHub repository still pointed at the former name `ioBroker.nebenkosten-monitor` and was dead.
+- **FIX:** 🛠️ **Description of `daysRemaining`** - the state was described as "days until the end of the contract" although it counts down to the end of the billing period. That wording had caused misunderstandings.
+- **DOCS:** 🧹 **Info page cleaned up** - removed the hard-coded version number (admin shows it anyway) and the outdated "NEW in 1.4.6" markers.
+- **CHORE:** ⬆️ **Release tooling updated** - `@alcalzone/release-script` and its plugins raised to 5.x.
 
 ### 1.6.4 (2026-08-04)
 
-- **FIX:** 🛠️ **Falscher Abrechnungszeitraum (#9)** - `daysRemaining` und `periodEnd` wurden nur beim Adapterstart berechnet und blieben danach eingefroren. Der Countdown wird jetzt laufend aktualisiert und rollt am Vertragsjubiläum automatisch in den neuen Zeitraum weiter.
-- **FIX:** 🛠️ **Tagesgenaue Berechnung** - Der Restzeitraum schwankt nicht mehr je nach Uhrzeit oder Sommer-/Winterzeit-Umstellung.
-- **FIX:** 🛠️ **Schaltjahre** - Ein Vertragsbeginn am 29.02. rutscht in Nicht-Schaltjahren nicht mehr in den März.
-- **FIX:** 🛠️ **Monats-Report wurde doppelt verschickt** - Die Merker-Prüfung rechnete in UTC statt in lokaler Zeit, dadurch kam der Report einmal um 00:00 und erneut um 02:00 Uhr (Sommerzeit). Es wird jetzt nur noch ein Report pro Tag versendet.
-- **FIX:** 🛠️ **Darstellung im Monats-Report** - Statt eines Zeilenumbruchs erschien ein literales `\n` im Text.
+- **FIX:** 🛠️ **Wrong billing period (#9)** - `daysRemaining` and `periodEnd` were only calculated when the adapter started and stayed frozen afterwards. The countdown is now refreshed continuously and rolls over into the new period at the contract anniversary.
+- **FIX:** 🛠️ **Day-accurate calculation** - the remaining period no longer varies with the time of day or the daylight saving change.
+- **FIX:** 🛠️ **Leap years** - a contract starting on 29 February no longer slips into March in non-leap years.
+- **FIX:** 🛠️ **Monthly report was sent twice** - the marker check worked in UTC instead of local time, so the report arrived once at 00:00 and again at 02:00 (summer time). Only one report per day is sent now.
+- **FIX:** 🛠️ **Formatting of the monthly report** - a literal `\n` appeared in the text instead of a line break.
 
 ### 1.6.3 (2026-02-04)
 
-- **FIX:** 🛠️ **Daily und Monthly start Wert auf 0 setzen**
+- **FIX:** 🛠️ **Daily and monthly start value reset to 0**
 
 ### 1.6.2 (2026-01-28)
 
-- **FIX:** 🛠️ **Monthly reset logic for last day of month**
+- **FIX:** 🛠️ **Monthly reset logic for the last day of the month**
 
 ### 1.6.1 (2026-01-28)
 
-- **NEU:** 📊 **Erweiterte Jahresstatistiken** - Einführung von `lastYear` Datenpunkten in den Statistiken:
-    - `statistics.consumption.lastYear`: Gesamtverbrauch des Vorjahres
-    - `statistics.cost.lastYear`: Gesamtkosten des Vorjahres
-    - Unterstützung für HT/NT und Gas-Volumen in der Vorjahresansicht
-- **NEU:** 🔄 **Automatisches Sichern** - Vorjahreswerte werden beim jährlichen Reset automatisch in die Statistik archiviert
-- **FIX:** 🛠️ **Syntax & Einheiten** - Korrektur von Einheiten-Inkonsistenzen (speziell Wasser/m³) und Linter-Fehlern
-- **DOCS:** 🌐 **Übersetzungen** - News-Einträge in alle unterstützten Sprachen übersetzt
+- **NEW:** 📊 **Extended yearly statistics** - introduced `lastYear` states in the statistics:
+    - `statistics.consumption.lastYear`: total consumption of the previous year
+    - `statistics.cost.lastYear`: total costs of the previous year
+    - support for peak/off-peak and gas volume in the previous-year view
+- **NEW:** 🔄 **Automatic archiving** - previous-year values are written to the statistics automatically during the yearly reset
+- **FIX:** 🛠️ **Syntax & units** - corrected inconsistent units (water/m³ in particular) and linter errors
+- **DOCS:** 🌐 **Translations** - news entries translated into all supported languages
 
 ### 1.6.0 (2026-01-28)
 
-- **NEU:** 📊 **Strukturierte Statistiken** - Einführung von Unterkanälen für bessere Übersicht:
-    - `statistics.consumption`: Alle historischen Verbrauchswerte
-    - `statistics.cost`: Alle historischen Kostenwerte (Tag/Woche/Monat)
-    - `statistics.timestamps`: Alle Reset-Zeitstempel an einem Ort
-- **NEU:** 💰 **Kostenstatistiken** - Verfolge deine Kosten nun auch für gestern, letzte Woche und letzten Monat
-- **REFACTORING:** 🏗️ **Modulare State-Verwaltung**:
-    - `stateManager.js` wurde in spezialisierte Module aufgeteilt (`lib/state/`)
-    - Verbesserte Wartbarkeit und Testbarkeit
-- **CLEANUP:** 🧹 **Bereinigung** - Automatische Entfernung veralteter Statistik-Datenpunkte beim ersten Start
+- **NEW:** 📊 **Structured statistics** - introduced sub-channels for a better overview:
+    - `statistics.consumption`: all historical consumption values
+    - `statistics.cost`: all historical cost values (day/week/month)
+    - `statistics.timestamps`: all reset timestamps in one place
+- **NEW:** 💰 **Cost statistics** - track your costs for yesterday, last week and last month as well
+- **REFACTORING:** 🏗️ **Modular state management**:
+    - `stateManager.js` was split into dedicated modules (`lib/state/`)
+    - improved maintainability and testability
+- **CLEANUP:** 🧹 **Housekeeping** - outdated statistics states are removed automatically on the first start
 
 ### 1.5.1 (2026-01-26)
 
-- **FIX:** 🕛 **Reset-Timing** - Automatische Resets werden nun um 23:59 Uhr ausgeführt (statt 00:00 Uhr)
-- **FIX:** Utopische Werte in Monthly/MonthlyVolume (DP Monthly)
+- **FIX:** 🕛 **Reset timing** - automatic resets now run at 23:59 (instead of 00:00)
+- **FIX:** Implausible values in monthly/monthlyVolume
 
 ### 1.5.0 (2026-01-25)
 
-- **NEU:** 📥 **CSV Import** - Importiere historische Zählerstände einfach per Drag-and-Drop:
-    - Neuer "Import"-Tab in der Konfiguration
-    - Modulare Backend-Struktur für CSV-Parsing
-    - Unterstützung für generische und EhB+-Formate
-    - Moderne React-basierte UI-Komponente für eine flüssige Bedienung
-- **NEU:** 📊 **Wöchentliches Tracking** - Verbrauchsüberwachung nun auch auf Wochenbasis möglich
-- **FIX:** 🕛 **Reset-Timing** - Automatische Resets werden nun um 23:59 Uhr ausgeführt (statt 00:00 Uhr), um Datenverluste am Ende des Zeitraums zu vermeiden
-- **ARCHITEKTUR:** 🏗️ **Verbesserte Backend-Modularisierung**:
-    - `ImportManager` eingeführt, um die Logik von `main.js` zu trennen
+- **NEW:** 📥 **CSV import** - import historical meter readings by drag and drop:
+    - new "Import" tab in the configuration
+    - modular backend structure for CSV parsing
+    - support for generic and EhB+ formats
+    - modern React-based UI component for smooth operation
+- **NEW:** 📊 **Weekly tracking** - consumption monitoring on a weekly basis
+- **FIX:** 🕛 **Reset timing** - automatic resets now run at 23:59 (instead of 00:00) to avoid losing data at the end of a period
+- **ARCHITECTURE:** 🏗️ **Improved backend modularisation**:
+    - introduced the `ImportManager` to separate that logic from `main.js`
 
 ### 1.4.6 (2026-01-20)
 
-- **⚠️ BREAKING CHANGE:** 🔄 **Hauptzähler-Benennung** - Hauptzähler benötigt jetzt einen Namen:
-    - **State-Pfade geändert**: `gas.*` → `gas.METER_NAME.*` (z.B. `gas.main.*`)
-    - **Neue Config-Felder**: "Name des Hauptzählers" für Gas/Wasser/Strom/PV
-    - **Default-Name**: "main" (wird automatisch verwendet wenn leer gelassen)
-    - **Konsistente Struktur**: Alle Zähler (Haupt + Zusätzlich) verwenden jetzt `type.meterName.*`
-    - **Flexibilität**: Hauptzähler kann jetzt frei benannt werden (z.B. "wohnung", "erdgeschoss", "gesamt")
-    - **Keine Special-Cases**: Vereinfachte Logik im Code
-- **NEU:** 🔔 **Smart Notifications** - Zählerauswahl für Benachrichtigungen:
-    - Wähle pro Utility-Typ aus, welche Zähler benachrichtigt werden sollen
-    - Multi-Select Dropdown zeigt alle konfigurierten Zähler
-    - Wenn leer: Alle Zähler werden benachrichtigt (Standard)
-    - Wenn ausgewählt: Nur gewählte Zähler erhalten Benachrichtigungen
-    - Gilt für Abrechnungsende, Vertragswechsel und monatliche Berichte
-- **VERBESSERT:** 🏗️ **Code-Architektur** - Entfernung von 19 Special-Case Checks in 7 Dateien:
-    - Vereinfachte basePath-Berechnungen in multiMeterManager, billingManager, stateManager
-    - Vereinheitlichter Config-Zugriff (alle Meter nutzen `meter.config.contractStart`)
-    - HT/NT-Logik basiert jetzt auf `config.htNtEnabled` statt Meter-Name
-    - Button-Trigger erkennt nur noch einheitliche Pfadstruktur
-    - Legacy-Code entfernt: updateBillingCountdown, updateCurrentPrice jetzt pro Zähler
-- **MIGRATION:** 📋 **Upgrade-Hinweise**:
-    - Bei Neuinstallation: Namen für Hauptzähler eingeben (oder "main" akzeptieren)
-    - Bei Upgrade: Adapter neu konfigurieren + Skripte/Visualisierungen anpassen
-    - History: Alte States bleiben erhalten, neue States werden parallel erstellt
-    - Empfehlung: "main" als Namen verwenden für einfachere Migration
+- **⚠️ BREAKING CHANGE:** 🔄 **Naming of the main meter** - the main meter now requires a name:
+    - **state paths changed**: `gas.*` → `gas.METER_NAME.*` (e.g. `gas.main.*`)
+    - **new configuration fields**: "Name of the main meter" for gas/water/electricity/PV
+    - **default name**: "main" (used automatically when left empty)
+    - **consistent structure**: all meters (main + additional) now use `type.meterName.*`
+    - **flexibility**: the main meter can be named freely (e.g. "flat", "groundfloor", "total")
+    - **no special cases**: simplified logic in the code
+- **NEW:** 🔔 **Smart notifications** - meter selection for notifications:
+    - choose per utility type which meters trigger notifications
+    - a multi-select dropdown shows all configured meters
+    - if empty: all meters are included (default)
+    - if selected: only the chosen meters trigger notifications
+    - applies to the end of the billing period, contract changes and monthly reports
+- **IMPROVED:** 🏗️ **Code architecture** - removed 19 special-case checks across 7 files:
+    - simplified basePath calculation in multiMeterManager, billingManager and stateManager
+    - unified configuration access (every meter uses `meter.config.contractStart`)
+    - the peak/off-peak logic is now based on `config.htNtEnabled` instead of the meter name
+    - the button trigger only recognises the unified path structure
+    - removed legacy code: updateBillingCountdown and updateCurrentPrice now work per meter
+- **MIGRATION:** 📋 **Upgrade notes**:
+    - new installation: enter a name for the main meter (or accept "main")
+    - upgrade: reconfigure the adapter and adjust scripts/visualisations
+    - history: old states remain, new states are created alongside them
+    - recommendation: use "main" as the name for an easier migration
 
 ### 1.4.5 (2026-01-20)
 
-- **FIX:** 🐛 **Kritische Multi-Meter Kostenberechnungsfehler** - Umfassende Korrekturen für Multi-Meter Funktionalität:
-    - **Hauptzähler Sync-Problem**: Doppelte Initialisierung entfernt, die `lastSync` Updates verhinderte
-    - **basicCharge Akkumulation**: Berechnet jetzt korrekt `basicCharge = Grundgebühr × Monate` (vorher nur 1 Monat)
-    - **paidTotal Akkumulation**: Berechnet jetzt korrekt `paidTotal = Abschlag × Monate` (vorher nur 1 Monat)
-    - **Jahresgebühr als fester Wert**: Jahresgebühr wird jetzt als fester jährlicher Wert genutzt (z.B. 60€ bleibt 60€)
-        - Vorher fälschlicherweise als monatlich behandelt
-        - Eingegebener Wert wird nun direkt wie vorgesehen genutzt
-    - **Balance-Formel korrigiert**: Formel `balance = totalYearly - paidTotal` korrigiert
-        - Positive Balance = Nachzahlung (Schuldner)
-        - Negative Balance = Guthaben (Rückerstattung)
-- **VERBESSERT:** 📦 **Entwickler-Abhängigkeiten**: Umstellung von Tilde (~) auf Caret (^) Versionierung für bessere Sicherheitsupdates
-- **CLEANUP:** 🧹 **Repository Compliance**: Unveröffentlichte Versionen aus dem Changelog entfernt (löst ioBroker Bot Issue #1)
+- **FIX:** 🐛 **Critical multi-meter cost calculation errors** - comprehensive corrections for the multi-meter functionality:
+    - **main meter sync problem**: removed a duplicate initialisation that prevented `lastSync` updates
+    - **basicCharge accumulation**: now correctly calculates `basicCharge = base fee × months` (previously only one month)
+    - **paidTotal accumulation**: now correctly calculates `paidTotal = advance payment × months` (previously only one month)
+    - **annual fee as a fixed value**: the annual fee is now used as a fixed yearly value (e.g. 60 € stays 60 €)
+        - previously treated as monthly by mistake
+        - the entered value is now used directly as intended
+    - **balance formula corrected**: the formula `balance = totalYearly - paidTotal` was fixed
+        - positive balance = additional payment (you owe money)
+        - negative balance = credit (you get money back)
+- **IMPROVED:** 📦 **Development dependencies**: switched from tilde (~) to caret (^) versioning for better security updates
+- **CLEANUP:** 🧹 **Repository compliance**: removed unpublished versions from the changelog (resolves ioBroker bot issue #1)
 
 ---
 
@@ -478,3 +482,21 @@ Der Adapter setzt Zähler automatisch zurück:
 MIT License
 
 Copyright (c) 2026 fischi87 <axel.fischer@hotmail.com>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
