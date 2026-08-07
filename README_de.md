@@ -361,8 +361,9 @@ Der Adapter setzt Zähler automatisch zurück:
 
 ## Changelog
 
-### **WORK IN PROGRESS**
+### 1.6.6 (2026-08-07)
 
+- **FIX:** 🛠️ **Objektstruktur korrigiert** - Die Datenpunkte bestehen jetzt den ioBroker-Objekt-Checker: Die Verbrauchsart-Ebene (Gas/Wasser/Strom/PV) wird als eigenes Objekt angelegt, Geldbeträge nutzen die zulässige Rolle `value` statt der nicht katalogisierten Rollen `value.money`/`value.price`, und beschreibbare Eingaben (`billing.endReading`, `adjustment.value`) nutzen die schreibbare Rolle `level`. Bestehende Installationen werden beim Start automatisch migriert.
 - **FIX:** 🛠️ **Timer werden jetzt beim Adapter registriert** - `setInterval` und `setTimeout` liefen an der Adapter-Verwaltung vorbei und wurden vom js-controller beim Entladen nicht aufgeräumt. Jetzt über `this.setInterval()` bzw. `adapter.setTimeout()`.
 - **CHORE:** ⬆️ **Node 22 als Mindestversion** - `engines.node` von `>= 20` auf `>= 22` angehoben, passend zum aktuellen js-controller.
 - **CHORE:** 🔧 **CI und Dependabot** - Workflow-Vorgaben des ioBroker-Checkers umgesetzt (Node-Versionen, Job-Abhängigkeiten, Automerge-Action, Cooldown für Abhängigkeits-Updates).

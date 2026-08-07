@@ -40,7 +40,7 @@ describe('migrateInstallmentToNumber()', () => {
         const common = adapter.extendObjectAsync.getCall(0).args[1].common;
         expect(common.type).to.equal('number');
         expect(common.unit).to.equal('€');
-        expect(common.role).to.equal('value.money');
+        expect(common.role).to.equal('value');
     });
 
     it('should carry the previously stored amount over', async () => {

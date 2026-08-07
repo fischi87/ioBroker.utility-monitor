@@ -12,6 +12,7 @@ const MessagingHandler = require('./lib/messagingHandler');
 const MultiMeterManager = require('./lib/multiMeterManager');
 const ImportManager = require('./lib/importManager');
 const calculator = require('./lib/calculator');
+const { migrateStateRoles } = require('./lib/state/objectMigration');
 
 class UtilityMonitor extends utils.Adapter {
     /**
@@ -55,6 +56,10 @@ class UtilityMonitor extends utils.Adapter {
         await this.initializeUtility('water', this.config.wasserAktiv);
         await this.initializeUtility('electricity', this.config.stromAktiv);
         await this.initializeUtility('pv', this.config.pvAktiv);
+
+        // Bring roles of pre-existing objects in line with the current
+        // definitions (setObjectNotExists does not touch existing objects).
+        await migrateStateRoles(this);
 
         // Initialize General Info States
         await this.setObjectNotExistsAsync('info', {
