@@ -43,3 +43,35 @@ updates:
           - dependency-name: '@types/node'
             update-types:
                 - 'version-update:semver-major'
+          # The custom jsonConfig component runs inside ioBroker.admin and shares
+          # React, MUI and adapter-react-v5 as singletons with the Admin runtime.
+          # As long as the stable Admin release is 7.x (React 18 / MUI 5), major
+          # bumps of these packages would break the component for all users, so
+          # they are upgraded deliberately together with the Admin 8 migration.
+          - dependency-name: 'react'
+            update-types:
+                - 'version-update:semver-major'
+          - dependency-name: 'react-dom'
+            update-types:
+                - 'version-update:semver-major'
+          - dependency-name: '@types/react'
+            update-types:
+                - 'version-update:semver-major'
+          - dependency-name: '@types/react-dom'
+            update-types:
+                - 'version-update:semver-major'
+          - dependency-name: '@mui/material'
+            update-types:
+                - 'version-update:semver-major'
+          - dependency-name: '@mui/icons-material'
+            update-types:
+                - 'version-update:semver-major'
+          - dependency-name: '@emotion/react'
+            update-types:
+                - 'version-update:semver-major'
+          - dependency-name: '@emotion/styled'
+            update-types:
+                - 'version-update:semver-major'
+          - dependency-name: '@iobroker/adapter-react-v5'
+            update-types:
+                - 'version-update:semver-major'
