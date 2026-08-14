@@ -362,6 +362,10 @@ The adapter resets the counters automatically:
 
 ## Changelog
 
+
+### **WORK IN PROGRESS**
+- (ioBroker-Bot) Adapter requires admin >= 7.8.23 now.
+
 ### 1.6.6 (2026-08-07)
 
 - **FIX:** 🛠️ **Object structure corrected** - the states now pass the ioBroker object checker: the utility-type level (gas/water/electricity/pv) is created as its own object, the monetary states use the accepted role `value` instead of the non-catalogue roles `value.money`/`value.price`, and writable inputs (`billing.endReading`, `adjustment.value`) use the writable role `level`. Existing installations are migrated automatically on startup.
