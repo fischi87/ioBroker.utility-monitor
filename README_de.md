@@ -361,6 +361,13 @@ Der Adapter setzt Zähler automatisch zurück:
 
 ## Changelog
 
+### 1.6.7 (2026-08-14)
+
+- **FIX:** 🌐 **Mehrsprachige Objektnamen** - Objekt- und Datenpunkt-Namen werden jetzt als `{ en, de }`-Objekte angelegt. Deutsche Nutzer behalten die deutschen Bezeichnungen, während der Repository-Checker und andere Sprachen einen englischen Namen erhalten.
+- **FIX:** 🇬🇧 **Englische Log-Meldungen** - alle Log- und Fehlermeldungen sind jetzt auf Englisch, wie es für Adapter im ioBroker-Repository verlangt wird. Nutzer-Benachrichtigungen (Telegram etc.) bleiben auf Deutsch.
+- **FIX:** 🔘 **`billing.closePeriod`-Button** - der Button-Datenpunkt nutzt jetzt `read: false`, wie es die Rolle `button` verlangt. Bestehende Installationen werden beim Start automatisch migriert.
+- **CHORE:** 🧹 **Aufräumen** - eine überflüssige `*.adjustment.note`-Subscription, die nie verarbeitet wurde, wurde entfernt, ebenso der tote Alt-Code-Pfad `closeBillingPeriod` (der noch die Nicht-Katalog-Rolle `value.money` nutzte), die ungenutzte `createUtilityStateStructure` und ein verwaister Übersetzungs-Key.
+
 ### 1.6.6 (2026-08-07)
 
 - **FIX:** 🛠️ **Objektstruktur korrigiert** - Die Datenpunkte bestehen jetzt den ioBroker-Objekt-Checker: Die Verbrauchsart-Ebene (Gas/Wasser/Strom/PV) wird als eigenes Objekt angelegt, Geldbeträge nutzen die zulässige Rolle `value` statt der nicht katalogisierten Rollen `value.money`/`value.price`, und beschreibbare Eingaben (`billing.endReading`, `adjustment.value`) nutzen die schreibbare Rolle `level`. Bestehende Installationen werden beim Start automatisch migriert.

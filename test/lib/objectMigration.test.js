@@ -71,6 +71,29 @@ describe('migrateStateRoles()', () => {
             .true;
     });
 
+    it('should set read:false on a button state that still has read:true', async () => {
+        const adapter = makeAdapter({
+            'gas.main.billing.closePeriod': { type: 'state', common: { role: 'button', read: true } },
+        });
+
+        const changed = await migrateStateRoles(adapter);
+
+        expect(changed).to.equal(1);
+        expect(adapter.extendObjectAsync.calledWith('gas.main.billing.closePeriod', { common: { read: false } })).to.be
+            .true;
+    });
+
+    it('should leave a button state that already has read:false untouched', async () => {
+        const adapter = makeAdapter({
+            'gas.main.billing.closePeriod': { type: 'state', common: { role: 'button', read: false } },
+        });
+
+        const changed = await migrateStateRoles(adapter);
+
+        expect(changed).to.equal(0);
+        expect(adapter.extendObjectAsync.called).to.be.false;
+    });
+
     it('should leave a correct read-only value state untouched', async () => {
         const adapter = makeAdapter({ 'gas.main.billing.daysRemaining': state('value') });
 

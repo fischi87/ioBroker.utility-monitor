@@ -362,6 +362,13 @@ The adapter resets the counters automatically:
 
 ## Changelog
 
+### 1.6.7 (2026-08-14)
+
+- **FIX:** 🌐 **Multilingual object names** - object and state names are now provided as `{ en, de }` objects, so German users keep the German labels while the repository checker and other locales get an English name.
+- **FIX:** 🇬🇧 **English log messages** - all log and error messages are now in English, as required for adapters in the ioBroker repository. User notifications (Telegram etc.) stay in German.
+- **FIX:** 🔘 **`billing.closePeriod` button** - the button state now uses `read: false` as required for the `button` role. Existing installations are migrated automatically on startup.
+- **CHORE:** 🧹 **Cleanup** - removed a redundant `*.adjustment.note` subscription that was never handled, removed the dead legacy `closeBillingPeriod` code path (which still used the non-catalogue `value.money` role), removed the unused `createUtilityStateStructure` and an orphaned translation key.
+
 ### 1.6.6 (2026-08-07)
 
 - **FIX:** 🛠️ **Object structure corrected** - the states now pass the ioBroker object checker: the utility-type level (gas/water/electricity/pv) is created as its own object, the monetary states use the accepted role `value` instead of the non-catalogue roles `value.money`/`value.price`, and writable inputs (`billing.endReading`, `adjustment.value`) use the writable role `level`. Existing installations are migrated automatically on startup.

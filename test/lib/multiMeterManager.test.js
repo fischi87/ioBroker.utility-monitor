@@ -407,7 +407,7 @@ describe('MultiMeterManager Module', () => {
 
             let warnCalled = false;
             adapter.log.warn = msg => {
-                if (msg.includes('Zählerstand gesunken') || msg.includes('Reset')) {
+                if (msg.includes('Meter reading decreased') || msg.includes('reset')) {
                     warnCalled = true;
                 }
             };

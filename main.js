@@ -42,7 +42,7 @@ class UtilityMonitor extends utils.Adapter {
      * Is called when databases are connected and adapter received configuration.
      */
     async onReady() {
-        this.log.info('Nebenkosten-Monitor starting...');
+        this.log.info('Utility Monitor starting...');
 
         // Initialize MultiMeterManager
         this.multiMeterManager = new MultiMeterManager(this, this.consumptionManager, this.billingManager);
@@ -104,7 +104,6 @@ class UtilityMonitor extends utils.Adapter {
 
         // Subscribe to manual adjustment changes
         this.subscribeStates('*.adjustment.value');
-        this.subscribeStates('*.adjustment.note');
 
         // Subscribe to notification triggers
         this.subscribeStates('notifications.triggerMonthlyReport');
@@ -112,7 +111,7 @@ class UtilityMonitor extends utils.Adapter {
         // Set up periodic tasks
         this.setupPeriodicTasks();
 
-        this.log.info('Nebenkosten-Monitor initialized successfully');
+        this.log.info('Utility Monitor initialized successfully');
     }
 
     /**
@@ -121,8 +120,8 @@ class UtilityMonitor extends utils.Adapter {
     validateConfiguration() {
         const types = [
             { key: 'gas', configKey: 'gas', label: 'Gas' },
-            { key: 'water', configKey: 'wasser', label: 'Wasser' },
-            { key: 'electricity', configKey: 'strom', label: 'Strom' },
+            { key: 'water', configKey: 'wasser', label: 'Water' },
+            { key: 'electricity', configKey: 'strom', label: 'Electricity' },
             { key: 'pv', configKey: 'pv', label: 'PV' },
         ];
 
@@ -136,14 +135,14 @@ class UtilityMonitor extends utils.Adapter {
             const contractStart = this.config[`${type.configKey}ContractStart`];
             if (!contractStart) {
                 this.log.warn(
-                    `${type.label}: Kein Vertragsbeginn konfiguriert! Für korrekte Jahresberechnungen und Abrechnungsperioden sollte ein Vertragsbeginn gesetzt werden.`,
+                    `${type.label}: No contract start configured! A contract start should be set for correct yearly calculations and billing periods.`,
                 );
             }
 
             // Check main meter sensor
             const sensorDP = this.config[`${type.configKey}SensorDP`];
             if (!sensorDP) {
-                this.log.warn(`${type.label}: Kein Sensor-Datenpunkt konfiguriert!`);
+                this.log.warn(`${type.label}: No sensor datapoint configured!`);
             }
 
             // Check additional meters
@@ -152,10 +151,10 @@ class UtilityMonitor extends utils.Adapter {
                 for (const meter of additionalMeters) {
                     if (meter && meter.name) {
                         if (!meter.contractStart) {
-                            this.log.warn(`${type.label} Zähler "${meter.name}": Kein Vertragsbeginn konfiguriert!`);
+                            this.log.warn(`${type.label} meter "${meter.name}": No contract start configured!`);
                         }
                         if (!meter.sensorDP) {
-                            this.log.warn(`${type.label} Zähler "${meter.name}": Kein Sensor-Datenpunkt konfiguriert!`);
+                            this.log.warn(`${type.label} meter "${meter.name}": No sensor datapoint configured!`);
                         }
                     }
                 }
@@ -191,10 +190,6 @@ class UtilityMonitor extends utils.Adapter {
         }
         // Fallback to legacy billingManager for single-meter setups (backward compatibility)
         return this.billingManager.updateCosts(type);
-    }
-
-    async closeBillingPeriod(type) {
-        return this.billingManager.closeBillingPeriod(type);
     }
 
     async updateBillingCountdown(type) {
@@ -241,7 +236,7 @@ class UtilityMonitor extends utils.Adapter {
      */
     onUnload(callback) {
         try {
-            this.log.info('Nebenkosten-Monitor shutting down...');
+            this.log.info('Utility Monitor shutting down...');
 
             // Clear all timers
             Object.values(this.periodicTimers).forEach(timer => {
