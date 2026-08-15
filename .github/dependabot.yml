@@ -28,6 +28,10 @@ updates:
           - dependency-name: '@types/node'
             update-types:
                 - 'version-update:semver-major'
+          # TypeScript majors can break the type-check/build; upgrade deliberately
+          - dependency-name: 'typescript'
+            update-types:
+                - 'version-update:semver-major'
 
     - package-ecosystem: 'npm'
       directory: '/admin/src-admin'
@@ -41,6 +45,14 @@ updates:
           default-days: 7
       ignore:
           - dependency-name: '@types/node'
+            update-types:
+                - 'version-update:semver-major'
+          # react-dropzone and typescript majors are upgraded deliberately along
+          # with the Admin 8 migration of the custom jsonConfig component.
+          - dependency-name: 'react-dropzone'
+            update-types:
+                - 'version-update:semver-major'
+          - dependency-name: 'typescript'
             update-types:
                 - 'version-update:semver-major'
           # The custom jsonConfig component runs inside ioBroker.admin and shares
