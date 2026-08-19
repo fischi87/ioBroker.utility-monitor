@@ -1,8 +1,21 @@
 {
     "common": {
         "name": "utility-monitor",
-        "version": "1.6.7",
+        "version": "1.6.8",
         "news": {
+            "1.6.8": {
+                "en": "Repository review follow-up: all user-facing messages (test message, billing/contract reminders, monthly report and the config popups) are now language-aware. English is the default; German is used automatically when the ioBroker system language is German.",
+                "de": "Nachtrag zum Repository-Review: Alle Nutzer-Nachrichten (Testnachricht, Erinnerungen zu Abrechnung/Vertrag, Monatsreport und die Konfigurations-Popups) sind jetzt sprachabhängig. Standard ist Englisch; Deutsch wird automatisch verwendet, wenn die ioBroker-Systemsprache Deutsch ist.",
+                "ru": "Дополнение к проверке репозитория: все сообщения для пользователя (тестовое сообщение, напоминания о расчётах/договоре, ежемесячный отчёт и всплывающие окна конфигурации) теперь зависят от языка. По умолчанию английский; немецкий используется автоматически, если системный язык ioBroker — немецкий.",
+                "pt": "Seguimento da revisão do repositório: todas as mensagens ao utilizador (mensagem de teste, lembretes de faturação/contrato, relatório mensal e os pop-ups de configuração) são agora sensíveis ao idioma. O inglês é o padrão; o alemão é usado automaticamente quando o idioma do sistema ioBroker é alemão.",
+                "nl": "Vervolg op de repository-review: alle berichten aan de gebruiker (testbericht, herinneringen voor afrekening/contract, maandrapport en de configuratiepop-ups) zijn nu taalafhankelijk. Engels is de standaard; Duits wordt automatisch gebruikt wanneer de ioBroker-systeemtaal Duits is.",
+                "fr": "Suite de la revue du dépôt : tous les messages destinés à l'utilisateur (message de test, rappels de facturation/contrat, rapport mensuel et les pop-ups de configuration) tiennent désormais compte de la langue. L'anglais est la valeur par défaut ; l'allemand est utilisé automatiquement lorsque la langue du système ioBroker est l'allemand.",
+                "it": "Seguito della revisione del repository: tutti i messaggi rivolti all'utente (messaggio di test, promemoria di fatturazione/contratto, report mensile e i popup di configurazione) ora dipendono dalla lingua. L'inglese è il valore predefinito; il tedesco viene usato automaticamente quando la lingua di sistema di ioBroker è il tedesco.",
+                "es": "Continuación de la revisión del repositorio: todos los mensajes para el usuario (mensaje de prueba, recordatorios de facturación/contrato, informe mensual y las ventanas emergentes de configuración) ahora dependen del idioma. El inglés es el predeterminado; el alemán se usa automáticamente cuando el idioma del sistema ioBroker es alemán.",
+                "pl": "Kontynuacja przeglądu repozytorium: wszystkie komunikaty dla użytkownika (wiadomość testowa, przypomnienia o rozliczeniu/umowie, raport miesięczny oraz okna konfiguracji) są teraz zależne od języka. Domyślnie angielski; niemiecki jest używany automatycznie, gdy językiem systemu ioBroker jest niemiecki.",
+                "uk": "Продовження перевірки репозиторію: усі повідомлення для користувача (тестове повідомлення, нагадування про розрахунок/договір, щомісячний звіт і спливаючі вікна конфігурації) тепер залежать від мови. За замовчуванням англійська; німецька використовується автоматично, коли системна мова ioBroker — німецька.",
+                "zh-cn": "仓库审查后续：所有面向用户的消息（测试消息、计费/合同提醒、月度报告以及配置弹窗）现在都支持语言切换。默认英语；当 ioBroker 系统语言为德语时自动使用德语。"
+            },
             "1.6.7": {
                 "en": "Repository review fixes: object and state names are now multilingual (English/German), all log and error messages are in English, the \"close period\" button state now correctly uses read=false, and a redundant state subscription, dead code and an unused translation key were removed. Existing installations are migrated automatically.",
                 "de": "Korrekturen aus dem Repository-Review: Objekt- und Datenpunkt-Namen sind jetzt mehrsprachig (Englisch/Deutsch), alle Log- und Fehlermeldungen sind auf Englisch, der Button-Datenpunkt \"Zeitraum abschließen\" nutzt jetzt korrekt read=false, und eine überflüssige Datenpunkt-Subscription, toter Code sowie ein ungenutzter Übersetzungs-Key wurden entfernt. Bestehende Installationen werden automatisch migriert.",

@@ -362,6 +362,10 @@ The adapter resets the counters automatically:
 
 ## Changelog
 
+### 1.6.8 (2026-08-19)
+
+- **FIX:** 🌐 **Language-aware user messages** - all user-facing text (test message, billing/contract reminders, the monthly report and the config popups) is now localized. **English is the default**, German is used automatically when the ioBroker system language is German. This follows the repository requirement that user output must be English or multilingual with English as default.
+
 ### 1.6.7 (2026-08-14)
 
 - **FIX:** 🌐 **Multilingual object names** - object and state names are now provided as `{ en, de }` objects, so German users keep the German labels while the repository checker and other locales get an English name.

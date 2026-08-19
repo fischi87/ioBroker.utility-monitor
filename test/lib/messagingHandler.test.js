@@ -82,18 +82,38 @@ describe('MessagingHandler', () => {
             expect(callArgs[0]).to.equal('telegram.0');
             expect(callArgs[1]).to.equal('send');
 
+            // Default language is English (adapter.language is not set)
             const message = callArgs[2].text;
-            expect(message).to.contain('⚡️ Strom');
-            expect(message).to.contain('Verbrauch (Jahr): 1000 kWh');
-            expect(message).to.contain('Verbrauchs-Kosten: 300.00 €');
-            expect(message).to.contain('❌ Nachzahlung');
+            expect(message).to.contain('📊 *Monthly report*');
+            expect(message).to.contain('⚡️ Electricity');
+            expect(message).to.contain('Consumption (year): 1000 kWh');
+            expect(message).to.contain('Consumption costs: 300.00 €');
+            expect(message).to.contain('❌ Additional payment');
 
             expect(message).to.contain('🔥 Gas');
-            expect(message).to.contain('Verbrauch (Jahr): 5000 kWh');
-            expect(message).to.contain('✅ Guthaben');
+            expect(message).to.contain('Consumption (year): 5000 kWh');
+            expect(message).to.contain('✅ Credit');
 
             const todayStr = formatLocalDate(new Date());
             expect(adapterMock.setStateAsync.calledWith('info.lastMonthlyReport', todayStr, true)).to.be.true;
+        });
+
+        it('should send the report in German when the system language is German', async () => {
+            adapterMock.language = 'de';
+            adapterMock.getStateAsync.withArgs('info.lastMonthlyReport').resolves({ val: '2020-01-01' });
+            adapterMock.getStateAsync.withArgs('electricity.main.consumption.yearly').resolves({ val: 1000 });
+            adapterMock.getStateAsync.withArgs('electricity.main.costs.totalYearly').resolves({ val: 300 });
+            adapterMock.getStateAsync.withArgs('electricity.main.costs.paidTotal').resolves({ val: 240 });
+            adapterMock.getStateAsync.withArgs('electricity.main.costs.balance').resolves({ val: 60 });
+            adapterMock.getStateAsync.resolves({ val: 0 });
+
+            await messagingHandler.checkMonthlyReport();
+
+            const message = adapterMock.sendToAsync.firstCall.args[2].text;
+            expect(message).to.contain('📊 *Monats-Report*');
+            expect(message).to.contain('⚡️ Strom');
+            expect(message).to.contain('Verbrauch (Jahr): 1000 kWh');
+            expect(message).to.contain('❌ Nachzahlung');
         });
 
         it('should NOT send a report if disabled', async () => {

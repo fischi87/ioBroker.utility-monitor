@@ -361,6 +361,10 @@ Der Adapter setzt Zähler automatisch zurück:
 
 ## Changelog
 
+### 1.6.8 (2026-08-19)
+
+- **FIX:** 🌐 **Sprachabhängige Nutzer-Nachrichten** - alle Texte an Nutzer (Testnachricht, Erinnerungen zu Abrechnung/Vertrag, Monatsreport und die Konfigurations-Popups) sind jetzt lokalisiert. **Standard ist Englisch**, Deutsch wird automatisch verwendet, wenn die ioBroker-Systemsprache Deutsch ist. Damit wird die Repository-Vorgabe erfüllt, dass Nutzer-Ausgaben Englisch oder mehrsprachig mit Englisch als Standard sein müssen.
+
 ### 1.6.7 (2026-08-14)
 
 - **FIX:** 🌐 **Mehrsprachige Objektnamen** - Objekt- und Datenpunkt-Namen werden jetzt als `{ en, de }`-Objekte angelegt. Deutsche Nutzer behalten die deutschen Bezeichnungen, während der Repository-Checker und andere Sprachen einen englischen Namen erhalten.
