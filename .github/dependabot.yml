@@ -47,12 +47,15 @@ updates:
           - dependency-name: '@types/node'
             update-types:
                 - 'version-update:semver-major'
-          # react-dropzone and typescript majors are upgraded deliberately along
-          # with the Admin 8 migration of the custom jsonConfig component.
+          # react-dropzone, typescript and vite majors are upgraded deliberately
+          # along with the Admin 8 migration of the custom jsonConfig component.
           - dependency-name: 'react-dropzone'
             update-types:
                 - 'version-update:semver-major'
           - dependency-name: 'typescript'
+            update-types:
+                - 'version-update:semver-major'
+          - dependency-name: 'vite'
             update-types:
                 - 'version-update:semver-major'
           # The custom jsonConfig component runs inside ioBroker.admin and shares
