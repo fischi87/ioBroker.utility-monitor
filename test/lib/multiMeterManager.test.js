@@ -300,6 +300,9 @@ describe('MultiMeterManager Module', () => {
 
             // Set lastYearStart to 6 months ago
             const sixMonthsAgo = new Date();
+            // Anchor to the 1st so setMonth(-6) never overflows on month-end days
+            // (e.g. Aug 29 -> Feb 29 -> Mar 1 in a non-leap year)
+            sixMonthsAgo.setDate(1);
             sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
             adapter.states['gas.main.statistics.timestamps.lastYearStart'] = { val: sixMonthsAgo.getTime(), ack: true };
 
@@ -556,6 +559,9 @@ describe('MultiMeterManager Module', () => {
 
             // Set yearStart to 6 months ago
             const sixMonthsAgo = new Date();
+            // Anchor to the 1st so setMonth(-6) never overflows on month-end days
+            // (e.g. Aug 29 -> Feb 29 -> Mar 1 in a non-leap year)
+            sixMonthsAgo.setDate(1);
             sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
             adapter.states['gas.main.statistics.timestamps.lastYearStart'] = { val: sixMonthsAgo.getTime(), ack: true };
 

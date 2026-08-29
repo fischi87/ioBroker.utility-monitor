@@ -40,7 +40,6 @@
     "HT Start (z.B. 06:00)": "Inizio non di punta (ad esempio 06:00)",
     "HT/NT-Tarif verwenden": "Utilizza la tariffa alta/bassa",
     "Haupttarif (HT) Preis (€/kWh)": "Prezzo tariffa di punta (€/kWh)",
-    "Hier kannst du historische Zählerstände importieren. Diese Funktion hilft dir, den Adapter schnell mit alten Daten zu füttern.\n\n⚠️ **Wichtig:** Wähle zuerst den Typ und den Zähler aus, für den die Daten bestimmt sind.": "Qui è possibile importare le letture storiche dei contatori. Questo ti aiuta ad alimentare rapidamente l'adattatore con i dati più vecchi.\n\n⚠️ **Importante:** Seleziona prima la tipologia e il contatore a cui appartengono i dati.",
     "Hier können Sie weitere Gaszähler hinzufügen (z.B. für verschiedene Wohnungen, Etagen oder Gebäude). Jeder Zähler wird separat erfasst und die Gesamtsumme automatisch berechnet.": "Qui puoi aggiungere ulteriori contatori del gas (ad esempio per appartamenti, piani o edifici diversi). Ogni contatore viene registrato separatamente e il totale viene calcolato automaticamente.",
     "Hier können Sie weitere Stromzähler hinzufügen (z.B. für verschiedene Wohnungen, Etagen oder Gebäude). Jeder Zähler wird separat erfasst und die Gesamtsumme automatisch berechnet.": "Qui puoi aggiungere ulteriori contatori elettrici (ad esempio per diversi appartamenti, piani o edifici). Ogni contatore viene registrato separatamente e il totale viene calcolato automaticamente.",
     "Hier können Sie weitere Wasserzähler hinzufügen (z.B. für verschiedene Wohnungen, Etagen oder Gebäude). Jeder Zähler wird separat erfasst und die Gesamtsumme automatisch berechnet.": "Qui è possibile aggiungere ulteriori contatori dell'acqua (ad esempio per appartamenti, piani o edifici diversi). Ogni contatore viene registrato separatamente e il totale viene calcolato automaticamente.",
@@ -150,5 +149,14 @@
     "🔍 Stromzähler-Sensor auswählen (kWh)": "🔍 Seleziona il sensore del contatore elettrico (kWh)",
     "🔍 Wasserzähler-Sensor auswählen (m³)": "🔍 Seleziona il sensore del contatore dell'acqua (m³)",
     "🔥 Gas": "🔥Gas",
-    "🛎️ Benachrichtigungen": "🛎️ Notifiche"
+    "🛎️ Benachrichtigungen": "🛎️ Notifiche",
+    "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).": "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).",
+    "Utility type": "Utility type",
+    "Meter name": "Meter name",
+    "Technical meter name, e.g. main": "Technical meter name, e.g. main",
+    "CSV content": "CSV content",
+    "Paste the CSV content here, then press SAVE before starting the import.": "Paste the CSV content here, then press SAVE before starting the import.",
+    "Start import": "Start import",
+    "Water": "Water",
+    "Electricity": "Electricity"
 }

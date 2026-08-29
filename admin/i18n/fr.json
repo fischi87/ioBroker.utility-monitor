@@ -40,7 +40,6 @@
     "HT Start (z.B. 06:00)": "Départ hors pointe (par exemple 06h00)",
     "HT/NT-Tarif verwenden": "Utiliser le tarif heures pleines/heures creuses",
     "Haupttarif (HT) Preis (€/kWh)": "Prix ​​tarif pointe (€/kWh)",
-    "Hier kannst du historische Zählerstände importieren. Diese Funktion hilft dir, den Adapter schnell mit alten Daten zu füttern.\n\n⚠️ **Wichtig:** Wähle zuerst den Typ und den Zähler aus, für den die Daten bestimmt sind.": "Ici, vous pouvez importer des relevés de compteurs historiques. Cela vous aide à alimenter rapidement l'adaptateur avec des données plus anciennes.\n\n⚠️ **Important :** Sélectionnez d'abord le type et le compteur auquel appartiennent les données.",
     "Hier können Sie weitere Gaszähler hinzufügen (z.B. für verschiedene Wohnungen, Etagen oder Gebäude). Jeder Zähler wird separat erfasst und die Gesamtsumme automatisch berechnet.": "Ici, vous pouvez ajouter d'autres compteurs de gaz (par exemple pour différents appartements, étages ou bâtiments). Chaque compteur est enregistré séparément et le total est calculé automatiquement.",
     "Hier können Sie weitere Stromzähler hinzufügen (z.B. für verschiedene Wohnungen, Etagen oder Gebäude). Jeder Zähler wird separat erfasst und die Gesamtsumme automatisch berechnet.": "Ici, vous pouvez ajouter d'autres compteurs d'électricité (par exemple pour différents appartements, étages ou bâtiments). Chaque compteur est enregistré séparément et le total est calculé automatiquement.",
     "Hier können Sie weitere Wasserzähler hinzufügen (z.B. für verschiedene Wohnungen, Etagen oder Gebäude). Jeder Zähler wird separat erfasst und die Gesamtsumme automatisch berechnet.": "Ici, vous pouvez ajouter d'autres compteurs d'eau (par exemple pour différents appartements, étages ou bâtiments). Chaque compteur est enregistré séparément et le total est calculé automatiquement.",
@@ -150,5 +149,14 @@
     "🔍 Stromzähler-Sensor auswählen (kWh)": "🔍 Sélectionnez le capteur du compteur d'électricité (kWh)",
     "🔍 Wasserzähler-Sensor auswählen (m³)": "🔍 Sélectionnez le capteur du compteur d'eau (m³)",
     "🔥 Gas": "🔥 Gaz",
-    "🛎️ Benachrichtigungen": "🛎️Notifications"
+    "🛎️ Benachrichtigungen": "🛎️Notifications",
+    "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).": "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).",
+    "Utility type": "Utility type",
+    "Meter name": "Meter name",
+    "Technical meter name, e.g. main": "Technical meter name, e.g. main",
+    "CSV content": "CSV content",
+    "Paste the CSV content here, then press SAVE before starting the import.": "Paste the CSV content here, then press SAVE before starting the import.",
+    "Start import": "Start import",
+    "Water": "Water",
+    "Electricity": "Electricity"
 }

@@ -1,8 +1,21 @@
 {
     "common": {
         "name": "utility-monitor",
-        "version": "1.6.8",
+        "version": "1.7.0",
         "news": {
+            "1.7.0": {
+                "en": "CSV import now works on Admin 7 and Admin 8. The import used a custom UI component that Admin 8 refuses to load (GUI API generation mismatch, #48/#10). It has been replaced with native jsonConfig controls (utility type, meter name, CSV text field and an import button). Simply paste the CSV, press SAVE, then start the import. The obsolete custom frontend was removed.",
+                "de": "Der CSV-Import funktioniert jetzt unter Admin 7 und Admin 8. Bisher nutzte der Import eine eigene Oberflächen-Komponente, die Admin 8 nicht lädt (GUI-API-Generation-Konflikt, #48/#10). Sie wurde durch native jsonConfig-Elemente ersetzt (Verbrauchsart, Zählername, CSV-Textfeld und Import-Button). Einfach CSV einfügen, SPEICHERN, dann Import starten. Die überflüssige eigene Oberfläche wurde entfernt.",
+                "ru": "Импорт CSV теперь работает в Admin 7 и Admin 8. Ранее импорт использовал собственный UI-компонент, который Admin 8 не загружает (несоответствие поколения GUI API, #48/#10). Он заменён нативными элементами jsonConfig (тип, имя счётчика, текстовое поле CSV и кнопка импорта). Просто вставьте CSV, нажмите СОХРАНИТЬ и запустите импорт. Устаревший собственный интерфейс удалён.",
+                "pt": "A importação de CSV funciona agora no Admin 7 e Admin 8. Antes usava um componente de interface próprio que o Admin 8 não carrega (incompatibilidade de geração da GUI API, #48/#10). Foi substituído por elementos nativos jsonConfig (tipo, nome do contador, campo de texto CSV e botão de importação). Basta colar o CSV, GUARDAR e iniciar a importação. A interface própria obsoleta foi removida.",
+                "nl": "CSV-import werkt nu op Admin 7 en Admin 8. De import gebruikte een eigen UI-component die Admin 8 niet laadt (GUI API-generatieconflict, #48/#10). Het is vervangen door native jsonConfig-elementen (type, meternaam, CSV-tekstveld en importknop). Plak de CSV, druk op OPSLAAN en start de import. De overbodige eigen frontend is verwijderd.",
+                "fr": "L'import CSV fonctionne désormais sur Admin 7 et Admin 8. L'import utilisait un composant d'interface personnalisé qu'Admin 8 refuse de charger (incompatibilité de génération de l'API GUI, #48/#10). Il a été remplacé par des éléments jsonConfig natifs (type, nom du compteur, champ texte CSV et bouton d'import). Collez le CSV, ENREGISTREZ, puis lancez l'import. L'ancienne interface personnalisée a été supprimée.",
+                "it": "L'importazione CSV ora funziona su Admin 7 e Admin 8. L'importazione usava un componente UI personalizzato che Admin 8 non carica (incompatibilità di generazione della GUI API, #48/#10). È stato sostituito con elementi nativi jsonConfig (tipo, nome contatore, campo di testo CSV e pulsante di importazione). Incolla il CSV, premi SALVA e avvia l'importazione. La vecchia interfaccia personalizzata è stata rimossa.",
+                "es": "La importación CSV ahora funciona en Admin 7 y Admin 8. La importación usaba un componente de interfaz propio que Admin 8 no carga (incompatibilidad de generación de la GUI API, #48/#10). Se ha sustituido por elementos nativos de jsonConfig (tipo, nombre del contador, campo de texto CSV y botón de importación). Pega el CSV, pulsa GUARDAR e inicia la importación. La interfaz propia obsoleta se ha eliminado.",
+                "pl": "Import CSV działa teraz w Admin 7 i Admin 8. Import używał własnego komponentu UI, którego Admin 8 nie ładuje (niezgodność generacji GUI API, #48/#10). Zastąpiono go natywnymi elementami jsonConfig (typ, nazwa licznika, pole tekstowe CSV i przycisk importu). Wklej CSV, naciśnij ZAPISZ i uruchom import. Zbędny własny interfejs został usunięty.",
+                "uk": "Імпорт CSV тепер працює в Admin 7 і Admin 8. Раніше імпорт використовував власний UI-компонент, який Admin 8 не завантажує (невідповідність покоління GUI API, #48/#10). Його замінено нативними елементами jsonConfig (тип, назва лічильника, текстове поле CSV і кнопка імпорту). Просто вставте CSV, натисніть ЗБЕРЕГТИ й запустіть імпорт. Застарілий власний інтерфейс видалено.",
+                "zh-cn": "CSV 导入现在可在 Admin 7 和 Admin 8 上使用。此前导入使用了一个自定义界面组件，Admin 8 拒绝加载它（GUI API 代次不匹配，#48/#10）。现已替换为原生 jsonConfig 控件（类型、计量表名称、CSV 文本框和导入按钮）。粘贴 CSV，点击保存，然后开始导入。已移除过时的自定义前端。"
+            },
             "1.6.8": {
                 "en": "Repository review follow-up: all user-facing messages (test message, billing/contract reminders, monthly report and the config popups) are now language-aware. English is the default; German is used automatically when the ioBroker system language is German.",
                 "de": "Nachtrag zum Repository-Review: Alle Nutzer-Nachrichten (Testnachricht, Erinnerungen zu Abrechnung/Vertrag, Monatsreport und die Konfigurations-Popups) sind jetzt sprachabhängig. Standard ist Englisch; Deutsch wird automatisch verwendet, wenn die ioBroker-Systemsprache Deutsch ist.",
@@ -204,7 +217,10 @@
         "notificationBillingEnabled": true,
         "notificationBillingDays": 7,
         "notificationChangeDays": 60,
-        "sensorSpikeThreshold": 500
+        "sensorSpikeThreshold": 500,
+        "importType": "gas",
+        "importMeter": "main",
+        "importCsvContent": ""
     },
     "objects": [],
     "instanceObjects": []

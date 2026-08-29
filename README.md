@@ -362,6 +362,11 @@ The adapter resets the counters automatically:
 
 ## Changelog
 
+### 1.7.0 (2026-08-29)
+
+- **FIX:** 🧩 **CSV import works on Admin 8 again (#48, #10)** - the import used a custom Module-Federation UI component that targeted "GUI API generation 1", which Admin 8 (generation 2) refuses to load. It has been replaced with **native jsonConfig controls** (utility type, meter name, CSV text field, import button), so the import works on **Admin 7 and Admin 8** without any custom component. Paste the CSV, press **Save**, then **Start import**.
+- **CHORE:** 🧹 **Removed the obsolete custom frontend** (`admin/src-admin`, `admin/custom`) and the related Dependabot config for it. The CSV backend (`importManager`) is unchanged.
+
 ### 1.6.8 (2026-08-19)
 
 - **FIX:** 🌐 **Language-aware user messages** - all user-facing text (test message, billing/contract reminders, the monthly report and the config popups) is now localized. **English is the default**, German is used automatically when the ioBroker system language is German. This follows the repository requirement that user output must be English or multilingual with English as default.

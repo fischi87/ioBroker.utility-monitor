@@ -40,7 +40,6 @@
     "HT Start (z.B. 06:00)": "Początek poza szczytem (np. 06:00)",
     "HT/NT-Tarif verwenden": "Użyj taryfy szczytowej/poza szczytem",
     "Haupttarif (HT) Preis (€/kWh)": "Szczytowa cena taryfowa (€/kWh)",
-    "Hier kannst du historische Zählerstände importieren. Diese Funktion hilft dir, den Adapter schnell mit alten Daten zu füttern.\n\n⚠️ **Wichtig:** Wähle zuerst den Typ und den Zähler aus, für den die Daten bestimmt sind.": "Tutaj możesz importować historyczne odczyty liczników. Pomaga to szybko zasilić adapter starszymi danymi.\n\n⚠️ **Ważne:** Najpierw wybierz typ i licznik, do którego należą dane.",
     "Hier können Sie weitere Gaszähler hinzufügen (z.B. für verschiedene Wohnungen, Etagen oder Gebäude). Jeder Zähler wird separat erfasst und die Gesamtsumme automatisch berechnet.": "Tutaj możesz dodać kolejne liczniki gazu (np. dla różnych mieszkań, pięter lub budynków). Każdy metr jest rejestrowany osobno, a suma jest obliczana automatycznie.",
     "Hier können Sie weitere Stromzähler hinzufügen (z.B. für verschiedene Wohnungen, Etagen oder Gebäude). Jeder Zähler wird separat erfasst und die Gesamtsumme automatisch berechnet.": "Tutaj możesz dodać kolejne liczniki energii elektrycznej (np. dla różnych mieszkań, pięter lub budynków). Każdy metr jest rejestrowany osobno, a suma jest obliczana automatycznie.",
     "Hier können Sie weitere Wasserzähler hinzufügen (z.B. für verschiedene Wohnungen, Etagen oder Gebäude). Jeder Zähler wird separat erfasst und die Gesamtsumme automatisch berechnet.": "Tutaj możesz dodać kolejne wodomierze (np. dla różnych mieszkań, pięter czy budynków). Każdy metr jest rejestrowany osobno, a suma jest obliczana automatycznie.",
@@ -150,5 +149,14 @@
     "🔍 Stromzähler-Sensor auswählen (kWh)": "🔍 Wybierz czujnik licznika energii elektrycznej (kWh)",
     "🔍 Wasserzähler-Sensor auswählen (m³)": "🔍 Wybierz czujnik wodomierza (m³)",
     "🔥 Gas": "🔥Gaz",
-    "🛎️ Benachrichtigungen": "🛎️ Powiadomienia"
+    "🛎️ Benachrichtigungen": "🛎️ Powiadomienia",
+    "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).": "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).",
+    "Utility type": "Utility type",
+    "Meter name": "Meter name",
+    "Technical meter name, e.g. main": "Technical meter name, e.g. main",
+    "CSV content": "CSV content",
+    "Paste the CSV content here, then press SAVE before starting the import.": "Paste the CSV content here, then press SAVE before starting the import.",
+    "Start import": "Start import",
+    "Water": "Water",
+    "Electricity": "Electricity"
 }

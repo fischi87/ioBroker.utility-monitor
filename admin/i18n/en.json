@@ -40,7 +40,6 @@
     "HT Start (z.B. 06:00)": "Off-peak start (e.g. 06:00)",
     "HT/NT-Tarif verwenden": "Use peak/off-peak tariff",
     "Haupttarif (HT) Preis (€/kWh)": "Peak tariff price (€/kWh)",
-    "Hier kannst du historische Zählerstände importieren. Diese Funktion hilft dir, den Adapter schnell mit alten Daten zu füttern.\n\n⚠️ **Wichtig:** Wähle zuerst den Typ und den Zähler aus, für den die Daten bestimmt sind.": "Here you can import historical meter readings. This helps you to feed the adapter with older data quickly.\n\n⚠️ **Important:** First select the type and the meter the data belongs to.",
     "Hier können Sie weitere Gaszähler hinzufügen (z.B. für verschiedene Wohnungen, Etagen oder Gebäude). Jeder Zähler wird separat erfasst und die Gesamtsumme automatisch berechnet.": "Here you can add further gas meters (e.g. for different flats, floors or buildings). Each meter is recorded separately and the total is calculated automatically.",
     "Hier können Sie weitere Stromzähler hinzufügen (z.B. für verschiedene Wohnungen, Etagen oder Gebäude). Jeder Zähler wird separat erfasst und die Gesamtsumme automatisch berechnet.": "Here you can add further electricity meters (e.g. for different flats, floors or buildings). Each meter is recorded separately and the total is calculated automatically.",
     "Hier können Sie weitere Wasserzähler hinzufügen (z.B. für verschiedene Wohnungen, Etagen oder Gebäude). Jeder Zähler wird separat erfasst und die Gesamtsumme automatisch berechnet.": "Here you can add further water meters (e.g. for different flats, floors or buildings). Each meter is recorded separately and the total is calculated automatically.",
@@ -150,5 +149,14 @@
     "🔍 Stromzähler-Sensor auswählen (kWh)": "🔍 Select electricity meter sensor (kWh)",
     "🔍 Wasserzähler-Sensor auswählen (m³)": "🔍 Select water meter sensor (m³)",
     "🔥 Gas": "🔥 Gas",
-    "🛎️ Benachrichtigungen": "🛎️ Notifications"
+    "🛎️ Benachrichtigungen": "🛎️ Notifications",
+    "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).": "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).",
+    "Utility type": "Utility type",
+    "Meter name": "Meter name",
+    "Technical meter name, e.g. main": "Technical meter name, e.g. main",
+    "CSV content": "CSV content",
+    "Paste the CSV content here, then press SAVE before starting the import.": "Paste the CSV content here, then press SAVE before starting the import.",
+    "Start import": "Start import",
+    "Water": "Water",
+    "Electricity": "Electricity"
 }

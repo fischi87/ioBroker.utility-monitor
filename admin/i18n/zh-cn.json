@@ -40,7 +40,6 @@
     "HT Start (z.B. 06:00)": "非高峰开始（例如 06:00）",
     "HT/NT-Tarif verwenden": "使用高峰/非高峰资费",
     "Haupttarif (HT) Preis (€/kWh)": "峰值电价（欧元/千瓦时）",
-    "Hier kannst du historische Zählerstände importieren. Diese Funktion hilft dir, den Adapter schnell mit alten Daten zu füttern.\n\n⚠️ **Wichtig:** Wähle zuerst den Typ und den Zähler aus, für den die Daten bestimmt sind.": "您可以在此处导入历史仪表读数。这可以帮助您快速向适配器提供较旧的数据。\n\n⚠️ **重要：** 首先选择数据所属的类型和仪表。",
     "Hier können Sie weitere Gaszähler hinzufügen (z.B. für verschiedene Wohnungen, Etagen oder Gebäude). Jeder Zähler wird separat erfasst und die Gesamtsumme automatisch berechnet.": "您可以在此处添加更多燃气表（例如，针对不同的公寓、楼层或建筑物）。每米单独记录并自动计算总数。",
     "Hier können Sie weitere Stromzähler hinzufügen (z.B. für verschiedene Wohnungen, Etagen oder Gebäude). Jeder Zähler wird separat erfasst und die Gesamtsumme automatisch berechnet.": "您可以在此处添加更多电表（例如针对不同的公寓、楼层或建筑物）。每米单独记录并自动计算总数。",
     "Hier können Sie weitere Wasserzähler hinzufügen (z.B. für verschiedene Wohnungen, Etagen oder Gebäude). Jeder Zähler wird separat erfasst und die Gesamtsumme automatisch berechnet.": "您可以在此处添加更多水表（例如，针对不同的公寓、楼层或建筑物）。每米单独记录并自动计算总数。",
@@ -150,5 +149,14 @@
     "🔍 Stromzähler-Sensor auswählen (kWh)": "🔍选择电表传感器（kWh）",
     "🔍 Wasserzähler-Sensor auswählen (m³)": "🔍选择水表传感器（m³）",
     "🔥 Gas": "🔥 天然气",
-    "🛎️ Benachrichtigungen": "🛎️ 通知"
+    "🛎️ Benachrichtigungen": "🛎️ 通知",
+    "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).": "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).",
+    "Utility type": "Utility type",
+    "Meter name": "Meter name",
+    "Technical meter name, e.g. main": "Technical meter name, e.g. main",
+    "CSV content": "CSV content",
+    "Paste the CSV content here, then press SAVE before starting the import.": "Paste the CSV content here, then press SAVE before starting the import.",
+    "Start import": "Start import",
+    "Water": "Water",
+    "Electricity": "Electricity"
 }

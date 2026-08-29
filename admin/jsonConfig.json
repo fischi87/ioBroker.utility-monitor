@@ -1574,24 +1574,66 @@
                 },
                 "_importInfo": {
                     "type": "staticText",
-                    "text": "Hier kannst du historische Zählerstände importieren. Diese Funktion hilft dir, den Adapter schnell mit alten Daten zu füttern.\n\n⚠️ **Wichtig:** Wähle zuerst den Typ und den Zähler aus, für den die Daten bestimmt sind.",
+                    "text": "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).",
                     "xs": 12,
                     "sm": 12,
                     "md": 12,
                     "lg": 12,
                     "xl": 12
                 },
-                "importCustom": {
-                    "type": "custom",
-                    "name": "UtilityMonitor/Components/CSVImporter",
-                    "url": "custom/CSVImporter_v15_11.js",
-                    "bundlerType": "module",
+                "importType": {
+                    "type": "select",
+                    "label": "Utility type",
+                    "options": [
+                        { "label": "Gas", "value": "gas" },
+                        { "label": "Water", "value": "water" },
+                        { "label": "Electricity", "value": "electricity" },
+                        { "label": "PV", "value": "pv" }
+                    ],
+                    "default": "gas",
+                    "xs": 12,
+                    "sm": 6,
+                    "md": 4,
+                    "lg": 4,
+                    "xl": 4
+                },
+                "importMeter": {
+                    "type": "text",
+                    "label": "Meter name",
+                    "default": "main",
+                    "help": "Technical meter name, e.g. main",
+                    "xs": 12,
+                    "sm": 6,
+                    "md": 4,
+                    "lg": 4,
+                    "xl": 4
+                },
+                "importCsvContent": {
+                    "type": "text",
+                    "label": "CSV content",
+                    "help": "Paste the CSV content here, then press SAVE before starting the import.",
+                    "minRows": 8,
+                    "maxRows": 25,
                     "newLine": true,
                     "xs": 12,
                     "sm": 12,
                     "md": 12,
                     "lg": 12,
                     "xl": 12
+                },
+                "importRun": {
+                    "type": "sendTo",
+                    "label": "Start import",
+                    "command": "importCSV",
+                    "variant": "contained",
+                    "useNative": true,
+                    "showProcessMessage": true,
+                    "newLine": true,
+                    "xs": 12,
+                    "sm": 6,
+                    "md": 4,
+                    "lg": 4,
+                    "xl": 4
                 }
             }
         },

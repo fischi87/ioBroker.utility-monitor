@@ -361,6 +361,11 @@ Der Adapter setzt Zähler automatisch zurück:
 
 ## Changelog
 
+### 1.7.0 (2026-08-29)
+
+- **FIX:** 🧩 **CSV-Import funktioniert wieder unter Admin 8 (#48, #10)** - der Import nutzte eine eigene Module-Federation-Komponente mit „GUI-API-Generation 1", die Admin 8 (Generation 2) nicht lädt. Sie wurde durch **native jsonConfig-Elemente** ersetzt (Verbrauchsart, Zählername, CSV-Textfeld, Import-Button) und funktioniert damit unter **Admin 7 und Admin 8** ohne eigene Komponente. CSV einfügen, **Speichern**, dann **Import starten**.
+- **CHORE:** 🧹 **Überflüssige eigene Oberfläche entfernt** (`admin/src-admin`, `admin/custom`) samt zugehöriger Dependabot-Konfiguration. Das CSV-Backend (`importManager`) bleibt unverändert.
+
 ### 1.6.8 (2026-08-19)
 
 - **FIX:** 🌐 **Sprachabhängige Nutzer-Nachrichten** - alle Texte an Nutzer (Testnachricht, Erinnerungen zu Abrechnung/Vertrag, Monatsreport und die Konfigurations-Popups) sind jetzt lokalisiert. **Standard ist Englisch**, Deutsch wird automatisch verwendet, wenn die ioBroker-Systemsprache Deutsch ist. Damit wird die Repository-Vorgabe erfüllt, dass Nutzer-Ausgaben Englisch oder mehrsprachig mit Englisch als Standard sein müssen.
