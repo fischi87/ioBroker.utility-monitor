@@ -1,8 +1,21 @@
 {
     "common": {
         "name": "utility-monitor",
-        "version": "1.7.0",
+        "version": "1.7.1",
         "news": {
+            "1.7.1": {
+                "en": "Fix: the CSV import panel used an invalid jsonConfig property (showProcessMessage) which made the whole import tab invalid, so the import button did nothing on Admin 8. Removed the invalid properties so the import works again.",
+                "de": "Fix: Das CSV-Import-Panel nutzte eine ungültige jsonConfig-Eigenschaft (showProcessMessage), wodurch der ganze Import-Tab ungültig war und der Import-Button unter Admin 8 nichts tat. Die ungültigen Eigenschaften wurden entfernt, sodass der Import wieder funktioniert.",
+                "ru": "Исправление: панель импорта CSV использовала недопустимое свойство jsonConfig (showProcessMessage), из-за чего вся вкладка импорта была недействительной и кнопка импорта в Admin 8 ничего не делала. Недопустимые свойства удалены, импорт снова работает.",
+                "pt": "Correção: o painel de importação CSV usava uma propriedade jsonConfig inválida (showProcessMessage), o que tornava toda a aba de importação inválida, pelo que o botão de importação não fazia nada no Admin 8. As propriedades inválidas foram removidas e a importação volta a funcionar.",
+                "nl": "Fix: het CSV-importpaneel gebruikte een ongeldige jsonConfig-eigenschap (showProcessMessage), waardoor het hele importtabblad ongeldig was en de importknop niets deed op Admin 8. De ongeldige eigenschappen zijn verwijderd, zodat de import weer werkt.",
+                "fr": "Correction : le panneau d'import CSV utilisait une propriété jsonConfig invalide (showProcessMessage), ce qui rendait tout l'onglet d'import invalide et le bouton d'import ne faisait rien sous Admin 8. Les propriétés invalides ont été supprimées et l'import fonctionne à nouveau.",
+                "it": "Correzione: il pannello di importazione CSV usava una proprietà jsonConfig non valida (showProcessMessage), che rendeva non valida l'intera scheda di importazione, per cui il pulsante di importazione non faceva nulla su Admin 8. Le proprietà non valide sono state rimosse e l'importazione funziona di nuovo.",
+                "es": "Corrección: el panel de importación CSV usaba una propiedad jsonConfig no válida (showProcessMessage), lo que invalidaba toda la pestaña de importación, por lo que el botón de importación no hacía nada en Admin 8. Se eliminaron las propiedades no válidas y la importación vuelve a funcionar.",
+                "pl": "Poprawka: panel importu CSV używał nieprawidłowej właściwości jsonConfig (showProcessMessage), przez co cała karta importu była nieprawidłowa i przycisk importu nic nie robił w Admin 8. Usunięto nieprawidłowe właściwości, więc import znów działa.",
+                "uk": "Виправлення: панель імпорту CSV використовувала недійсну властивість jsonConfig (showProcessMessage), через що вся вкладка імпорту була недійсною і кнопка імпорту в Admin 8 нічого не робила. Недійсні властивості видалено, імпорт знову працює.",
+                "zh-cn": "修复：CSV 导入面板使用了无效的 jsonConfig 属性（showProcessMessage），导致整个导入选项卡无效，因此在 Admin 8 上导入按钮无反应。已移除无效属性，导入功能恢复正常。"
+            },
             "1.7.0": {
                 "en": "CSV import now works on Admin 7 and Admin 8. The import used a custom UI component that Admin 8 refuses to load (GUI API generation mismatch, #48/#10). It has been replaced with native jsonConfig controls (utility type, meter name, CSV text field and an import button). Simply paste the CSV, press SAVE, then start the import. The obsolete custom frontend was removed.",
                 "de": "Der CSV-Import funktioniert jetzt unter Admin 7 und Admin 8. Bisher nutzte der Import eine eigene Oberflächen-Komponente, die Admin 8 nicht lädt (GUI-API-Generation-Konflikt, #48/#10). Sie wurde durch native jsonConfig-Elemente ersetzt (Verbrauchsart, Zählername, CSV-Textfeld und Import-Button). Einfach CSV einfügen, SPEICHERN, dann Import starten. Die überflüssige eigene Oberfläche wurde entfernt.",

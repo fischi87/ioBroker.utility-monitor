@@ -361,6 +361,10 @@ Der Adapter setzt Zähler automatisch zurück:
 
 ## Changelog
 
+### 1.7.1 (2026-08-30)
+
+- **FIX:** 🐛 **CSV-Import-Button tat unter Admin 8 nichts** - das Import-Panel nutzte ungültige jsonConfig-Eigenschaften (`showProcessMessage`, `minRows`), wodurch der ganze Import-Tab schema-ungültig war. Der Klick auf „Import starten" hatte keine Wirkung und erzeugte keine Log-Ausgabe. Die ungültigen Eigenschaften wurden entfernt, der Import funktioniert wieder.
+
 ### 1.7.0 (2026-08-29)
 
 - **FIX:** 🧩 **CSV-Import funktioniert wieder unter Admin 8 (#48, #10)** - der Import nutzte eine eigene Module-Federation-Komponente mit „GUI-API-Generation 1", die Admin 8 (Generation 2) nicht lädt. Sie wurde durch **native jsonConfig-Elemente** ersetzt (Verbrauchsart, Zählername, CSV-Textfeld, Import-Button) und funktioniert damit unter **Admin 7 und Admin 8** ohne eigene Komponente. CSV einfügen, **Speichern**, dann **Import starten**.
