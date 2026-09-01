@@ -1,8 +1,21 @@
 {
     "common": {
         "name": "utility-monitor",
-        "version": "1.7.1",
+        "version": "1.7.2",
         "news": {
+            "1.7.2": {
+                "en": "Fix: the CSV import button reached no backend (nothing happened, no log, just a delayed OK). The import now sends type and meter via the button and reads the CSV content from the saved config, so it actually runs. Paste the CSV, press SAVE, then Start import; a success/error message is shown.",
+                "de": "Fix: Der CSV-Import-Button erreichte das Backend nicht (nichts passierte, kein Log, nur ein verzögertes OK). Der Import sendet Typ und Zähler jetzt über den Button und liest den CSV-Inhalt aus der gespeicherten Konfiguration, sodass er wirklich läuft. CSV einfügen, SPEICHERN, dann Import starten; eine Erfolgs-/Fehlermeldung wird angezeigt.",
+                "ru": "Исправление: кнопка импорта CSV не достигала бэкенда (ничего не происходило, без лога, лишь запоздалое OK). Теперь импорт отправляет тип и счётчик через кнопку и читает содержимое CSV из сохранённой конфигурации, поэтому он действительно выполняется. Вставьте CSV, СОХРАНИТЕ, затем запустите импорт; показывается сообщение об успехе/ошибке.",
+                "pt": "Correção: o botão de importação CSV não chegava ao backend (nada acontecia, sem log, apenas um OK atrasado). A importação agora envia o tipo e o contador pelo botão e lê o conteúdo CSV da configuração guardada, por isso é executada de facto. Cole o CSV, GUARDE e inicie a importação; é mostrada uma mensagem de sucesso/erro.",
+                "nl": "Fix: de CSV-importknop bereikte geen backend (er gebeurde niets, geen log, alleen een vertraagde OK). De import stuurt nu type en meter via de knop en leest de CSV-inhoud uit de opgeslagen configuratie, zodat hij echt draait. Plak de CSV, SLA OP en start de import; er wordt een succes-/foutmelding getoond.",
+                "fr": "Correction : le bouton d'import CSV n'atteignait aucun backend (rien ne se passait, pas de log, juste un OK différé). L'import envoie désormais le type et le compteur via le bouton et lit le contenu CSV depuis la configuration enregistrée, il s'exécute donc réellement. Collez le CSV, ENREGISTREZ, puis lancez l'import ; un message de succès/erreur s'affiche.",
+                "it": "Correzione: il pulsante di importazione CSV non raggiungeva alcun backend (non succedeva nulla, nessun log, solo un OK ritardato). L'importazione ora invia tipo e contatore tramite il pulsante e legge il contenuto CSV dalla configurazione salvata, quindi viene effettivamente eseguita. Incolla il CSV, SALVA e avvia l'importazione; viene mostrato un messaggio di successo/errore.",
+                "es": "Corrección: el botón de importación CSV no llegaba a ningún backend (no pasaba nada, sin registro, solo un OK con retraso). La importación ahora envía el tipo y el contador mediante el botón y lee el contenido CSV de la configuración guardada, por lo que realmente se ejecuta. Pega el CSV, GUARDA e inicia la importación; se muestra un mensaje de éxito/error.",
+                "pl": "Poprawka: przycisk importu CSV nie docierał do backendu (nic się nie działo, brak logu, tylko opóźnione OK). Import wysyła teraz typ i licznik przez przycisk i odczytuje zawartość CSV z zapisanej konfiguracji, więc rzeczywiście działa. Wklej CSV, ZAPISZ, następnie uruchom import; wyświetlany jest komunikat o sukcesie/błędzie.",
+                "uk": "Виправлення: кнопка імпорту CSV не досягала бекенду (нічого не відбувалося, без логу, лише запізніле OK). Тепер імпорт надсилає тип і лічильник через кнопку та читає вміст CSV зі збереженої конфігурації, тож він справді виконується. Вставте CSV, ЗБЕРЕЖІТЬ, потім запустіть імпорт; показується повідомлення про успіх/помилку.",
+                "zh-cn": "修复：CSV 导入按钮未到达后端（无反应、无日志，只有延迟的 OK）。现在导入通过按钮发送类型和计量表，并从已保存的配置中读取 CSV 内容，因此真正执行。粘贴 CSV，保存，然后开始导入；会显示成功/错误消息。"
+            },
             "1.7.1": {
                 "en": "Fix: the CSV import panel used an invalid jsonConfig property (showProcessMessage) which made the whole import tab invalid, so the import button did nothing on Admin 8. Removed the invalid properties so the import works again.",
                 "de": "Fix: Das CSV-Import-Panel nutzte eine ungültige jsonConfig-Eigenschaft (showProcessMessage), wodurch der ganze Import-Tab ungültig war und der Import-Button unter Admin 8 nichts tat. Die ungültigen Eigenschaften wurden entfernt, sodass der Import wieder funktioniert.",

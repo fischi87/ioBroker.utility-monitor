@@ -1625,7 +1625,7 @@
                     "label": "Start import",
                     "command": "importCSV",
                     "variant": "contained",
-                    "useNative": true,
+                    "jsonData": "{\"type\": \"${data.importType}\", \"meterName\": \"${data.importMeter}\"}",
                     "newLine": true,
                     "xs": 12,
                     "sm": 6,

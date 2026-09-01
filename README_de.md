@@ -361,6 +361,10 @@ Der Adapter setzt Zähler automatisch zurück:
 
 ## Changelog
 
+### 1.7.2 (2026-08-30)
+
+- **FIX:** 🐛 **CSV-Import tat unter Admin 8 nichts (kein Backend-Aufruf)** - der `sendTo`-Button nutzte `useNative`, wodurch eine leere Nachricht ankam und `handleImportCSV` sofort abbrach (kein Log, nur ein verzögertes „OK"). Der Button sendet Verbrauchsart und Zählername jetzt über `jsonData`, der CSV-Inhalt wird aus der gespeicherten Config (`importCsvContent`) gelesen - das vermeidet Escaping-Probleme bei mehrzeiligem Inhalt. Ablauf: CSV einfügen → **Speichern** → **Import starten**; eine Erfolgs-/Fehlermeldung wird jetzt angezeigt.
+
 ### 1.7.1 (2026-08-30)
 
 - **FIX:** 🐛 **CSV-Import-Button tat unter Admin 8 nichts** - das Import-Panel nutzte ungültige jsonConfig-Eigenschaften (`showProcessMessage`, `minRows`), wodurch der ganze Import-Tab schema-ungültig war. Der Klick auf „Import starten" hatte keine Wirkung und erzeugte keine Log-Ausgabe. Die ungültigen Eigenschaften wurden entfernt, der Import funktioniert wieder.

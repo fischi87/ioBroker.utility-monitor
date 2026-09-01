@@ -362,6 +362,10 @@ The adapter resets the counters automatically:
 
 ## Changelog
 
+### 1.7.2 (2026-08-30)
+
+- **FIX:** 🐛 **CSV import did nothing on Admin 8 (no backend call)** - the `sendTo` button used `useNative`, which delivered an empty message, so `handleImportCSV` returned before doing anything (no log, just a delayed "OK"). The button now sends the utility type and meter name via `jsonData`, and the CSV content is read from the saved config (`importCsvContent`) - avoiding multi-line escaping issues. Flow: paste CSV → **Save** → **Start import**; a success/error message is now shown.
+
 ### 1.7.1 (2026-08-30)
 
 - **FIX:** 🐛 **CSV import button did nothing on Admin 8** - the import panel used invalid jsonConfig properties (`showProcessMessage`, `minRows`), which made the whole import tab schema-invalid, so clicking "Start import" had no effect and produced no log output. Removed the invalid properties so the import works again.
