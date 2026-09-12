@@ -49,7 +49,7 @@ jobs:
         # version of the js-controller, which requires Node >= 22 since 7.2.3.
         # The adapter itself still runs on Node 20 (see engines in package.json)
         # together with a stable js-controller.
-        node-version: [22.x, 24.x]
+        node-version: [22.x, 24.x, 26.x]
         os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
