@@ -1,20 +1,20 @@
 {
     "common": {
         "name": "utility-monitor",
-        "version": "1.7.2",
+        "version": "1.7.3",
         "news": {
-            "1.7.2": {
-                "en": "Fix: the CSV import button reached no backend (nothing happened, no log, just a delayed OK). The import now sends type and meter via the button and reads the CSV content from the saved config, so it actually runs. Paste the CSV, press SAVE, then Start import; a success/error message is shown.",
-                "de": "Fix: Der CSV-Import-Button erreichte das Backend nicht (nichts passierte, kein Log, nur ein verzögertes OK). Der Import sendet Typ und Zähler jetzt über den Button und liest den CSV-Inhalt aus der gespeicherten Konfiguration, sodass er wirklich läuft. CSV einfügen, SPEICHERN, dann Import starten; eine Erfolgs-/Fehlermeldung wird angezeigt.",
-                "ru": "Исправление: кнопка импорта CSV не достигала бэкенда (ничего не происходило, без лога, лишь запоздалое OK). Теперь импорт отправляет тип и счётчик через кнопку и читает содержимое CSV из сохранённой конфигурации, поэтому он действительно выполняется. Вставьте CSV, СОХРАНИТЕ, затем запустите импорт; показывается сообщение об успехе/ошибке.",
-                "pt": "Correção: o botão de importação CSV não chegava ao backend (nada acontecia, sem log, apenas um OK atrasado). A importação agora envia o tipo e o contador pelo botão e lê o conteúdo CSV da configuração guardada, por isso é executada de facto. Cole o CSV, GUARDE e inicie a importação; é mostrada uma mensagem de sucesso/erro.",
-                "nl": "Fix: de CSV-importknop bereikte geen backend (er gebeurde niets, geen log, alleen een vertraagde OK). De import stuurt nu type en meter via de knop en leest de CSV-inhoud uit de opgeslagen configuratie, zodat hij echt draait. Plak de CSV, SLA OP en start de import; er wordt een succes-/foutmelding getoond.",
-                "fr": "Correction : le bouton d'import CSV n'atteignait aucun backend (rien ne se passait, pas de log, juste un OK différé). L'import envoie désormais le type et le compteur via le bouton et lit le contenu CSV depuis la configuration enregistrée, il s'exécute donc réellement. Collez le CSV, ENREGISTREZ, puis lancez l'import ; un message de succès/erreur s'affiche.",
-                "it": "Correzione: il pulsante di importazione CSV non raggiungeva alcun backend (non succedeva nulla, nessun log, solo un OK ritardato). L'importazione ora invia tipo e contatore tramite il pulsante e legge il contenuto CSV dalla configurazione salvata, quindi viene effettivamente eseguita. Incolla il CSV, SALVA e avvia l'importazione; viene mostrato un messaggio di successo/errore.",
-                "es": "Corrección: el botón de importación CSV no llegaba a ningún backend (no pasaba nada, sin registro, solo un OK con retraso). La importación ahora envía el tipo y el contador mediante el botón y lee el contenido CSV de la configuración guardada, por lo que realmente se ejecuta. Pega el CSV, GUARDA e inicia la importación; se muestra un mensaje de éxito/error.",
-                "pl": "Poprawka: przycisk importu CSV nie docierał do backendu (nic się nie działo, brak logu, tylko opóźnione OK). Import wysyła teraz typ i licznik przez przycisk i odczytuje zawartość CSV z zapisanej konfiguracji, więc rzeczywiście działa. Wklej CSV, ZAPISZ, następnie uruchom import; wyświetlany jest komunikat o sukcesie/błędzie.",
-                "uk": "Виправлення: кнопка імпорту CSV не досягала бекенду (нічого не відбувалося, без логу, лише запізніле OK). Тепер імпорт надсилає тип і лічильник через кнопку та читає вміст CSV зі збереженої конфігурації, тож він справді виконується. Вставте CSV, ЗБЕРЕЖІТЬ, потім запустіть імпорт; показується повідомлення про успіх/помилку.",
-                "zh-cn": "修复：CSV 导入按钮未到达后端（无反应、无日志，只有延迟的 OK）。现在导入通过按钮发送类型和计量表，并从已保存的配置中读取 CSV 内容，因此真正执行。粘贴 CSV，保存，然后开始导入；会显示成功/错误消息。"
+            "1.7.3": {
+                "en": "CSV import: fixed so the button reaches the backend on Admin 8 and shows a clear result message. Repository housekeeping: updated the test dependency, added Node 26 to CI, translated the import texts, trimmed the changelog, and fixed the adapter logo (JPG renamed).",
+                "de": "CSV-Import: behoben, sodass der Button unter Admin 8 das Backend erreicht und eine klare Ergebnismeldung zeigt. Repository-Pflege: Test-Abhängigkeit aktualisiert, Node 26 in der CI ergänzt, Import-Texte übersetzt, Changelog gekürzt und das Adapter-Logo korrigiert (JPG umbenannt).",
+                "ru": "Импорт CSV: исправлено, кнопка теперь достигает бэкенда в Admin 8 и показывает понятное сообщение. Обслуживание репозитория: обновлена тестовая зависимость, добавлен Node 26 в CI, переведены тексты импорта, сокращён список изменений и исправлен логотип (JPG переименован).",
+                "pt": "Importação CSV: corrigida para que o botão chegue ao backend no Admin 8 e mostre uma mensagem de resultado clara. Manutenção do repositório: dependência de teste atualizada, Node 26 adicionado ao CI, textos de importação traduzidos, changelog reduzido e logótipo corrigido (JPG renomeado).",
+                "nl": "CSV-import: opgelost zodat de knop de backend bereikt op Admin 8 en een duidelijke resultaatmelding toont. Repository-onderhoud: testafhankelijkheid bijgewerkt, Node 26 aan CI toegevoegd, importteksten vertaald, changelog ingekort en adapterlogo gecorrigeerd (JPG hernoemd).",
+                "fr": "Import CSV : corrigé pour que le bouton atteigne le backend sous Admin 8 et affiche un message de résultat clair. Maintenance du dépôt : dépendance de test mise à jour, Node 26 ajouté à la CI, textes d'import traduits, changelog réduit et logo de l'adaptateur corrigé (JPG renommé).",
+                "it": "Importazione CSV: corretta affinché il pulsante raggiunga il backend su Admin 8 e mostri un messaggio di esito chiaro. Manutenzione del repository: dipendenza di test aggiornata, Node 26 aggiunto alla CI, testi di importazione tradotti, changelog ridotto e logo corretto (JPG rinominato).",
+                "es": "Importación CSV: corregida para que el botón llegue al backend en Admin 8 y muestre un mensaje de resultado claro. Mantenimiento del repositorio: dependencia de pruebas actualizada, Node 26 añadido a CI, textos de importación traducidos, changelog recortado y logo corregido (JPG renombrado).",
+                "pl": "Import CSV: naprawiono, aby przycisk docierał do backendu w Admin 8 i pokazywał czytelny komunikat o wyniku. Porządki w repozytorium: zaktualizowano zależność testową, dodano Node 26 do CI, przetłumaczono teksty importu, skrócono changelog i poprawiono logo (zmieniono nazwę na JPG).",
+                "uk": "Імпорт CSV: виправлено, щоб кнопка досягала бекенду в Admin 8 і показувала зрозуміле повідомлення про результат. Обслуговування репозиторію: оновлено тестову залежність, додано Node 26 до CI, перекладено тексти імпорту, скорочено список змін і виправлено логотип (JPG перейменовано).",
+                "zh-cn": "CSV 导入：已修复，按钮在 Admin 8 上能到达后端并显示清晰的结果消息。仓库维护：更新测试依赖，CI 增加 Node 26，翻译导入文本，精简更新日志，并修复适配器徽标（JPG 重命名）。"
             },
             "1.7.1": {
                 "en": "Fix: the CSV import panel used an invalid jsonConfig property (showProcessMessage) which made the whole import tab invalid, so the import button did nothing on Admin 8. Removed the invalid properties so the import works again.",
@@ -93,45 +93,6 @@
                 "pl": "Ważne: info.monthlyInstallment jest teraz liczbą z jednostką EUR zamiast sformatowanego tekstu, dzięki czemu nadaje się do historii, wykresów i skryptów. Istniejące instalacje są konwertowane automatycznie. Poprawiono także nieaktualny link do repozytorium oraz mylący opis daysRemaining na stronie informacyjnej.",
                 "uk": "Важливо: info.monthlyInstallment тепер число з одиницею EUR замість форматованого тексту, тож його можна записувати в історію, будувати графіки та використовувати у скриптах. Наявні встановлення перетворюються автоматично. Також виправлено застаріле посилання на репозиторій і хибний опис daysRemaining на інформаційній сторінці.",
                 "zh-cn": "重要变更：info.monthlyInstallment 现在是带单位 EUR 的数值，而非格式化文本，因此可用于历史记录、图表和脚本。现有安装会自动转换。此外修正了信息页中失效的仓库链接以及 daysRemaining 的误导性描述。"
-            },
-            "1.6.4": {
-                "en": "Fix: billing countdown is now refreshed continuously instead of only at adapter start; monthly report is no longer sent twice. Also contains the previously unpublished fixes: monthly reset on the last day of the month and daily/monthly start values set to 0.",
-                "de": "Fix: Abrechnungs-Countdown wird jetzt laufend statt nur beim Adapterstart aktualisiert; Monats-Report wird nicht mehr doppelt versendet. Enthält zudem die bisher unveröffentlichten Korrekturen: Monats-Reset am letzten Tag des Monats und Startwerte für Tag/Monat auf 0.",
-                "ru": "Исправление: обратный отсчёт расчётного периода теперь обновляется постоянно, а не только при запуске адаптера; ежемесячный отчёт больше не отправляется дважды. Также включает ранее не опубликованные исправления: сброс за месяц в последний день месяца и начальные значения дня/месяца, равные 0.",
-                "pt": "Correção: a contagem regressiva do período de faturação é agora atualizada continuamente e não apenas no arranque do adaptador; o relatório mensal já não é enviado duas vezes. Inclui também as correções ainda não publicadas: reposição mensal no último dia do mês e valores iniciais diários/mensais a 0.",
-                "nl": "Fix: de aftelling van de afrekenperiode wordt nu doorlopend bijgewerkt in plaats van alleen bij het starten van de adapter; het maandrapport wordt niet meer dubbel verzonden. Bevat ook de nog niet gepubliceerde correcties: maandreset op de laatste dag van de maand en dag-/maandstartwaarden op 0.",
-                "fr": "Correction : le compte à rebours de la période de facturation est désormais actualisé en continu et non plus uniquement au démarrage de l'adaptateur ; le rapport mensuel n'est plus envoyé deux fois. Contient également les correctifs non publiés jusqu'ici : réinitialisation mensuelle le dernier jour du mois et valeurs de départ journalières/mensuelles à 0.",
-                "it": "Correzione: il conto alla rovescia del periodo di fatturazione viene ora aggiornato continuamente e non solo all'avvio dell'adattatore; il report mensile non viene più inviato due volte. Include inoltre le correzioni finora non pubblicate: reset mensile nell'ultimo giorno del mese e valori iniziali giornalieri/mensili a 0.",
-                "es": "Corrección: la cuenta atrás del período de facturación ahora se actualiza continuamente y no solo al iniciar el adaptador; el informe mensual ya no se envía dos veces. Incluye además las correcciones no publicadas hasta ahora: reinicio mensual el último día del mes y valores iniciales diarios/mensuales a 0.",
-                "pl": "Poprawka: odliczanie okresu rozliczeniowego jest teraz aktualizowane na bieżąco, a nie tylko przy starcie adaptera; raport miesięczny nie jest już wysyłany dwukrotnie. Zawiera także dotychczas nieopublikowane poprawki: reset miesięczny w ostatnim dniu miesiąca oraz dzienne/miesięczne wartości początkowe ustawione na 0.",
-                "uk": "Виправлення: зворотний відлік розрахункового періоду тепер оновлюється постійно, а не лише при запуску адаптера; щомісячний звіт більше не надсилається двічі. Також містить раніше не опубліковані виправлення: місячне скидання в останній день місяця та початкові значення дня/місяця, що дорівнюють 0.",
-                "zh-cn": "修复：计费周期倒计时现在会持续更新，而不再仅在适配器启动时计算；月度报告不再重复发送。另包含此前未发布的修复：月末最后一天的月度重置，以及日/月起始值归零。"
-            },
-            "1.6.1": {
-                "en": "New statistics data points: lastDay, lastWeek, lastMonth, and lastYear for costs and consumption.",
-                "de": "Neue Statistik-Datenpunkte: lastDay, lastWeek, lastMonth, lastYear für Kosten und Verbrauch.",
-                "ru": "Новые точки статистических данных: lastDay, lastWeek, lastMonth и lastYear для затрат и потребления.",
-                "pt": "Novos pontos de dados estatísticos: lastDay, lastWeek, lastMonth e lastYear para custos e consumo.",
-                "nl": "Nieuwe statistiekgegevenspunten: lastDay, lastWeek, lastMonth en lastYear voor kosten en verbruik.",
-                "fr": "Nouveaux points de données statistiques : lastDay, lastWeek, lastMonth et lastYear pour les coûts et la consommation.",
-                "it": "Nuovi punti dati statistici: lastDay, lastWeek, lastMonth e lastYear per costi e consumi.",
-                "es": "Nuevos puntos de datos estadísticos: lastDay, lastWeek, lastMonth y lastYear para costes y consumo.",
-                "pl": "Nowe punkty danych statystycznych: lastDay, lastWeek, lastMonth i lastYear dla kosztów i zużycia.",
-                "uk": "Нові статистичні дані: lastDay, lastWeek, lastMonth і lastYear для витрат і споживання.",
-                "zh-cn": "新的统计数据点：成本和消耗的 lastDay、lastWeek、lastMonth 和 lastYear。"
-            },
-            "1.5.1": {
-                "en": "Fix: Reset timing and monthly calculation logic. Fix: JSDoc type definitions.",
-                "de": "Fix: Reset-Timing und monatliche Berechnungslogik. Fix: JSDoc Typ-Definitionen.",
-                "ru": "Исправление: время сброса и логика ежемесячного расчета. Исправление: определения типов JSDoc.",
-                "pt": "Correção: tempo de redefinição e lógica de cálculo mensal. Correção: definições de tipo JSDoc.",
-                "nl": "Fix: Reset timing en maandelijkse berekeningslogica. Fix: JSDoc type definities.",
-                "fr": "Correctif : synchronisation de la réinitialisation et logique de calcul mensuel. Correctif : définitions de type JSDoc.",
-                "it": "Correzione: tempi di ripristino e logica di calcolo mensile. Correzione: definizioni dei tipi JSDoc.",
-                "es": "Solución: sincronización de reinicio y lógica de cálculo mensual. Solución: definiciones de tipos de JSDoc.",
-                "pl": "Naprawa: czas resetowania i logika obliczeń miesięcznych. Naprawa: definicje typów JSDoc.",
-                "uk": "Виправлення: час скидання та логіка щомісячного розрахунку. Виправлення: визначення типів JSDoc.",
-                "zh-cn": "修复：重置时间和每月计算逻辑。修复：JSDoc 类型定义。"
             }
         },
         "titleLang": {
@@ -160,16 +121,24 @@
             "uk": "Моніторинг споживання газу, води та електроенергії з розрахунком витрат",
             "zh-cn": "监控燃气、水和电力消耗并计算成本"
         },
-        "authors": ["fischi87 <axel.fischer@hotmail.com>"],
-        "keywords": ["utility", "electricity", "gas", "water", "metering"],
+        "authors": [
+            "fischi87 <axel.fischer@hotmail.com>"
+        ],
+        "keywords": [
+            "utility",
+            "electricity",
+            "gas",
+            "water",
+            "metering"
+        ],
         "licenseInformation": {
             "license": "MIT",
             "type": "free"
         },
         "platform": "Javascript/Node.js",
-        "icon": "utility-monitor.png",
+        "icon": "utility-monitor.jpg",
         "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/fischi87/ioBroker.utility-monitor/main/admin/utility-monitor.png",
+        "extIcon": "https://raw.githubusercontent.com/fischi87/ioBroker.utility-monitor/main/admin/utility-monitor.jpg",
         "readme": "https://github.com/fischi87/ioBroker.utility-monitor",
         "loglevel": "info",
         "tier": 3,

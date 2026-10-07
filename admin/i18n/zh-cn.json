@@ -150,13 +150,13 @@
     "🔍 Wasserzähler-Sensor auswählen (m³)": "🔍选择水表传感器（m³）",
     "🔥 Gas": "🔥 天然气",
     "🛎️ Benachrichtigungen": "🛎️ 通知",
-    "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).": "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).",
-    "Utility type": "Utility type",
-    "Meter name": "Meter name",
-    "Technical meter name, e.g. main": "Technical meter name, e.g. main",
-    "CSV content": "CSV content",
-    "Paste the CSV content here, then press SAVE before starting the import.": "Paste the CSV content here, then press SAVE before starting the import.",
-    "Start import": "Start import",
-    "Water": "Water",
-    "Electricity": "Electricity"
+    "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).": "导入历史抄表数据。选择类型和计量表，粘贴 CSV 内容，点击保存，然后点击“开始导入”。CSV 需要一个日期列和一个数值列（分隔符会自动识别）。",
+    "Utility type": "类型",
+    "Meter name": "计量表名称",
+    "Technical meter name, e.g. main": "计量表技术名称，例如 main",
+    "CSV content": "CSV 内容",
+    "Paste the CSV content here, then press SAVE before starting the import.": "将 CSV 内容粘贴到此处，开始导入前请点击保存。",
+    "Start import": "开始导入",
+    "Water": "水",
+    "Electricity": "电"
 }

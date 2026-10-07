@@ -150,13 +150,13 @@
     "🔍 Wasserzähler-Sensor auswählen (m³)": "🔍 Selecione o sensor do hidrômetro (m³)",
     "🔥 Gas": "🔥 Gás",
     "🛎️ Benachrichtigungen": "🛎️ Notificações",
-    "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).": "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).",
-    "Utility type": "Utility type",
-    "Meter name": "Meter name",
-    "Technical meter name, e.g. main": "Technical meter name, e.g. main",
-    "CSV content": "CSV content",
-    "Paste the CSV content here, then press SAVE before starting the import.": "Paste the CSV content here, then press SAVE before starting the import.",
-    "Start import": "Start import",
-    "Water": "Water",
-    "Electricity": "Electricity"
+    "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).": "Importe leituras históricas do contador. Escolha o tipo de serviço e o contador, cole o conteúdo CSV, prima GUARDAR e depois clique em «Iniciar importação». O CSV precisa de uma coluna de data e uma de valor (o separador é detetado automaticamente).",
+    "Utility type": "Tipo de serviço",
+    "Meter name": "Nome do contador",
+    "Technical meter name, e.g. main": "Nome técnico do contador, por ex. main",
+    "CSV content": "Conteúdo CSV",
+    "Paste the CSV content here, then press SAVE before starting the import.": "Cole aqui o conteúdo CSV e prima GUARDAR antes de iniciar a importação.",
+    "Start import": "Iniciar importação",
+    "Water": "Água",
+    "Electricity": "Eletricidade"
 }

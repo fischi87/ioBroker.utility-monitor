@@ -150,13 +150,13 @@
     "🔍 Wasserzähler-Sensor auswählen (m³)": "🔍 Виберіть датчик водоміра (м³)",
     "🔥 Gas": "🔥 Газ",
     "🛎️ Benachrichtigungen": "🛎️ Сповіщення",
-    "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).": "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).",
-    "Utility type": "Utility type",
-    "Meter name": "Meter name",
-    "Technical meter name, e.g. main": "Technical meter name, e.g. main",
-    "CSV content": "CSV content",
-    "Paste the CSV content here, then press SAVE before starting the import.": "Paste the CSV content here, then press SAVE before starting the import.",
-    "Start import": "Start import",
-    "Water": "Water",
-    "Electricity": "Electricity"
+    "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).": "Імпортуйте історичні показання лічильника. Виберіть тип і лічильник, вставте вміст CSV, натисніть ЗБЕРЕГТИ, потім натисніть «Запустити імпорт». CSV повинен містити стовпець дати та стовпець значення (роздільник визначається автоматично).",
+    "Utility type": "Тип ресурсу",
+    "Meter name": "Назва лічильника",
+    "Technical meter name, e.g. main": "Технічна назва лічильника, напр. main",
+    "CSV content": "Вміст CSV",
+    "Paste the CSV content here, then press SAVE before starting the import.": "Вставте сюди вміст CSV і натисніть ЗБЕРЕГТИ перед запуском імпорту.",
+    "Start import": "Запустити імпорт",
+    "Water": "Вода",
+    "Electricity": "Електрика"
 }

@@ -1,4 +1,4 @@
-![Logo](admin/utility-monitor.png)
+![Logo](admin/utility-monitor.jpg)
 
 # ioBroker.utility-monitor
 
@@ -360,6 +360,12 @@ Der Adapter setzt Zähler automatisch zurück:
 ---
 
 ## Changelog
+
+### 1.7.3 (2026-10-07)
+
+- **IMPROVEMENT:** 📥 **Klarere Rückmeldung beim CSV-Import** - der Import meldet jetzt, wie viele Datensätze in wie vielen Jahren archiviert wurden. Liegen alle Zeilen im aktuellen Jahr (das nicht in die History-States archiviert wird), wird ein deutlicher Hinweis angezeigt statt einem stillen „nichts passiert".
+- **FIX:** 🖼️ Logo ist jetzt ein gültiges JPEG und wird überall einheitlich als `utility-monitor.jpg` referenziert (Admin, io-package, README).
+- Repository-Checker-Fixes: `@iobroker/testing` auf `^6.3.0` angehoben, Node.js 26.x zur CI-Testmatrix hinzugefügt, News-Liste auf die 7 neuesten Versionen gekürzt und weitere i18n-Übersetzungen ergänzt (es, fr, it, nl, pl, pt, ru, uk, zh-cn).
 
 ### 1.7.2 (2026-08-30)
 

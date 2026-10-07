@@ -150,13 +150,13 @@
     "🔍 Wasserzähler-Sensor auswählen (m³)": "🔍 Selecteer watermetersensor (m³)",
     "🔥 Gas": "🔥Gas",
     "🛎️ Benachrichtigungen": "🛎️ Meldingen",
-    "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).": "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).",
-    "Utility type": "Utility type",
-    "Meter name": "Meter name",
-    "Technical meter name, e.g. main": "Technical meter name, e.g. main",
-    "CSV content": "CSV content",
-    "Paste the CSV content here, then press SAVE before starting the import.": "Paste the CSV content here, then press SAVE before starting the import.",
-    "Start import": "Start import",
+    "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).": "Importeer historische meterstanden. Kies het nutstype en de meter, plak de CSV-inhoud, klik op OPSLAAN en klik dan op 'Import starten'. De CSV heeft een datumkolom en een waardekolom nodig (het scheidingsteken wordt automatisch gedetecteerd).",
+    "Utility type": "Nutstype",
+    "Meter name": "Meternaam",
+    "Technical meter name, e.g. main": "Technische meternaam, bijv. main",
+    "CSV content": "CSV-inhoud",
+    "Paste the CSV content here, then press SAVE before starting the import.": "Plak hier de CSV-inhoud en klik op OPSLAAN voordat je de import start.",
+    "Start import": "Import starten",
     "Water": "Water",
-    "Electricity": "Electricity"
+    "Electricity": "Elektriciteit"
 }

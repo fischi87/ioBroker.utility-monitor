@@ -150,13 +150,13 @@
     "🔍 Wasserzähler-Sensor auswählen (m³)": "🔍 Выберите датчик водомера (м³)",
     "🔥 Gas": "🔥Газ",
     "🛎️ Benachrichtigungen": "🛎️ Уведомления",
-    "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).": "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).",
-    "Utility type": "Utility type",
-    "Meter name": "Meter name",
-    "Technical meter name, e.g. main": "Technical meter name, e.g. main",
-    "CSV content": "CSV content",
-    "Paste the CSV content here, then press SAVE before starting the import.": "Paste the CSV content here, then press SAVE before starting the import.",
-    "Start import": "Start import",
-    "Water": "Water",
-    "Electricity": "Electricity"
+    "Import historical meter readings. Choose the utility type and meter, paste the CSV content, press SAVE, then click \"Start import\". The CSV needs a date column and a value column (the separator is detected automatically).": "Импортируйте исторические показания счётчика. Выберите тип и счётчик, вставьте содержимое CSV, нажмите СОХРАНИТЬ, затем нажмите «Запустить импорт». CSV должен содержать столбец с датой и столбец со значением (разделитель определяется автоматически).",
+    "Utility type": "Тип ресурса",
+    "Meter name": "Имя счётчика",
+    "Technical meter name, e.g. main": "Техническое имя счётчика, напр. main",
+    "CSV content": "Содержимое CSV",
+    "Paste the CSV content here, then press SAVE before starting the import.": "Вставьте сюда содержимое CSV и нажмите СОХРАНИТЬ перед запуском импорта.",
+    "Start import": "Запустить импорт",
+    "Water": "Вода",
+    "Electricity": "Электричество"
 }
