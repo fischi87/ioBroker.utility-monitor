@@ -50,6 +50,22 @@
                     "lg": 6,
                     "xl": 4
                 },
+                "gasSensorUnit": {
+                    "type": "select",
+                    "label": "Sensor-Einheit",
+                    "help": "Einheit des ausgewählten Datenpunkts. Intern wird mit m³ gerechnet (z.B. Liter-Zähler automatisch /1000).",
+                    "hidden": "!data.gasAktiv",
+                    "default": "1",
+                    "options": [
+                        { "label": "m³", "value": "1" },
+                        { "label": "Liter", "value": "0.001" }
+                    ],
+                    "sm": 12,
+                    "xs": 12,
+                    "md": 4,
+                    "lg": 3,
+                    "xl": 2
+                },
                 "_gasMeterHeader": {
                     "type": "header",
                     "text": "Offset (Optional)",
@@ -379,6 +395,19 @@
                             "width": "20%"
                         },
                         {
+                            "type": "select",
+                            "title": "Einheit",
+                            "attr": "sensorFactor",
+                            "filter": false,
+                            "sort": false,
+                            "width": "8%",
+                            "default": "1",
+                            "options": [
+                                { "label": "m³", "value": "1" },
+                                { "label": "Liter", "value": "0.001" }
+                            ]
+                        },
+                        {
                             "type": "text",
                             "title": "Preis (€/kWh)",
                             "attr": "preis",
@@ -492,6 +521,22 @@
                     "md": 8,
                     "lg": 6,
                     "xl": 4
+                },
+                "wasserSensorUnit": {
+                    "type": "select",
+                    "label": "Sensor-Einheit",
+                    "help": "Einheit des ausgewählten Datenpunkts. Intern wird mit m³ gerechnet (z.B. Liter-Zähler automatisch /1000).",
+                    "hidden": "!data.wasserAktiv",
+                    "default": "1",
+                    "options": [
+                        { "label": "m³", "value": "1" },
+                        { "label": "Liter", "value": "0.001" }
+                    ],
+                    "sm": 12,
+                    "xs": 12,
+                    "md": 4,
+                    "lg": 3,
+                    "xl": 2
                 },
                 "_wasserMeterHeader": {
                     "type": "header",
@@ -686,6 +731,19 @@
                             "width": "20%"
                         },
                         {
+                            "type": "select",
+                            "title": "Einheit",
+                            "attr": "sensorFactor",
+                            "filter": false,
+                            "sort": false,
+                            "width": "8%",
+                            "default": "1",
+                            "options": [
+                                { "label": "m³", "value": "1" },
+                                { "label": "Liter", "value": "0.001" }
+                            ]
+                        },
+                        {
                             "type": "text",
                             "title": "Preis (€/m³)",
                             "attr": "preis",
@@ -799,6 +857,23 @@
                     "md": 8,
                     "lg": 6,
                     "xl": 4
+                },
+                "stromSensorUnit": {
+                    "type": "select",
+                    "label": "Sensor-Einheit",
+                    "help": "Einheit des ausgewählten Datenpunkts. Intern wird in kWh gerechnet (z.B. Wh-Zähler automatisch /1000).",
+                    "hidden": "!data.stromAktiv",
+                    "default": "1",
+                    "options": [
+                        { "label": "kWh", "value": "1" },
+                        { "label": "Wh", "value": "0.001" },
+                        { "label": "MWh", "value": "1000" }
+                    ],
+                    "sm": 12,
+                    "xs": 12,
+                    "md": 4,
+                    "lg": 3,
+                    "xl": 2
                 },
                 "_stromMeterHeader": {
                     "type": "header",
@@ -1086,6 +1161,20 @@
                             "width": "20%"
                         },
                         {
+                            "type": "select",
+                            "title": "Einheit",
+                            "attr": "sensorFactor",
+                            "filter": false,
+                            "sort": false,
+                            "width": "8%",
+                            "default": "1",
+                            "options": [
+                                { "label": "kWh", "value": "1" },
+                                { "label": "Wh", "value": "0.001" },
+                                { "label": "MWh", "value": "1000" }
+                            ]
+                        },
+                        {
                             "type": "text",
                             "title": "Preis (€/kWh)",
                             "attr": "preis",
@@ -1189,6 +1278,23 @@
                     "text": "Sensor-Konfiguration",
                     "size": 5,
                     "hidden": "!data.pvAktiv"
+                },
+                "pvSensorUnit": {
+                    "type": "select",
+                    "label": "Sensor-Einheit",
+                    "help": "Einheit des ausgewählten Datenpunkts. Intern wird in kWh gerechnet (z.B. Wh-Zähler automatisch /1000).",
+                    "hidden": "!data.pvAktiv",
+                    "default": "1",
+                    "options": [
+                        { "label": "kWh", "value": "1" },
+                        { "label": "Wh", "value": "0.001" },
+                        { "label": "MWh", "value": "1000" }
+                    ],
+                    "sm": 12,
+                    "xs": 12,
+                    "md": 4,
+                    "lg": 3,
+                    "xl": 2
                 },
                 "pvSensorDP": {
                     "type": "objectId",

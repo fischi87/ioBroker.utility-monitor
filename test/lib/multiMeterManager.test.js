@@ -141,6 +141,36 @@ describe('MultiMeterManager Module', () => {
             expect(meters).to.have.lengthOf(2); // main + Complete
             expect(meters[1].name).to.equal('complete');
         });
+
+        it('should read the sensor factor from <type>SensorUnit and default to 1', () => {
+            const adapter = createMockAdapter({
+                stromAktiv: true,
+                stromMainMeterName: 'main',
+                stromSensorDP: 'test.0.strom.sensor',
+                stromSensorUnit: '0.001',
+            });
+            const manager = new MultiMeterManager(adapter, null, null);
+
+            // Electricity meter picks up the configured Wh -> kWh factor
+            const stromMeters = manager.getMetersForType('electricity');
+            expect(stromMeters[0].config.sensorFactor).to.equal(0.001);
+
+            // Gas has no SensorUnit configured -> factor defaults to 1
+            const gasMeters = manager.getMetersForType('gas');
+            expect(gasMeters[0].config.sensorFactor).to.equal(1);
+        });
+
+        it('should read the sensor factor for additional meters', () => {
+            const adapter = createMockAdapter({
+                gasAdditionalMeters: [
+                    { name: 'Werkstatt', sensorDP: 'test.0.sensor2', sensorFactor: '0.001' },
+                ],
+            });
+            const manager = new MultiMeterManager(adapter, null, null);
+
+            const meters = manager.getMetersForType('gas');
+            expect(meters[1].config.sensorFactor).to.equal(0.001);
+        });
     });
 
     describe('getConfigType()', () => {
@@ -435,6 +465,35 @@ describe('MultiMeterManager Module', () => {
 
             // Daily consumption should remain unchanged (delta was 0)
             expect(adapter.states['gas.main.consumption.daily'].val).to.equal(5);
+        });
+
+        it('should scale the raw sensor value by the configured factor (Wh -> kWh)', async () => {
+            const adapter = createMockAdapter({
+                gasAktiv: false,
+                stromAktiv: true,
+                stromMainMeterName: 'main',
+                stromSensorDP: 'test.0.strom.sensor',
+                stromSensorUnit: '0.001', // datapoint counts in Wh
+                stromOffset: 0,
+                stromPreis: 0.3,
+                stromAdditionalMeters: [],
+                sensorSpikeThreshold: 500,
+            });
+            const manager = new MultiMeterManager(adapter, null, null);
+            manager.meterRegistry.register('test.0.strom.sensor', 'electricity', 'main');
+
+            // Baseline already known (stored in kWh)
+            manager.lastSensorValues['test.0.strom.sensor'] = 4000;
+            adapter.states['electricity.main.info.meterReading'] = { val: 4000, ack: true };
+            adapter.states['electricity.main.statistics.timestamps.lastYearStart'] = {
+                val: Date.now(),
+                ack: true,
+            };
+
+            // Raw sensor delivers 4,100,000 Wh -> should become 4100 kWh (delta 100)
+            await manager.handleSensorUpdate('electricity', 'main', 'test.0.strom.sensor', 4100000);
+
+            expect(adapter.states['electricity.main.info.meterReading'].val).to.equal(4100);
         });
     });
 
